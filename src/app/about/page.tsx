@@ -3,7 +3,6 @@ import Link from "next/link";
 import { RelationLegend } from "@/components/relation-legend";
 import { getStats } from "@/lib/queries";
 
-export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "About and methodology",
   description: "How Historycheck records are written, verified, illustrated and connected.",

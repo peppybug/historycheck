@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ArchiveImage, ImageCredit } from "@/components/archive-image";
 import { CollectionHeader, EventsByCentury } from "@/components/collection";
-import { getCivilization } from "@/lib/queries";
+import { getCivilization, staticSlugs } from "@/lib/queries";
 
-export const dynamic = "force-dynamic";
+export async function generateStaticParams() {
+  return staticSlugs("civilization");
+}
 type Props = { params: Promise<{ slug: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

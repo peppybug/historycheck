@@ -14,13 +14,15 @@
     "db:setup": "npm run db:migrate && npm run db:seed",
     "content:validate": "tsx scripts/validate-content.ts && tsx scripts/check-titles.ts",
     "enrich": "tsx scripts/enrich.ts",
-    "test": "tsx --test tests/*.test.ts"
+    "test": "tsx --test tests/*.test.ts",
+    "build:pages": "node scripts/build-pages.mjs"
   },
   "dependencies": {
     "@fontsource-variable/figtree": "^5.3.0",
     "@fontsource-variable/newsreader": "^5.3.0",
     "d3-geo": "^3.1.2",
     "drizzle-orm": "^0.45.4",
+    "minisearch": "^7.1.1",
     "next": "15.5.29",
     "postgres": "^4.1.1",
     "react": "19.1.0",

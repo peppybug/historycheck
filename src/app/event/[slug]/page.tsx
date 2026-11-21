@@ -10,10 +10,12 @@ import { RelationLegend } from "@/components/relation-legend";
 import { VerificationBadge } from "@/components/verification-badge";
 import { WorldMap } from "@/components/world-map";
 import { formatDate, formatRange, lifespan, precisionNote } from "@/lib/dates";
-import { getEvent } from "@/lib/queries";
+import { getEvent, staticSlugs } from "@/lib/queries";
 import { siteUrl } from "@/lib/site";
 
-export const dynamic = "force-dynamic";
+export async function generateStaticParams() {
+  return staticSlugs("event");
+}
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -129,7 +131,7 @@ export default async function EventPage({ params }: Props) {
               <div className="mt-6 flex flex-wrap gap-2">
                 <SaveButton event={{ slug: ev.slug, title: ev.title, year: yearOf(ev), thumb: ev.featuredImage?.smallUrl ?? null }} />
                 <ShareButton title={ev.title} />
-                <Link href={`/connections?event=${ev.slug}`} className="inline-flex h-10 items-center rounded-sm border border-line-strong bg-surface px-3.5 text-sm font-medium text-ink hover:border-ink">
+                <Link href={`/connections/${ev.slug}`} className="inline-flex h-10 items-center rounded-sm border border-line-strong bg-surface px-3.5 text-sm font-medium text-ink hover:border-ink">
                   View connections
                 </Link>
               </div>
@@ -293,7 +295,7 @@ export default async function EventPage({ params }: Props) {
                 <h2 id="before-after" className="text-2xl">Before and after</h2>
                 <p className="mt-2 text-ink-2">How this event connects to the rest of the record. Red lines are causal links; grey dotted lines show sequence only.</p>
               </div>
-              <Link href={`/connections?event=${ev.slug}`} className="link text-sm font-medium">Open in the connections explorer</Link>
+              <Link href={`/connections/${ev.slug}`} className="link text-sm font-medium">Open in the connections explorer</Link>
             </div>
             <div className="mt-8">
               <BeforeAfter ev={ev} />

@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CollectionHeader, EventsByCentury } from "@/components/collection";
-import { getRegion } from "@/lib/queries";
+import { getRegion, staticSlugs } from "@/lib/queries";
 
-export const dynamic = "force-dynamic";
+export async function generateStaticParams() {
+  return staticSlugs("region");
+}
 type Props = { params: Promise<{ slug: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

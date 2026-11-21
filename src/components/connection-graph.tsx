@@ -2,10 +2,19 @@
 
 import Link from "next/link";
 import { useLayoutEffect, useMemo, useRef, useState } from "react";
-import type { EventCardData } from "@/lib/queries";
 import { yearLabel } from "@/lib/dates";
 
-type Node = EventCardData & { id: number; sortKey: number };
+export interface GraphNode {
+  id: number;
+  slug: string;
+  title: string;
+  sortKey: number;
+  startYear: number;
+  endYear: number | null;
+  datePrecision: "day" | "month" | "year" | "approximate" | "decade" | "century";
+  thumb: string | null;
+}
+type Node = GraphNode;
 interface Edge {
   from_event_id: number;
   to_event_id: number;
@@ -183,15 +192,15 @@ export function ConnectionGraph({ nodes, edges, rootId }: { nodes: Node[]; edges
                   <Link
                     key={n.id}
                     data-node={n.id}
-                    href={n.id === rootId ? `/event/${n.slug}` : `/connections?event=${n.slug}`}
+                    href={n.id === rootId ? `/event/${n.slug}` : `/connections/${n.slug}`}
                     className={`group block rounded-sm border bg-surface p-3 transition-[border-color,box-shadow] duration-150 hover:shadow-lift ${
                       n.id === rootId ? "border-2 border-ink" : "border-line hover:border-line-strong"
                     }`}
                   >
                     <span className="flex gap-2.5">
-                      {n.image ? (
+                      {n.thumb ? (
                         // eslint-disable-next-line @next/next/no-img-element
-                        <img src={n.image.smallUrl ?? n.image.thumbUrl} alt="" className="h-12 w-12 shrink-0 rounded-xs object-cover" loading="lazy" />
+                        <img src={n.thumb} alt="" className="h-12 w-12 shrink-0 rounded-xs object-cover" loading="lazy" />
                       ) : null}
                       <span className="min-w-0">
                         <span className="block text-xs text-muted tabular">{yearLabel({ year: n.startYear, precision: n.datePrecision }, n.endYear != null ? { year: n.endYear } : null)}</span>
@@ -218,9 +227,9 @@ export function ConnectionGraph({ nodes, edges, rootId }: { nodes: Node[]; edges
               const causal = e.type === "led_to" || e.type === "contributed_to";
               return (
                 <li key={`${e.from_event_id}-${e.to_event_id}-${e.type}`} className="border-b border-line pb-2.5">
-                  <Link className="link" href={`/connections?event=${a.slug}`}>{a.title}</Link>{" "}
+                  <Link className="link" href={`/connections/${a.slug}`}>{a.title}</Link>{" "}
                   <span className={causal ? "font-semibold text-thread-ink" : "text-muted"}>{VERB[e.type]}</span>{" "}
-                  <Link className="link" href={`/connections?event=${b.slug}`}>{b.title}</Link>
+                  <Link className="link" href={`/connections/${b.slug}`}>{b.title}</Link>
                   {e.note ? <span className="mt-0.5 block text-xs text-ink-2">{e.note}</span> : null}
                 </li>
               );

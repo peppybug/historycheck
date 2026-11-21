@@ -605,3 +605,26 @@ export async function sitemapEntries() {
   ]);
   return { ev, pe, pl, pr, ca, ci, re };
 }
+
+/* ------------------------------------------------------------------ */
+/* Static generation                                                   */
+/* ------------------------------------------------------------------ */
+
+/** Slugs for generateStaticParams (every public page is pre-rendered). */
+export async function staticSlugs(kind: "event" | "person" | "place" | "period" | "category" | "region" | "civilization") {
+  const rows =
+    kind === "event"
+      ? await db.select({ slug: s.events.slug }).from(s.events).where(published)
+      : kind === "person"
+        ? await db.select({ slug: s.people.slug }).from(s.people).where(eq(s.people.status, "published"))
+        : kind === "place"
+          ? await db.select({ slug: s.places.slug }).from(s.places).where(eq(s.places.status, "published"))
+          : kind === "period"
+            ? await db.select({ slug: s.periods.slug }).from(s.periods)
+            : kind === "category"
+              ? await db.select({ slug: s.categories.slug }).from(s.categories)
+              : kind === "region"
+                ? await db.select({ slug: s.regions.slug }).from(s.regions)
+                : await db.select({ slug: s.civilizations.slug }).from(s.civilizations);
+  return rows.map((r) => ({ slug: r.slug }));
+}

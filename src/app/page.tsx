@@ -20,7 +20,6 @@ import {
   getStats,
 } from "@/lib/queries";
 
-export const dynamic = "force-dynamic";
 
 const EXAMPLES = ["Julius Caesar", "1989", "Cold War", "Ancient Egypt", "Moon landing", "Industrial Revolution", "Mali Empire"];
 
@@ -76,7 +75,7 @@ export default async function HomePage() {
             <div className="mt-5">
               <ThreadChain events={chain.events} types={chain.types} />
             </div>
-            <Link href="/connections?event=world-war-i" className="link mt-5 inline-block text-sm font-medium">
+            <Link href="/connections/world-war-i" className="link mt-5 inline-block text-sm font-medium">
               Explore every connection from 1914
             </Link>
           </div>

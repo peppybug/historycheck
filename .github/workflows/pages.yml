@@ -1,0 +1,87 @@
+# Builds Historycheck as a static site and deploys it to GitHub Pages.
+#
+# The record is loaded into a throwaway Postgres from the curated content in
+# content/ and the verified snapshot in data/enriched.json (no network calls
+# to Wikimedia are made), every page is pre-rendered, and ./out is published.
+#
+# One-time setup: Settings → Pages → Build and deployment → Source: "GitHub Actions".
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main, claude/elegant-clarke-1rlgsd]
+  workflow_dispatch:
+  schedule:
+    # Daily rebuild so homepage selections (e.g. "Less familiar chapters") rotate.
+    - cron: "23 5 * * *"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: historycheck
+          POSTGRES_PASSWORD: historycheck
+          POSTGRES_DB: historycheck
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U historycheck"
+          --health-interval 5s --health-timeout 5s --health-retries 12
+    env:
+      DATABASE_URL: postgres://historycheck:historycheck@localhost:5432/historycheck
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Configure Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - run: npm ci
+
+      - name: Check content and logic
+        run: |
+          npx tsx scripts/validate-content.ts
+          npm test
+
+      - name: Load the record into Postgres
+        run: |
+          npm run db:migrate
+          npm run db:seed
+
+      - name: Build static site
+        run: npm run build:pages
+        env:
+          # e.g. "/historycheck" for https://<user>.github.io/historycheck, or "" for a custom domain
+          NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          NEXT_PUBLIC_SITE_URL: ${{ steps.pages.outputs.base_url }}
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
+import { loadEngine, suggest } from "@/lib/client-search";
 
 interface Suggestion {
   type: "event" | "person" | "place" | "period" | "civilization";
@@ -67,24 +68,23 @@ export function SearchBox({
       setLoading(false);
       return;
     }
-    const ctrl = new AbortController();
+    let cancelled = false;
     setLoading(true);
     const t = setTimeout(async () => {
       try {
-        const res = await fetch(`/api/suggest?q=${encodeURIComponent(q)}`, { signal: ctrl.signal });
-        if (!res.ok) throw new Error(String(res.status));
-        const data = (await res.json()) as { items: Suggestion[] };
-        setItems(data.items);
+        const engine = await loadEngine();
+        if (cancelled) return;
+        setItems(suggest(engine, q) as Suggestion[]);
         setActive(-1);
-      } catch (e) {
-        if ((e as Error).name !== "AbortError") setItems([]);
+      } catch {
+        if (!cancelled) setItems([]);
       } finally {
-        if (!ctrl.signal.aborted) setLoading(false);
+        if (!cancelled) setLoading(false);
       }
-    }, 140);
+    }, 90);
     return () => {
+      cancelled = true;
       clearTimeout(t);
-      ctrl.abort();
     };
   }, [value]);
 
@@ -150,7 +150,10 @@ export function SearchBox({
             setValue(e.target.value);
             setOpen(true);
           }}
-          onFocus={() => setOpen(true)}
+          onFocus={() => {
+            setOpen(true);
+            loadEngine().catch(() => {});
+          }}
           onBlur={() => setTimeout(() => setOpen(false), 120)}
           onKeyDown={(e) => {
             if (!showList || !items.length) return;

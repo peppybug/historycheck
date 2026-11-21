@@ -4,9 +4,11 @@ import { notFound } from "next/navigation";
 import { ArchiveImage, ImageCredit } from "@/components/archive-image";
 import { EventRow } from "@/components/event-card";
 import { WorldMap } from "@/components/world-map";
-import { getPlace } from "@/lib/queries";
+import { getPlace, staticSlugs } from "@/lib/queries";
 
-export const dynamic = "force-dynamic";
+export async function generateStaticParams() {
+  return staticSlugs("place");
+}
 type Props = { params: Promise<{ slug: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

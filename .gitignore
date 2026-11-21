@@ -44,3 +44,7 @@ next-env.d.ts
 # enrichment HTTP cache (reproducible; enriched.json is committed)
 /data/cache/
 .playwright-mcp/
+
+# static export
+/out/
+/.static-stash/

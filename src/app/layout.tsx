@@ -15,7 +15,6 @@ export const metadata: Metadata = {
   applicationName: "Historycheck",
   openGraph: { type: "website", siteName: "Historycheck", locale: "en_GB" },
   twitter: { card: "summary_large_image" },
-  icons: { icon: "/icon.svg" },
 };
 
 export const viewport: Viewport = {

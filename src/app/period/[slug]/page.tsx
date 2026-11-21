@@ -3,9 +3,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CollectionHeader, EventsByCentury } from "@/components/collection";
 import { formatYear } from "@/lib/dates";
-import { getPeriod } from "@/lib/queries";
+import { getPeriod, staticSlugs } from "@/lib/queries";
 
-export const dynamic = "force-dynamic";
+export async function generateStaticParams() {
+  return staticSlugs("period");
+}
 type Props = { params: Promise<{ slug: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

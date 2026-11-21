@@ -3,7 +3,6 @@ import { Suspense } from "react";
 import { Timeline } from "@/components/timeline";
 import { getCategoriesWithCounts, getRegionsWithCounts, getTimelineEvents } from "@/lib/queries";
 
-export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "Interactive timeline",
   description: "Every event in the record on one zoomable timeline, by region — see what happened at the same time across the world.",

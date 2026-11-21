@@ -1,8 +1,6 @@
-import { geoEqualEarth, geoPath } from "d3-geo";
 import Link from "next/link";
-import { feature } from "topojson-client";
-import type { FeatureCollection } from "geojson";
-import land110 from "world-atlas/land-110m.json";
+import { withBase } from "@/lib/base-path";
+import { MAP_H as H, MAP_W as W, projection } from "@/lib/world-geometry";
 
 export interface MapPoint {
   slug: string;
@@ -11,15 +9,6 @@ export interface MapPoint {
   lng: number;
   weight?: number;
 }
-
-const W = 960;
-const H = 470;
-const projection = geoEqualEarth().fitExtent([[8, 8], [W - 8, H - 8]], { type: "Sphere" });
-const path = geoPath(projection);
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const land = feature(land110 as any, (land110 as any).objects.land) as unknown as FeatureCollection;
-const landPath = path(land) ?? "";
-const spherePath = path({ type: "Sphere" }) ?? "";
 
 /**
  * Static world map rendered on the server (Natural Earth 1:110m land,
@@ -70,8 +59,8 @@ export function WorldMap({
   return (
     <figure className="overflow-hidden rounded-sm border border-line bg-surface">
       <svg viewBox={viewBox} role="img" aria-label={label} className="block h-auto w-full">
-        <path d={spherePath} fill="var(--sunken)" />
-        <path d={landPath} fill="var(--paper)" stroke="var(--line-strong)" strokeWidth={0.6 * scale} />
+        <use href={withBase("/data/world.svg#sphere")} fill="var(--sunken)" />
+        <use href={withBase("/data/world.svg#land")} fill="var(--paper)" stroke="var(--line-strong)" strokeWidth={0.6 * scale} />
         {points.map((p) => {
           const xy = projection([p.lng, p.lat]);
           if (!xy) return null;

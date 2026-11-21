@@ -7,7 +7,6 @@ import { WorldMap } from "@/components/world-map";
 import { formatYear } from "@/lib/dates";
 import { getCategoriesWithCounts, getCivilizations, getMapPlaces, getNotablePeople, getPeriodsWithCounts, getRegionsWithCounts } from "@/lib/queries";
 
-export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "Explore history",
   description: "Browse the historical record by period, theme, region, civilization, people and places.",

@@ -11,7 +11,7 @@ export function EventPicker({ options, value }: { options: { slug: string; title
       <select
         id="pick"
         value={value}
-        onChange={(e) => router.push(`/connections?event=${e.target.value}`)}
+        onChange={(e) => router.push(`/connections/${e.target.value}`)}
         className="mt-1 block w-full max-w-xl rounded-sm border border-line-strong bg-surface px-3 py-2.5 text-base"
       >
         {options.map((o) => (

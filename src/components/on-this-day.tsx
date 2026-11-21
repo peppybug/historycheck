@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import type { EventCardData } from "@/lib/queries";
 import { formatYear, monthName } from "@/lib/dates";
+import { withBase } from "@/lib/base-path";
 import { EventCardFeature, EventRow } from "./event-card";
 
 interface Data {
@@ -25,7 +26,7 @@ export function OnThisDay() {
     const m = now.getMonth() + 1;
     const d = now.getDate();
     setDate({ m, d });
-    fetch(`/api/on-this-day?m=${m}&d=${d}`)
+    fetch(withBase(`/data/on-this-day/${String(m).padStart(2, "0")}-${String(d).padStart(2, "0")}.json`))
       .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
       .then(setData)
       .catch(() => setError(true));

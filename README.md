@@ -14,23 +14,65 @@ The launch database holds **175 hand-written events** spanning about 5,000 years
 | --- | --- |
 | **Home** (`/`) | Search with typeahead, a real causal chain from the database (First World War → … → Cold War), featured events, *On this day* using the visitor's local date, periods, civilizations, people, themes and lesser-known events. |
 | **Event pages** (`/event/[slug]`) | Header with precision-aware dates and verification status, featured image with full credit, overview, context, causes, narrative, consequences, timeline, **before/after** (caused by, contributing causes, preceded by → led to, contributed to, followed by), meanwhile elsewhere, people, places with a map, a captioned image gallery with licences, sources, and a "how this record was checked" box. |
-| **Search** (`/search`) | Weighted full-text search plus trigram typo tolerance, relational boosts (searching "Julius Caesar" returns the person and every event he is linked to), year and era parsing ("44 BC", "1960s", "15th century", "1914-1918"), filters by period, category, region and date range, faceted counts, sorting, highlighting, "did you mean" and helpful empty states. |
+| **Search** (`/search`) | Runs in the browser over an index generated from the database at build time, so it works on static hosting. Field-weighted ranking, prefix matching while you type, typo tolerance as a labelled fallback ("Ceasar" finds Caesar), relational matching (searching "Julius Caesar" returns the person and every event he is linked to), year and era parsing ("44 BC", "1960s", "15th century", "1914-1918"), filters by period, category, region and date range, faceted counts, sorting, highlighting, "did you mean" and helpful empty states. |
 | **Explore** (`/explore`) | Browse by period, theme, region, civilization and person, plus a server-rendered world map of every place. |
 | **Timeline** (`/timeline`) | All events on one linear scale with a lane per region. Zoom from all of history to single years (buttons, Ctrl/⌘ + scroll, or pinch), filter by region and category, jump to a year, and hover anywhere to list every event happening at that moment. A list view is the default on phones. |
-| **Connections** (`/connections`) | A layered causal map up to three steps from any event. Direct causation, contributing causes and mere sequence are drawn differently, and every link is also listed in words. |
+| **Connections** (`/connections/[slug]`) | A layered causal map up to three steps from any event. Direct causation, contributing causes and mere sequence are drawn differently, and every link is also listed in words. |
 | **People, places, periods, categories, regions, civilizations** | Dedicated pages for each. |
 | **Saved and recently viewed** | Kept in the visitor's browser; no account needed. |
-| **Editorial workspace** (`/admin`) | Password-protected. Create and edit events, review queue, link people, places, sources (link-checked before saving) and images (verified on Commons before saving), manage typed connections, import people and places from Wikipedia/Wikidata. |
+| **Editorial workspace** (`/admin`) | Needs a Node server, so it is **not part of the GitHub Pages build** (see [Editing the record](#adding-to-the-record)). Password-protected. Create and edit events, review queue, link people, places, sources (link-checked before saving) and images (verified on Commons before saving), manage typed connections, import people and places from Wikipedia/Wikidata. |
 | **SEO** | Per-page metadata and Open Graph images, JSON-LD for events, canonical URLs, `sitemap.xml`, `robots.txt`. |
 
 ## Stack
 
 - **Next.js 15** (App Router, React Server Components, server actions), **TypeScript**, **Tailwind CSS 4**
 - **PostgreSQL 16** with **Drizzle ORM** and SQL migrations (works with Supabase or any Postgres)
-- Postgres full-text search (`tsvector` maintained by triggers, `unaccent`) and `pg_trgm` for typo tolerance
+- Client-side search with MiniSearch over a JSON index generated from Postgres at build time
 - `d3-geo` + Natural Earth for maps rendered on the server (no tile provider, no client JavaScript)
 - Self-hosted fonts via Fontsource: Newsreader (headings and long-form reading), Figtree (interface)
 - `zod` for input validation; HMAC-signed session cookies for the admin area
+
+## Hosting on GitHub Pages
+
+The public site is deployed as a fully static export by `.github/workflows/pages.yml`. On every push to `main` (or the current default branch), and once a day, the workflow:
+
+1. starts a throwaway PostgreSQL 16 service;
+2. validates the content and runs the unit tests;
+3. runs the migrations and loads the record from `content/` and `data/enriched.json` (no requests to Wikimedia are made during the build);
+4. pre-renders every page with `npm run build:pages`, producing ./out with 797 HTML pages, a search index, one "On this day" file per calendar day and a shared map outline;
+5. publishes ./out to GitHub Pages.
+
+**One-time setup:** in the repository, open **Settings → Pages → Build and deployment** and set **Source** to **GitHub Actions**. The next push (or **Actions → Deploy to GitHub Pages → Run workflow**) publishes the site at `https://<your-user>.github.io/historycheck/`.
+
+The base path and canonical URL come from GitHub automatically (`actions/configure-pages`), so a custom domain also works without code changes.
+
+What changes on static hosting:
+
+| Feature | On GitHub Pages |
+| --- | --- |
+| Event, person, place and collection pages, timeline, explore, about | Pre-rendered at build time |
+| Search and typeahead | In the browser, over `/data/search-index.json` |
+| On this day | In the browser, using the visitor's date and `/data/on-this-day/MM-DD.json` |
+| Random event, saved events, recently viewed | In the browser |
+| Connections | One static page per event (`/connections/apollo-11/`) |
+| `/admin` editorial workspace | Not available (it needs a server); edit `content/` instead |
+| "Less familiar chapters" on the homepage | Rotates with the daily rebuild |
+
+To build the static site locally:
+
+```bash
+NEXT_PUBLIC_BASE_PATH=/historycheck npm run build:pages
+```
+
+`scripts/build-pages.mjs` temporarily moves the server-only code (`src/app/admin`, `src/components/admin`, `src/middleware.ts`) out of the way, runs `next build` with `output: "export"`, and restores it afterwards, even if the build fails.
+
+To preview it under the same path GitHub uses, serve a folder that contains `out` as `historycheck`:
+
+```bash
+mkdir -p /tmp/pages && ln -sfn "$PWD/out" /tmp/pages/historycheck && python3 -m http.server 4000 -d /tmp/pages
+```
+
+Then open <http://localhost:4000/historycheck/>.
 
 ## Getting started
 
@@ -82,17 +124,19 @@ Open <http://localhost:3000>. The editorial workspace is at <http://localhost:30
 | `DATABASE_URL` | Yes | Postgres connection string. On Supabase, use the *Session pooler* connection string. |
 | `ADMIN_PASSWORD` | For `/admin` | Password for the editorial workspace. If unset, the workspace is disabled. |
 | `SESSION_SECRET` | For `/admin` | At least 32 random characters, used to sign the admin session cookie. Generate one with `openssl rand -base64 48`. |
+| `NEXT_PUBLIC_BASE_PATH` | Static builds only | Sub-path the site is served from, e.g. `/historycheck` for a GitHub Pages project site. Set automatically by the Pages workflow. |
 | `NEXT_PUBLIC_SITE_URL` | Recommended | Public origin (for example `https://historycheck.example`). Used for canonical URLs, Open Graph and the sitemap. |
 
 No third-party API keys are needed. Wikipedia, Wikidata and Wikimedia Commons are public APIs; the enrichment script identifies itself with a descriptive User-Agent as Wikimedia's policy requires, and throttles and caches its requests.
 
-Secrets are only read on the server (database access, server actions and middleware); nothing sensitive is exposed to the browser.
+Secrets are only read on the server or at build time (database access, server actions and middleware); nothing sensitive is exposed to the browser. The static GitHub Pages build needs no secrets at all: its database is a temporary container inside the workflow.
 
 ## Scripts
 
 | Command | What it does |
 | --- | --- |
-| `npm run dev` / `build` / `start` | Next.js development server, production build, production server |
+| `npm run dev` / `build` / `start` | Next.js development server, production build, production server (with `/admin`) |
+| `npm run build:pages` | Static export for GitHub Pages into ./out |
 | `npm run db:migrate` | Apply SQL migrations |
 | `npm run db:generate` | Generate a migration after editing `src/db/schema.ts` |
 | `npm run db:seed` | Reset and load the database from `content/` and `data/enriched.json` |
@@ -155,27 +199,25 @@ Each event cites its encyclopedia article and Wikidata item, institutional sourc
 
 ## Adding to the record
 
-**In the workspace (`/admin`):** create an event (it starts as a draft), then link people, places, connections, sources and images on its page. Import new people or places by Wikipedia title; their dates, coordinates, portraits and short descriptions are fetched and verified live. Publish when the record is reviewed.
-
-**In code:** add an entry to a file in `content/events/`, register any new people or places, then run:
-
-```bash
-npm run content:validate
-```
+**For the GitHub Pages site,** the record lives in `content/` and changes go through pull requests, so reviewing the PR is the review before publication. Add or edit an event in `content/events/`, register any new people or places in `content/people.ts` and `content/places.ts`, then refresh the verified snapshot and check everything:
 
 ```bash
 npm run enrich
 ```
 
 ```bash
-npm run db:seed
+npm run content:validate
 ```
 
-Note that `db:seed` resets the database. Edits made in the workspace live only in the database, so export or back up before re-seeding a production database.
+Commit the content changes together with the updated `data/enriched.json` and `data/enrichment-report.md`. If the report lists a date that differs from Wikidata, either fix the content or explain the difference in `content/review.ts`; until then the build keeps that event unpublished. Merging deploys the site.
 
-## Deployment
+**With a server deployment (`/admin`):** create an event (it starts as a draft), then link people, places, connections, sources and images on its page. Import new people or places by Wikipedia title; their dates, coordinates, portraits and short descriptions are fetched and verified live. Publish when the record is reviewed.
 
-Any Node host works. For Vercel with Supabase:
+Note that `db:seed` resets the database. Edits made in the workspace live only in that database (they are not written back to `content/`), so back up before re-seeding a server database.
+
+## Server deployment (optional)
+
+GitHub Pages is the default. To also run the editorial workspace, deploy the regular build to any Node host. For Vercel with Supabase:
 
 1. Create a Supabase project, copy the *Session pooler* connection string into `DATABASE_URL`, and run `npm run db:setup` from your machine against it.
 2. Import the repository into Vercel, set `DATABASE_URL`, `ADMIN_PASSWORD`, `SESSION_SECRET` and `NEXT_PUBLIC_SITE_URL`, and deploy.

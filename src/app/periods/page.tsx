@@ -4,7 +4,6 @@ import { PeriodStrip } from "@/components/period-strip";
 import { formatYear } from "@/lib/dates";
 import { getPeriodsWithCounts } from "@/lib/queries";
 
-export const dynamic = "force-dynamic";
 export const metadata: Metadata = { title: "Historical periods", description: "Nine periods of world history, from the first cities to the present.", alternates: { canonical: "/periods" } };
 
 export default async function PeriodsPage() {
