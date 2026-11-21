@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import type { ImageRow } from "@/lib/queries";
 
 type Img = Pick<ImageRow, "thumbUrl" | "thumbWidth" | "thumbHeight" | "caption"> & {
@@ -25,11 +28,25 @@ export function ArchiveImage({
   priority?: boolean;
   fit?: "cover" | "contain";
 }) {
+  const [failed, setFailed] = useState(false);
+  const ref = useRef<HTMLImageElement>(null);
+  // Catch failures that happened before hydration attached onError.
+  useEffect(() => {
+    const el = ref.current;
+    if (el && el.complete && el.naturalWidth === 0) setFailed(true);
+  }, []);
   const small = image.smallUrl && image.smallUrl !== image.thumbUrl ? image.smallUrl : null;
+  if (failed)
+    return (
+      <span role="img" aria-label={alt ?? image.caption} className={`flex h-full w-full items-end bg-sunken p-3 text-xs text-muted ${className}`}>
+        Image could not be loaded from Wikimedia Commons right now.
+      </span>
+    );
   const srcSet = small ? `${small} 500w, ${image.thumbUrl} ${image.thumbWidth}w` : undefined;
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
+      ref={ref}
       src={small && !priority ? small : image.thumbUrl}
       srcSet={srcSet}
       sizes={srcSet ? sizes : undefined}
@@ -39,6 +56,7 @@ export function ArchiveImage({
       loading={priority ? "eager" : "lazy"}
       fetchPriority={priority ? "high" : undefined}
       decoding="async"
+      onError={() => setFailed(true)}
       className={`h-full w-full ${fit === "cover" ? "object-cover" : "object-contain"} ${className}`}
     />
   );

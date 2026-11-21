@@ -58,8 +58,18 @@ function Credit({ item }: { item: GalleryItem }) {
   );
 }
 
-export function ImageGallery({ items }: { items: GalleryItem[] }) {
+export function ImageGallery({ items: all }: { items: GalleryItem[] }) {
   const dialog = useRef<HTMLDialogElement>(null);
+  // Images that fail to load are removed rather than shown broken.
+  const [failed, setFailed] = useState<Set<string>>(new Set());
+  const items = all.filter((i) => !failed.has(i.thumbUrl));
+  const drop = (url: string) => setFailed((f) => new Set(f).add(url));
+  const listRef = useRef<HTMLUListElement>(null);
+  useEffect(() => {
+    listRef.current?.querySelectorAll("img").forEach((img) => {
+      if (img.complete && img.naturalWidth === 0 && img.dataset.thumb) drop(img.dataset.thumb);
+    });
+  }, []);
   const [index, setIndex] = useState<number | null>(null);
 
   useEffect(() => {
@@ -83,7 +93,7 @@ export function ImageGallery({ items }: { items: GalleryItem[] }) {
 
   return (
     <>
-      <ul className="columns-1 gap-5 sm:columns-2 lg:columns-3">
+      <ul ref={listRef} className="columns-1 gap-5 sm:columns-2 lg:columns-3">
         {items.map((it, i) => (
           <li key={it.thumbUrl} className="mb-5 break-inside-avoid">
             <figure>
@@ -101,6 +111,8 @@ export function ImageGallery({ items }: { items: GalleryItem[] }) {
                   alt={it.caption}
                   loading="lazy"
                   decoding="async"
+                  data-thumb={it.thumbUrl}
+                  onError={() => drop(it.thumbUrl)}
                   className="h-auto w-full"
                 />
               </button>

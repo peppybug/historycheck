@@ -114,10 +114,10 @@ export default async function EventPage({ params }: Props) {
             <div>
               {ev.links.partOf.length ? (
                 <p className="mb-3 text-sm text-ink-2">
-                  Part of{" "}
                   {ev.links.partOf.map((r, i) => (
                     <span key={r.card.slug}>
-                      {i ? ", " : ""}
+                      {i ? " · " : ""}
+                      {r.type === "part_of" ? "Part of " : "During "}
                       <Link className="link font-medium" href={`/event/${r.card.slug}`}>{r.card.title}</Link>
                     </span>
                   ))}
@@ -125,7 +125,7 @@ export default async function EventPage({ params }: Props) {
               ) : null}
               <h1 className="text-[2.25rem] leading-[1.08] sm:text-3xl">{ev.title}</h1>
               {ev.altNames.length ? <p className="mt-2 text-sm text-muted">Also known as {ev.altNames.join(", ")}</p> : null}
-              <p className="mt-5 max-w-2xl font-serif text-xl leading-relaxed text-ink-2">{ev.summary}</p>
+              <p className="mt-5 max-w-2xl font-serif text-lg leading-relaxed text-ink-2 sm:text-xl">{ev.summary}</p>
               <div className="mt-6 flex flex-wrap gap-2">
                 <SaveButton event={{ slug: ev.slug, title: ev.title, year: yearOf(ev), thumb: ev.featuredImage?.smallUrl ?? null }} />
                 <ShareButton title={ev.title} />
@@ -195,7 +195,7 @@ export default async function EventPage({ params }: Props) {
 
       {/* Body ------------------------------------------------------------ */}
       <div className="container-page mt-12 grid gap-12 lg:grid-cols-[200px_1fr] xl:gap-16">
-        <aside className="hidden lg:block">
+        <div className="hidden lg:block">
           <nav aria-label="On this page" className="sticky top-6">
             <p className="text-xs font-semibold text-muted">On this page</p>
             <ol className="mt-3 grid gap-2 border-l border-line text-sm">
@@ -208,7 +208,7 @@ export default async function EventPage({ params }: Props) {
               ))}
             </ol>
           </nav>
-        </aside>
+        </div>
 
         <div className="min-w-0">
           <section aria-labelledby="overview" className="scroll-mt-6">

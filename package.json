@@ -38,6 +38,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/topojson-client": "^3.1.5",
+    "axe-core": "^4.10.2",
     "dotenv": "^18.0.10",
     "drizzle-kit": "^0.31.11",
     "eslint": "^9",

@@ -4,7 +4,7 @@
 
 Historycheck is a searchable, connected record of world history. Every event page explains what happened, the context that produced it, the people and places involved, what came before and what happened next, with dates checked against Wikidata and archival images matched to the exact subject.
 
-The launch database holds **175 hand-written events** across five thousand years and every inhabited continent, plus **231 people**, **159 places**, **17 civilizations**, about 1,400 verified Wikimedia Commons images, around 1,000 checked sources and more than 200 typed connections between events.
+The launch database holds **175 hand-written events** spanning about 5,000 years across all ten regions of the record, plus **231 people**, **159 places**, **17 civilizations**, **1,446** verified Wikimedia Commons images, **2,114** sources (1,001 institutional sources beyond the Wikipedia and Wikidata anchors) and **172** typed connections between events, 79 of them causal. 96 events have dates that match Wikidata exactly; every other event shows on its page why it is partially verified.
 
 ---
 
@@ -134,10 +134,10 @@ Images are never found by keyword search. For each record, the pipeline:
 2. picks the image attached to that entity: Wikidata **P18** for people and places, or the **lead image** editors chose for the event's own article;
 3. builds galleries only from images **used inside the event's article**, keeping the article's caption as evidence of relevance;
 4. fetches Commons metadata for every file (creator, date, licence, licence URL, whether attribution is required) and accepts only files with licence information;
-5. checks that both display renditions (500 px and 1280 px) return HTTP 200, and drops any image that doesn't;
+5. checks that the display renditions return HTTP 200 and drops any image that doesn't. When a file is narrower than 1280 px, Commons would return the unscaled original; instead the pipeline derives the largest *standard* thumbnail width (960, 500, 330 or 250 px) below the original's width. Those are edge-cached by Wikimedia and are what its hotlinking guidance prefers. Because Wikimedia's robot policy limits scripts from triggering thumbnail generation, derived renditions are verified through the Commons API (file exists, dimensions known) rather than by fetching each one;
 6. stores how each image was matched (`wikidata_p18`, `wikipedia_lead`, `article_media` or `curated`) so it can be shown and audited.
 
-When no image can be verified, the page says so rather than showing a substitute. Commons thumbnails are served directly from `upload.wikimedia.org` at pre-sized widths with explicit dimensions, lazy loading and `srcset`, so there is no layout shift and no re-proxying.
+When no image can be verified, the page says so rather than showing a substitute. If an image fails to load in a visitor's browser, the page shows a labelled placeholder (or drops it from the gallery) instead of a broken image. For a high-traffic deployment, consider putting a caching image proxy or CDN in front of `upload.wikimedia.org`. Commons thumbnails are served directly from `upload.wikimedia.org` at pre-sized widths with explicit dimensions, lazy loading and `srcset`, so there is no layout shift and no re-proxying.
 
 ### Date verification
 

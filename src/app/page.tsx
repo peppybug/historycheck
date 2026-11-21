@@ -28,7 +28,7 @@ export default async function HomePage() {
   const [stats, featured, chain, periods, civs, people, discoveries, conflicts, science, politics] = await Promise.all([
     getStats(),
     getFeatured(),
-    getCausalChain("world-war-i"),
+    getCausalChain("world-war-i", 6, "cold-war"),
     getPeriodsWithCounts(),
     getCivilizations(),
     getNotablePeople(10),

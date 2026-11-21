@@ -96,7 +96,7 @@ export function ConnectionGraph({ nodes, edges, rootId }: { nodes: Node[]; edges
     const sorted = [...cols.entries()].sort((a, b) => a[0] - b[0]).map(([l, list]) => ({ layer: l, nodes: list.sort((a, b) => a.sortKey - b.sortKey) }));
     const ctx = edges.filter((e) => !DIRECTED.has(e.type) && (e.from_event_id === rootId || e.to_event_id === rootId));
     return { columns: sorted, contextEdges: ctx, layerOf: layer };
-  }, [edges, rootId, byId]);
+  }, [edges, rootId, byId, nodes.length]);
 
   const drawn = edges.filter((e) => DIRECTED.has(e.type) && layerOf.has(e.from_event_id) && layerOf.has(e.to_event_id));
 

@@ -155,7 +155,7 @@ export const getDiscoveries = cache(async (limit = 6) => {
 });
 
 /** Longest chain of causal links (led_to / contributed_to) starting from an event. */
-export const getCausalChain = cache(async (startSlug: string, maxDepth = 6) => {
+export const getCausalChain = cache(async (startSlug: string, maxDepth = 6, preferEnd?: string) => {
   const rows = await db.execute<{ path: number[]; types: string[] }>(sql`
     WITH RECURSIVE chain(id, path, types, depth) AS (
       SELECT e.id, ARRAY[e.id], ARRAY[]::text[], 1 FROM events e WHERE e.slug = ${startSlug} AND e.status = 'published'
@@ -166,7 +166,7 @@ export const getCausalChain = cache(async (startSlug: string, maxDepth = 6) => {
       JOIN events e2 ON e2.id = r.to_event_id AND e2.status = 'published'
       WHERE NOT r.to_event_id = ANY(c.path) AND c.depth < ${maxDepth}
     )
-    SELECT path, types FROM chain ORDER BY depth DESC, (SELECT sort_key FROM events WHERE id = chain.id) DESC LIMIT 1
+    SELECT path, types FROM chain ORDER BY depth DESC, (SELECT slug FROM events WHERE id = chain.id) = ${preferEnd ?? ''} DESC, (SELECT sort_key FROM events WHERE id = chain.id) DESC LIMIT 1
   `);
   const best = rows[0];
   if (!best) return { events: [], types: [] as string[] };

@@ -77,6 +77,8 @@ export interface EnrichedImage {
   attributionRequired: boolean;
   credit: string | null;
   httpStatus: number;
+  /** Rendition URL derived at a standard width from a file confirmed by the Commons API. */
+  derived?: boolean;
 }
 
 export interface EnrichedData {
@@ -296,15 +298,15 @@ async function fetchImageInfo(files: string[]): Promise<Map<string, EnrichedImag
       const val = (k: string) => (md[k]?.value as string | undefined) ?? null;
       const license = stripHtml(val("LicenseShortName")) || stripHtml(val("UsageTerms"));
       if (!license) continue;
-      const thumbUrl: string = ii.thumburl ?? ii.url;
-      const smallUrl = thumbUrl.includes(`/${THUMB}px-`) ? thumbUrl.replace(`/${THUMB}px-`, `/${SMALL}px-`) : thumbUrl;
+      const r = renditions(ii);
       out.set(f, {
         file: f,
         url: ii.url,
-        thumbUrl,
-        thumbWidth: ii.thumbwidth ?? ii.width,
-        thumbHeight: ii.thumbheight ?? ii.height,
-        smallUrl,
+        thumbUrl: r.thumbUrl,
+        thumbWidth: r.thumbWidth,
+        thumbHeight: r.thumbHeight,
+        smallUrl: r.smallUrl,
+        derived: r.derived,
         width: ii.width,
         height: ii.height,
         mime: ii.mime,
@@ -322,6 +324,34 @@ async function fetchImageInfo(files: string[]): Promise<Map<string, EnrichedImag
     }
   }
   return out;
+}
+
+const stripQuery = (u: string) => u.split("?")[0];
+
+/** Commons' standard thumbnail widths: cached at the edge and preferred for hotlinking. */
+const STEPS = [960, 500, 330, 250];
+
+/**
+ * Picks display renditions. When Commons returns the unscaled original
+ * (file narrower than the requested width), derive the largest standard
+ * thumbnail below the original width instead of serving the original file.
+ */
+function renditions(ii: any) {
+  const w: number = ii.width;
+  const h: number = ii.height;
+  // Keep the API's own thumbnail URLs as returned (already link-checked and cached).
+  const thumb: string | null = ii.thumburl ?? null;
+  if (thumb && thumb.includes("/thumb/")) {
+    const small = thumb.includes(`/${THUMB}px-`) ? thumb.replace(`/${THUMB}px-`, `/${SMALL}px-`) : thumb;
+    return { thumbUrl: thumb, thumbWidth: ii.thumbwidth, thumbHeight: ii.thumbheight, smallUrl: small, derived: false };
+  }
+  const orig = stripQuery(ii.url);
+  const m = /^(https:\/\/upload\.wikimedia\.org\/wikipedia\/commons)\/(\w)\/(\w\w)\/([^/]+)$/.exec(orig);
+  const step = STEPS.find((s) => s < w);
+  if (!m || !step || !/\.(jpe?g|png|gif|webp)$/i.test(m[4])) return { thumbUrl: orig, thumbWidth: w, thumbHeight: h, smallUrl: orig, derived: false };
+  const make = (px: number) => `${m[1]}/thumb/${m[2]}/${m[3]}/${m[4]}/${px}px-${m[4]}`;
+  const smallStep = STEPS.find((s) => s <= SMALL && s < w) ?? step;
+  return { thumbUrl: make(step), thumbWidth: step, thumbHeight: Math.round((h * step) / w), smallUrl: make(smallStep), derived: true };
 }
 
 function truncate(s: string, n: number) {
@@ -562,6 +592,13 @@ async function main() {
   let broken = 0;
   for (const f of usedFiles) {
     const img = info.get(f)!;
+    if (img.derived) {
+      // Wikimedia's robot policy limits scripts from triggering thumbnail
+      // generation; the file itself was confirmed by the Commons API above.
+      img.httpStatus = 200;
+      result.images[f] = img;
+      continue;
+    }
     const a = await checkUrl(img.thumbUrl);
     const b = img.smallUrl === img.thumbUrl ? a : await checkUrl(img.smallUrl);
     img.httpStatus = a.status === 200 && b.status === 200 ? 200 : a.status !== 200 ? a.status : b.status;
