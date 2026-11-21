@@ -215,7 +215,7 @@ export const worldWarEvents: EventSeed[] = [
       ["leon-trotsky", "Organiser of the seizure of power"],
       ["nicholas-ii-of-russia", "Last tsar, who abdicated earlier in 1917"],
     ],
-    relations: [["led_to", "cold-war", "The ideological rivalry between Soviet communism and Western capitalism began here."]],
+    relations: [["contributed_to", "cold-war", "The ideological rivalry between Soviet communism and Western capitalism began here."]],
   },
   {
     slug: "halifax-explosion",
@@ -459,7 +459,7 @@ export const worldWarEvents: EventSeed[] = [
       ["1929-10-29", "Black Tuesday", "Record trading as prices collapse."],
       ["1932-07-08", "Market bottoms", "Dow at 41."],
     ],
-    relations: [["led_to", "great-depression", "The crash was one of the triggers of the global depression."]],
+    relations: [["contributed_to", "great-depression", "The crash was one of the triggers of the global depression."]],
   },
   {
     slug: "great-depression",
@@ -686,7 +686,7 @@ export const worldWarEvents: EventSeed[] = [
     ],
     relations: [
       ["led_to", "founding-of-the-united-nations", "The Allies created the UN to prevent another world war."],
-      ["led_to", "cold-war", "The war left two rival superpowers dominating the world."],
+      ["contributed_to", "cold-war", "The war left two rival superpowers dominating the world."],
       ["contributed_to", "partition-of-india", "A weakened Britain moved quickly to leave India after the war."],
     ],
     sources: [

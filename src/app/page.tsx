@@ -44,7 +44,7 @@ export default async function HomePage() {
     <>
       {/* Hero ----------------------------------------------------------- */}
       <section className="border-b border-line bg-surface">
-        <div className="container-page grid gap-12 py-12 md:py-16 lg:grid-cols-[1.25fr_1fr] lg:gap-16 lg:py-20">
+        <div className="container-page grid grid-cols-1 gap-12 py-12 md:py-16 lg:grid-cols-[1.25fr_1fr] lg:gap-16 lg:py-20">
           <div className="flex flex-col justify-center">
             <h1 className="max-w-[16ch] text-[2.5rem] leading-[1.06] sm:text-3xl">Every event has a before and an after.</h1>
             <p className="mt-5 max-w-xl text-lg text-ink-2">
@@ -235,7 +235,7 @@ export default async function HomePage() {
               </p>
               <p>
                 Images are matched to the exact subject, not found by keyword. A portrait comes from the image Wikidata attaches to that person; an
-                event's lead image is the one editors chose for its article. Each image carries its creator, date and licence.
+                event&apos;s lead image is the one editors chose for its article. Each image carries its creator, date and licence.
               </p>
               <p>
                 {stats.relations} connections link the events together. They are classified by strength, so a sequence of events is never

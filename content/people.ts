@@ -193,7 +193,7 @@ export const peopleRegistry: Record<string, PersonRef> = {
   "qin-shi-huang": { wiki: "Qin Shi Huang", affiliation: "Qin dynasty" },
   "ramesses-ii": { wiki: "Ramesses II", affiliation: "Ancient Egypt" },
   "ramesses-iii": { wiki: "Ramesses III", affiliation: "Ancient Egypt" },
-  "rani-lakshmibai": "Rani of Jhansi",
+  "rani-lakshmibai": { wiki: "Rani of Jhansi", name: "Rani Lakshmibai" },
   "richard-arkwright": "Richard Arkwright",
   "richard-carrington": "Richard Christopher Carrington",
   "robert-e-lee": "Robert E. Lee",

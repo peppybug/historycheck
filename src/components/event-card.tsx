@@ -9,7 +9,8 @@ const dateOf = (e: EventCardData, short = false) =>
     e.endYear != null ? { year: e.endYear, month: e.endMonth, day: e.endDay } : null,
     { short },
   );
-const yearOf = (e: EventCardData) =>
+type DateBits = Pick<EventCardData, "startYear" | "endYear" | "datePrecision">;
+const yearOf = (e: DateBits) =>
   yearLabel({ year: e.startYear, precision: e.datePrecision }, e.endYear != null ? { year: e.endYear } : null);
 
 /** Large card with image on top — used for featured events. */

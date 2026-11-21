@@ -323,7 +323,7 @@ export const earlyModernEvents: EventSeed[] = [
       ["1616", "Book placed on the Index", "Pending correction."],
     ],
     people: [["nicolaus-copernicus", "Astronomer who proposed the heliocentric model"]],
-    relations: [["led_to", "trial-of-galileo", "Galileo's defence of Copernicanism led to his trial."]],
+    relations: [["contributed_to", "trial-of-galileo", "Galileo's defence of Copernicanism led to his trial."]],
     sources: [
       { url: "https://plato.stanford.edu/entries/copernicus/", title: "Nicolaus Copernicus", publisher: "Stanford Encyclopedia of Philosophy", type: "academic" },
     ],
@@ -527,8 +527,8 @@ export const earlyModernEvents: EventSeed[] = [
     ],
     people: [["olaudah-equiano", "Formerly enslaved writer and abolitionist"]],
     relations: [
-      ["led_to", "haitian-revolution", "The brutality of plantation slavery provoked the revolt of the enslaved in Saint-Domingue."],
-      ["led_to", "slavery-abolition-act", "Abolitionist campaigns arose in response to the trade."],
+      ["contributed_to", "haitian-revolution", "The brutality of plantation slavery provoked the revolt of the enslaved in Saint-Domingue."],
+      ["contributed_to", "slavery-abolition-act", "Abolitionist campaigns arose in response to the trade."],
     ],
     sources: [
       { url: "https://www.slavevoyages.org/", title: "Trans-Atlantic Slave Trade Database", publisher: "SlaveVoyages (Rice University and partners)", type: "database" },

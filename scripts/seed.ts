@@ -21,6 +21,7 @@ import * as s from "../src/db/schema";
 import { allEvents } from "../content/events";
 import { peopleRegistry } from "../content/people";
 import { placesRegistry } from "../content/places";
+import { extraRelations } from "../content/relations";
 import { reviewedDates } from "../content/review";
 import { categories, civilizations, periods, regions } from "../content/taxonomy";
 import { parseDate, sortKey } from "../content/types";
@@ -291,6 +292,11 @@ async function main() {
     const rels = allEvents.flatMap((e) =>
       (e.relations ?? []).map(([type, target, note]) => ({ fromEventId: eventId.get(e.slug)!, toEventId: eventId.get(target)!, type, note: note ?? null })),
     );
+    for (const [from, type, to, note] of extraRelations) {
+      const a = eventId.get(from), b = eventId.get(to);
+      if (!a || !b) throw new Error(`content/relations.ts references an unknown event: ${!a ? from : to}`);
+      rels.push({ fromEventId: a, toEventId: b, type, note });
+    }
     if (rels.length) await tx.insert(s.eventRelations).values(rels).onConflictDoNothing();
 
     console.log(

@@ -1,5 +1,6 @@
 // Static validation of curated content: references, dates, duplicates.
 import { allEvents } from "../content/events";
+import { extraRelations } from "../content/relations";
 import { parseDate } from "../content/types";
 import { periods, categories, regions, civilizations } from "../content/taxonomy";
 let errors = 0;
@@ -19,6 +20,7 @@ for (const e of allEvents) {
   e.places?.forEach(p => places.add(p));
   if (e.causes.length < 1 || e.consequences.length < 1) err(`${e.slug}: causes/consequences`);
 }
+for (const [a, , b] of extraRelations) { if (!slugs.has(a)) err(`relations.ts: ${a}`); if (!slugs.has(b)) err(`relations.ts: ${b}`); }
 console.log(`events=${allEvents.length} people=${people.size} places=${places.size} errors=${errors}`);
 if (process.argv.includes("--list")) { console.log("PEOPLE", [...people].sort().join(" ")); console.log("PLACES", [...places].sort().join(" ")); }
 process.exit(errors ? 1 : 0);

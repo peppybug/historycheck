@@ -340,7 +340,7 @@ export const coldWarEvents: EventSeed[] = [
       ["chiang-kai-shek", "Leader of the Nationalist government"],
     ],
     relations: [
-      ["led_to", "cultural-revolution", "Mao's rule culminated in the upheaval of 1966–1976."],
+      ["contributed_to", "cultural-revolution", "Mao's rule culminated in the upheaval of 1966–1976."],
       ["contributed_to", "korean-war", "Chinese troops intervened in Korea in 1950."],
     ],
   },
@@ -429,7 +429,7 @@ export const coldWarEvents: EventSeed[] = [
       ["james-watson", "Co-author of the double-helix model"],
       ["francis-crick", "Co-author of the double-helix model"],
     ],
-    relations: [["led_to", "human-genome-project", "Knowing DNA's structure eventually made sequencing the human genome possible."]],
+    relations: [["contributed_to", "human-genome-project", "Knowing DNA's structure eventually made sequencing the human genome possible."]],
   },
   {
     slug: "bandung-conference",
@@ -593,7 +593,7 @@ export const coldWarEvents: EventSeed[] = [
     ],
     people: [["sergei-korolev", "Chief designer of the Soviet space programme"]],
     relations: [
-      ["led_to", "vostok-1", "The Soviet programme followed with the first human in space."],
+      ["followed_by", "vostok-1", "The Soviet programme followed with the first human in space."],
       ["contributed_to", "arpanet", "Sputnik prompted the creation of ARPA, which funded the ARPANET."],
       ["part_of", "cold-war", "A defining moment of superpower technological rivalry."],
     ],
@@ -638,7 +638,7 @@ export const coldWarEvents: EventSeed[] = [
       ["fidel-castro", "Leader of the revolution"],
       ["che-guevara", "Revolutionary commander"],
     ],
-    relations: [["led_to", "cuban-missile-crisis", "Cuba's alliance with the USSR brought Soviet missiles to the island."]],
+    relations: [["contributed_to", "cuban-missile-crisis", "Cuba's alliance with the USSR brought Soviet missiles to the island."]],
   },
   {
     slug: "vostok-1",
@@ -1012,7 +1012,7 @@ export const coldWarEvents: EventSeed[] = [
       ["1990", "ARPANET decommissioned", "Superseded by the internet."],
     ],
     people: [["leonard-kleinrock", "Computer scientist whose UCLA lab sent the message"]],
-    relations: [["led_to", "world-wide-web", "The Web was built on the internet that grew from ARPANET."]],
+    relations: [["contributed_to", "world-wide-web", "The Web was built on the internet that grew from ARPANET."]],
   },
   {
     slug: "terracotta-army-discovery",

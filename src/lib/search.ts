@@ -47,7 +47,7 @@ function prefixQuery(q: string): string | null {
   return words.map((w, i) => (i === words.length - 1 && w.length >= 2 ? `${w}:*` : w)).join(" & ");
 }
 
-export interface EventHit {
+export type EventHit = {
   slug: string;
   title: string;
   summaryHtml: string; // contains ⟦ ⟧ markers around matched terms
@@ -69,9 +69,9 @@ export interface EventHit {
   thumbH: number | null;
   score: number;
   why: string | null;
-}
+};
 
-export async function search(p: SearchParams) {
+export async function search(p: SearchParams, fuzzy = false): Promise<SearchOutput> {
   const q = p.q;
   const yr = parseYearQuery(q);
   const pq = prefixQuery(q);
@@ -99,6 +99,7 @@ export async function search(p: SearchParams) {
         OR EXISTS (SELECT 1 FROM event_civilizations ec JOIN civilizations x ON x.id = ec.civilization_id WHERE ec.event_id = e.id AND similarity(${lq}, lower(hc_unaccent(x.name))) > 0.45)
         OR similarity(${lq}, lower(pe.name)) > 0.5 OR similarity(${lq}, lower(c.name)) > 0.5
         OR ${yearMatch}
+        ${fuzzy ? sql`OR hc_fuzzy(${q}, e.title) > 0.62 OR EXISTS (SELECT 1 FROM event_people ep JOIN people x ON x.id = ep.person_id WHERE ep.event_id = e.id AND hc_fuzzy(${q}, x.name) > 0.62)` : sql``}
       )`
     : sql`true`;
 
@@ -113,6 +114,7 @@ export async function search(p: SearchParams) {
         + coalesce((SELECT max(similarity(${lq}, lower(hc_unaccent(x.name)))) FROM event_civilizations ec JOIN civilizations x ON x.id = ec.civilization_id WHERE ec.event_id = e.id), 0) * 0.8
         + CASE WHEN ${yearMatch} THEN 1.5 ELSE 0 END
         + CASE WHEN e.is_featured THEN 0.05 ELSE 0 END
+        ${fuzzy ? sql`+ hc_fuzzy(${q}, e.title) * 1.5 + coalesce((SELECT max(hc_fuzzy(${q}, x.name)) FROM event_people ep JOIN people x ON x.id = ep.person_id WHERE ep.event_id = e.id), 0)` : sql``}
       )`
     : sql`(CASE WHEN e.is_featured THEN 1 ELSE 0 END)::float`;
 
@@ -164,8 +166,9 @@ export async function search(p: SearchParams) {
           WHERE x.status = 'published' AND (
             (x.search_vector @@ ${tsq} AND word_similarity(${lq}, lower(hc_unaccent(x.name))) > 0.3)
             OR similarity(${lq}, lower(hc_unaccent(x.name))) > 0.4
-            OR word_similarity(${lq}, lower(hc_unaccent(x.name))) > 0.7)
-          ORDER BY similarity(${lq}, lower(hc_unaccent(x.name))) + word_similarity(${lq}, lower(hc_unaccent(x.name))) + ts_rank(x.search_vector, ${tsq}) DESC
+            OR word_similarity(${lq}, lower(hc_unaccent(x.name))) > 0.7
+            ${fuzzy ? sql`OR hc_fuzzy(${q}, x.name) > 0.62` : sql``})
+          ORDER BY similarity(${lq}, lower(hc_unaccent(x.name))) + word_similarity(${lq}, lower(hc_unaccent(x.name))) + ts_rank(x.search_vector, ${tsq}) ${fuzzy ? sql`+ hc_fuzzy(${q}, x.name)` : sql``} DESC
           LIMIT ${p.type === "people" ? 30 : 4}`)
       : Promise.resolve([]),
     hasText && (p.type === "all" || p.type === "places")
@@ -176,8 +179,9 @@ export async function search(p: SearchParams) {
           WHERE x.status = 'published' AND (
             similarity(${lq}, lower(hc_unaccent(x.name))) > 0.4
             OR word_similarity(${lq}, lower(hc_unaccent(x.name))) > 0.75
-            OR (x.search_vector @@ ${tsq} AND word_similarity(${lq}, lower(hc_unaccent(x.name))) > 0.3))
-          ORDER BY similarity(${lq}, lower(hc_unaccent(x.name))) DESC
+            OR (x.search_vector @@ ${tsq} AND word_similarity(${lq}, lower(hc_unaccent(x.name))) > 0.3)
+            ${fuzzy ? sql`OR hc_fuzzy(${q}, x.name) > 0.62` : sql``})
+          ORDER BY similarity(${lq}, lower(hc_unaccent(x.name))) ${fuzzy ? sql`+ hc_fuzzy(${q}, x.name)` : sql``} DESC
           LIMIT ${p.type === "places" ? 30 : 4}`)
       : Promise.resolve([]),
     hasText && p.type === "all"
@@ -189,6 +193,18 @@ export async function search(p: SearchParams) {
           ) t WHERE s > 0.35 OR ${lq} LIKE '%' || lower(name) || '%' ORDER BY s DESC LIMIT 4`)
       : Promise.resolve([]),
   ]);
+
+  // No person matched exactly: look for close spellings of names ("Ghandi" → Gandhi).
+  let peopleOut = [...people];
+  if (!fuzzy && hasText && q.length >= 4 && !peopleOut.length && (p.type === "all" || p.type === "people") && (events.length || places.length)) {
+    peopleOut = (await search({ ...p, type: "people" }, true)).people;
+  }
+
+  // Nothing matched exactly: retry tolerating misspellings ("Ceasar", "Ghandi").
+  if (!fuzzy && hasText && q.length >= 4 && !events.length && !people.length && !places.length) {
+    const retry = await search(p, true);
+    if (retry.events.length || retry.people.length || retry.places.length) return { ...retry, approximate: true };
+  }
 
   // "Did you mean" when nothing matched
   let suggestion: string | null = null;
@@ -207,15 +223,30 @@ export async function search(p: SearchParams) {
     total: total[0]?.n ?? 0,
     pageSize: PAGE_SIZE,
     facets: [...facets],
-    people: [...people],
+    people: peopleOut,
     places: [...places],
     taxonomy: [...taxonomy],
     year: yr,
     suggestion,
+    approximate: fuzzy,
   };
 }
 
-export type SearchResult = Awaited<ReturnType<typeof search>>;
+type PersonHit = { slug: string; name: string; short_description: string; birth_year: number | null; death_year: number | null; birth_precision: string | null; death_precision: string | null; thumb: string | null; events: number };
+type PlaceHit = { slug: string; name: string; modern_country: string | null; significance: string | null; thumb: string | null; events: number };
+export interface SearchOutput {
+  events: EventHit[];
+  total: number;
+  pageSize: number;
+  facets: { kind: string; slug: string; name: string; n: number }[];
+  people: PersonHit[];
+  places: PlaceHit[];
+  taxonomy: { kind: string; slug: string; name: string; detail: string | null }[];
+  year: ReturnType<typeof parseYearQuery>;
+  suggestion: string | null;
+  approximate: boolean;
+}
+export type SearchResult = SearchOutput;
 
 /** Fast typeahead suggestions across all record types. */
 export async function suggest(raw: string) {
@@ -229,14 +260,14 @@ export async function suggest(raw: string) {
       SELECT 'event' AS type, e.slug, e.title AS label,
         CASE WHEN e.start_year < 0 THEN (-e.start_year)::text || ' BCE' ELSE e.start_year::text END || ' · ' || e.location_label AS detail,
         i.small_url AS thumb,
-        greatest(word_similarity(${lq}, lower(hc_unaccent(e.title))),
+        greatest(word_similarity(${lq}, lower(hc_unaccent(e.title))), hc_fuzzy(${q}, e.title) * 0.75,
                  coalesce((SELECT max(word_similarity(${lq}, lower(hc_unaccent(a)))) FROM unnest(e.alt_names) a), 0) * 0.95)
           + CASE WHEN lower(hc_unaccent(e.title)) LIKE ${like} THEN 0.3 ELSE 0 END
           + CASE WHEN ${yr ? sql`(e.start_year <= ${yr.to} AND coalesce(e.end_year, e.start_year) >= ${yr.from})` : sql`false`} THEN 0.9 ELSE 0 END AS s
       FROM events e LEFT JOIN images i ON i.id = e.featured_image_id WHERE e.status = 'published'
       UNION ALL
       SELECT 'person', x.slug, x.name, x.short_description, i.small_url,
-        word_similarity(${lq}, lower(hc_unaccent(x.name))) + CASE WHEN lower(hc_unaccent(x.name)) LIKE ${like} THEN 0.35 ELSE 0 END
+        greatest(word_similarity(${lq}, lower(hc_unaccent(x.name))), hc_fuzzy(${q}, x.name) * 0.8) + CASE WHEN lower(hc_unaccent(x.name)) LIKE ${like} THEN 0.35 ELSE 0 END
       FROM people x LEFT JOIN images i ON i.id = x.portrait_image_id WHERE x.status = 'published'
       UNION ALL
       SELECT 'place', x.slug, x.name, coalesce(x.modern_country, x.significance), i.small_url,

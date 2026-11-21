@@ -166,7 +166,7 @@ export const getCausalChain = cache(async (startSlug: string, maxDepth = 6) => {
       JOIN events e2 ON e2.id = r.to_event_id AND e2.status = 'published'
       WHERE NOT r.to_event_id = ANY(c.path) AND c.depth < ${maxDepth}
     )
-    SELECT path, types FROM chain ORDER BY depth DESC, path LIMIT 1
+    SELECT path, types FROM chain ORDER BY depth DESC, (SELECT sort_key FROM events WHERE id = chain.id) DESC LIMIT 1
   `);
   const best = rows[0];
   if (!best) return { events: [], types: [] as string[] };
@@ -226,7 +226,7 @@ export const getCivilizations = cache(async () => {
       w: s.images.thumbWidth,
       h: s.images.thumbHeight,
       caption: s.images.caption,
-      count: sql<number>`(SELECT count(*)::int FROM event_civilizations ec JOIN events e ON e.id = ec.event_id AND e.status = 'published' WHERE ec.civilization_id = ${s.civilizations.id})`,
+      count: sql<number>`(SELECT count(*)::int FROM event_civilizations ec JOIN events e ON e.id = ec.event_id AND e.status = 'published' WHERE ec.civilization_id = "civilizations"."id")`,
     })
     .from(s.civilizations)
     .leftJoin(s.images, eq(s.civilizations.imageId, s.images.id))
@@ -387,7 +387,7 @@ export const getEvent = cache(async (slug: string) => {
     contributedTo: rel.filter((r) => r.direction === "out" && r.type === "contributed_to").sort(byKey),
     followedBy: rel.filter((r) => r.direction === "out" && r.type === "followed_by").sort(byKey),
   };
-  const context = {
+  const links = {
     partOf: rel.filter((r) => r.direction === "out" && (r.type === "part_of" || r.type === "occurred_during")).sort(byKey),
     includes: rel.filter((r) => r.direction === "in" && (r.type === "part_of" || r.type === "occurred_during")).sort(byKey),
     related: rel.filter((r) => r.type === "related_to").sort(byKey),
@@ -419,7 +419,7 @@ export const getEvent = cache(async (slug: string) => {
     ...ev,
     before,
     after,
-    context,
+    links,
     prev: prev ? toCard(prev) : null,
     next: next ? toCard(next) : null,
     meanwhile,
@@ -587,7 +587,7 @@ export async function getConnectionGraph(slug: string, depth = 2) {
 
 export async function listEventOptions() {
   return db
-    .select({ slug: s.events.slug, title: s.events.title, startYear: s.events.startYear, rels: sql<number>`(SELECT count(*)::int FROM event_relations r WHERE r.from_event_id = ${s.events.id} OR r.to_event_id = ${s.events.id})` })
+    .select({ slug: s.events.slug, title: s.events.title, startYear: s.events.startYear, rels: sql<number>`(SELECT count(*)::int FROM event_relations r WHERE r.from_event_id = "events"."id" OR r.to_event_id = "events"."id")` })
     .from(s.events)
     .where(published)
     .orderBy(asc(s.events.sortKey));

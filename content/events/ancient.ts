@@ -39,7 +39,7 @@ export const ancientEvents: EventSeed[] = [
       ["~-1754", "Code of Hammurabi", "A major legal text is inscribed in Akkadian cuneiform."],
       ["~75", "Last known cuneiform tablet", "An astronomical text marks the end of the tradition."],
     ],
-    relations: [["led_to", "code-of-hammurabi", "Written law depended on a mature writing system."]],
+    relations: [["contributed_to", "code-of-hammurabi", "Written law depended on a mature writing system."]],
   },
   {
     slug: "indus-valley-cities",
@@ -523,7 +523,7 @@ export const ancientEvents: EventSeed[] = [
       ["miltiades", "Athenian general credited with the victory"],
       ["darius-i", "Persian king who ordered the expedition"],
     ],
-    relations: [["led_to", "battle-of-thermopylae", "Defeat at Marathon prompted Xerxes' far larger invasion."]],
+    relations: [["contributed_to", "battle-of-thermopylae", "Defeat at Marathon prompted Xerxes' far larger invasion."]],
   },
   {
     slug: "battle-of-thermopylae",
@@ -938,7 +938,7 @@ export const ancientEvents: EventSeed[] = [
       ["julius-caesar", "Roman general who crossed the Rubicon"],
       ["pompey", "Caesar's rival and commander of senatorial forces"],
     ],
-    relations: [["led_to", "assassination-of-julius-caesar", "Caesar's victory and dictatorship provoked the conspiracy against him."]],
+    relations: [["contributed_to", "assassination-of-julius-caesar", "Caesar's victory and dictatorship provoked the conspiracy against him."]],
   },
   {
     slug: "assassination-of-julius-caesar",
@@ -985,7 +985,7 @@ export const ancientEvents: EventSeed[] = [
       ["mark-antony", "Caesar's ally, who turned public opinion against the assassins"],
       ["augustus", "Caesar's heir Octavian, later Rome's first emperor"],
     ],
-    relations: [["led_to", "battle-of-actium", "The power struggle after the murder ended in war between Octavian and Antony."]],
+    relations: [["contributed_to", "battle-of-actium", "The power struggle after the murder ended in war between Octavian and Antony."]],
   },
   {
     slug: "battle-of-actium",

@@ -855,7 +855,7 @@ export const medievalEvents: EventSeed[] = [
       ["1500", "Printing in over 200 towns", "Europe's 'incunabula' era ends."],
     ],
     people: [["johannes-gutenberg", "Inventor of the European printing press"]],
-    relations: [["led_to", "ninety-five-theses", "Printing allowed Luther's arguments to spread across Europe within weeks."]],
+    relations: [["contributed_to", "ninety-five-theses", "Printing allowed Luther's arguments to spread across Europe within weeks."]],
   },
   {
     slug: "fall-of-constantinople",

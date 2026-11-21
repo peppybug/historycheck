@@ -44,7 +44,7 @@ export const revolutionEvents: EventSeed[] = [
       ["james-watt", "Engineer who improved the steam engine"],
       ["richard-arkwright", "Pioneer of the factory system"],
     ],
-    relations: [["led_to", "first-opium-war", "Industrial Britain's demand for trade drove its confrontation with Qing China."]],
+    relations: [["contributed_to", "first-opium-war", "Industrial Britain's demand for trade drove its confrontation with Qing China."]],
   },
   {
     slug: "watt-steam-engine",
@@ -180,7 +180,7 @@ export const revolutionEvents: EventSeed[] = [
     ],
     relations: [
       ["contributed_to", "haitian-revolution", "Revolutionary ideals and upheaval in France spread to its Caribbean colony."],
-      ["led_to", "coronation-of-napoleon", "The revolution's turmoil brought Napoleon to power."],
+      ["contributed_to", "coronation-of-napoleon", "The revolution's turmoil brought Napoleon to power."],
     ],
   },
   {
@@ -309,7 +309,7 @@ export const revolutionEvents: EventSeed[] = [
       ["pope-pius-vii", "Pope present at the coronation"],
     ],
     relations: [
-      ["led_to", "battle-of-waterloo", "A decade of Napoleonic wars ended at Waterloo."],
+      ["followed_by", "battle-of-waterloo", "A decade of Napoleonic wars ended at Waterloo."],
       ["contributed_to", "latin-american-independence", "Napoleon's invasion of Spain in 1808 triggered independence movements in Spanish America."],
     ],
   },
@@ -425,7 +425,7 @@ export const revolutionEvents: EventSeed[] = [
       ["1815-06-09", "Final Act signed", "Nine days before Waterloo."],
     ],
     people: [["klemens-von-metternich", "Austrian statesman who presided over the Congress"]],
-    relations: [["led_to", "revolutions-of-1848", "Suppressed liberal and national aspirations erupted in 1848."]],
+    relations: [["contributed_to", "revolutions-of-1848", "Suppressed liberal and national aspirations erupted in 1848."]],
   },
   {
     slug: "latin-american-independence",
@@ -838,7 +838,7 @@ export const revolutionEvents: EventSeed[] = [
       ["robert-e-lee", "Commander of the Confederate Army of Northern Virginia"],
       ["frederick-douglass", "Abolitionist leader"],
     ],
-    relations: [["led_to", "march-on-washington", "The unfinished promise of emancipation drove the civil rights movement a century later."]],
+    relations: [["related_to", "march-on-washington", "The civil rights movement took up the unfinished promise of emancipation a century later."]],
   },
   {
     slug: "emancipation-proclamation",
@@ -916,6 +916,6 @@ export const revolutionEvents: EventSeed[] = [
       ["1889-02-11", "Meiji Constitution", "Promulgated."],
     ],
     people: [["emperor-meiji", "Emperor of Japan from 1867 to 1912"]],
-    relations: [["led_to", "russo-japanese-war", "Modernised Japan challenged Russia for power in East Asia."]],
+    relations: [["contributed_to", "russo-japanese-war", "Modernised Japan challenged Russia for power in East Asia."]],
   },
 ];

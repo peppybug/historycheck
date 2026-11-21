@@ -123,7 +123,7 @@ export const industryEmpireEvents: EventSeed[] = [
       ["leopold-ii-of-belgium", "King who gained the Congo Free State"],
     ],
     relations: [
-      ["led_to", "battle-of-adwa", "Italian colonial ambitions in the Horn of Africa met Ethiopian resistance."],
+      ["contributed_to", "battle-of-adwa", "Italian colonial ambitions in the Horn of Africa met Ethiopian resistance."],
       ["contributed_to", "ghana-independence", "Colonial rule established in this era was challenged by independence movements after 1945."],
     ],
   },
