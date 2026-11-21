@@ -1,15 +1,15 @@
 # Enrichment report
 
-Generated 2026-11-21T16:07:29.770Z
+Generated 2026-11-21T20:27:33.669Z
 
 ## Summary
 
-- Events: 175; with featured image: 174; avg gallery: 5.2
-- Date checks: 96 match, 32 mismatch, 47 no Wikidata date
-- People: 231; with portrait: 231; not human on Wikidata: 0
-- Places: 159; with coordinates: 158; with image: 159
-- Images verified: 1446; unreachable dropped: 0
-- Extra sources: 1005
+- Events: 213; with featured image: 210; avg gallery: 5.0
+- Date checks: 112 match, 39 mismatch, 62 no Wikidata date
+- People: 256; with portrait: 255; not human on Wikidata: 0
+- Places: 185; with coordinates: 184; with image: 185
+- Images verified: 1687; unreachable dropped: 0
+- Extra sources: 1086
 
 ## Date mismatches (for editorial review)
 
@@ -45,7 +45,16 @@ Generated 2026-11-21T16:07:29.770Z
 - **maastricht-treaty** (1993-11-01): year 1993 vs Wikidata 1992-02-07 (day, gregorian)
 - **end-of-apartheid** (1994-04-27): date 4/27 vs Wikidata 1994-04-26 (day, gregorian)
 - **arab-spring** (2010-12-17 → 2012): date 12/17 vs Wikidata 2010-12-18 (day, gregorian)
+- **dutch-golden-age** (~1588 → 1672): year 1672 vs Wikidata 1675 (year, gregorian)
+- **tulip-mania** (1636 → 1637-02): year 1636 vs Wikidata 1634 (year, gregorian)
+- **raid-on-the-medway** (1667-06-19 → 1667-06-24): date 6/19 vs Wikidata 1667-06-09 (day, gregorian); date 6/24 vs Wikidata 1667-06-14 (day, gregorian)
+- **german-invasion-of-the-netherlands** (1940-05-10 → 1940-05-14): date 5/14 vs Wikidata 1940-05-15 (day, gregorian)
+- **february-strike** (1941-02-25 → 1941-02-26): date 2/26 vs Wikidata 1941-02-27 (day, gregorian)
+- **operation-market-garden** (1944-09-17 → 1944-09-25): date 9/25 vs Wikidata 1944-09-26 (day, gregorian)
+- **dutch-famine-1944** (1944-11 → 1945-05): month 11 vs Wikidata 1944-09 (month, gregorian); month 5 vs Wikidata 1945-04 (month, gregorian)
 
 ## Events without a featured image
 
 - augustus-becomes-emperor
+- duyfken-landing-australia
+- delta-works

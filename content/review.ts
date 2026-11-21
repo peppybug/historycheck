@@ -75,4 +75,19 @@ export const reviewedDates: Record<string, string> = {
     "Voting ran from 26 to 29 April 1994. Special voting began on 26 April; general voting took place on 27 April, now Freedom Day.",
   "arab-spring":
     "Mohamed Bouazizi set himself on fire on 17 December 2010; the protests in Sidi Bouzid began the next day.",
+  // Netherlands
+  "dutch-golden-age":
+    "The Golden Age has no fixed end date. This record ends it with the Rampjaar of 1672, a common turning point; Wikidata uses 1675. Both are conventions.",
+  "tulip-mania":
+    "Bulb speculation grew from about 1634; this record dates the speculative peak of late 1636 and the collapse in February 1637.",
+  "raid-on-the-medway":
+    "Wikidata gives the Old Style (Julian) dates used in England, 9–14 June 1667. This record uses the New Style (Gregorian) dates then used in the Dutch Republic, 19–24 June.",
+  "german-invasion-of-the-netherlands":
+    "General Winkelman announced the capitulation on the evening of 14 May 1940; the formal surrender was signed on 15 May, and fighting in Zeeland continued until 17 May.",
+  "february-strike":
+    "The strike was held on 25 and 26 February 1941; German forces had broken it by 27 February, the end date Wikidata uses.",
+  "operation-market-garden":
+    "The evacuation of the 1st Airborne Division across the Rhine took place on the night of 25–26 September 1944, so sources end the operation on either date.",
+  "dutch-famine-1944":
+    "The German food embargo began in September 1944, but famine conditions took hold from November. Allied food drops began on 29 April 1945 and the famine ended with liberation in May.",
 };
