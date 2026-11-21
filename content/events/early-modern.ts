@@ -419,6 +419,7 @@ export const earlyModernEvents: EventSeed[] = [
     region: "southeast-asia",
     location: "Amsterdam, Dutch Republic; Batavia (Jakarta)",
     places: ["amsterdam", "batavia"],
+    civ: ["dutch-republic"],
     wiki: "Dutch East India Company",
     keywords: ["VOC", "joint-stock company", "spice trade", "colonialism", "Indonesia"],
     summary:

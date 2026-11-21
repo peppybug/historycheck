@@ -266,6 +266,17 @@ export const civilizations = [
       "A Turkish dynasty that took Constantinople in 1453 and ruled across southeastern Europe, the Middle East and North Africa for six centuries.",
   },
   {
+    slug: "dutch-republic",
+    name: "Dutch Republic",
+    wiki: "Dutch Republic",
+    region: "europe",
+    startYear: 1588,
+    endYear: 1795,
+    dateLabel: "1588 – 1795",
+    description:
+      "The Republic of the Seven United Netherlands, a federation of provinces that broke from Spanish rule and became Europe's leading commercial and maritime power in the seventeenth century.",
+  },
+  {
     slug: "mughal",
     name: "Mughal Empire",
     wiki: "Mughal Empire",

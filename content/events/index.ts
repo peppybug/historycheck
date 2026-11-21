@@ -7,6 +7,8 @@ import { industryEmpireEvents } from "./industry-empire";
 import { worldWarEvents } from "./world-wars";
 import { coldWarEvents } from "./cold-war";
 import { contemporaryEvents } from "./contemporary";
+import { netherlandsEvents } from "./netherlands";
+import { netherlandsModernEvents } from "./netherlands-modern";
 
 export const allEvents: EventSeed[] = [
   ...ancientEvents,
@@ -17,4 +19,6 @@ export const allEvents: EventSeed[] = [
   ...worldWarEvents,
   ...coldWarEvents,
   ...contemporaryEvents,
+  ...netherlandsEvents,
+  ...netherlandsModernEvents,
 ];
