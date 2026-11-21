@@ -130,6 +130,9 @@ export function stripHtml(s: string | undefined | null): string {
   if (!s) return "";
   return decodeEntities(
     s
+      // Commons templates embed machine-readable QuickStatements text
+      // ("date QS:P571,+1574-…") in hidden elements; drop them entirely.
+      .replace(/<(div|span)\b[^>]*display:\s*none[^>]*>[\s\S]*?<\/\1>/gi, "")
       .replace(/<br\s*\/?>/gi, " ")
       .replace(/<[^>]+>/g, "")
       .replace(/\s+/g, " ")
