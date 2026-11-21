@@ -1,0 +1,1 @@
+ALTER TYPE "public"."image_match_method" ADD VALUE 'article_media' BEFORE 'curated';
