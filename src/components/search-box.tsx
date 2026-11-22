@@ -5,7 +5,7 @@ import { useEffect, useId, useRef, useState } from "react";
 import { loadEngine, suggest } from "@/lib/client-search";
 
 interface Suggestion {
-  type: "event" | "person" | "place" | "period" | "civilization";
+  type: "event" | "person" | "place" | "period" | "civilization" | "belief" | "deity";
   slug: string;
   label: string;
   detail: string | null;
@@ -18,6 +18,8 @@ const TYPE_LABEL: Record<Suggestion["type"], string> = {
   place: "Place",
   period: "Period",
   civilization: "Civilization",
+  belief: "Belief",
+  deity: "Mythology",
 };
 
 const hrefFor = (s: Suggestion) =>
@@ -29,7 +31,11 @@ const hrefFor = (s: Suggestion) =>
         ? `/place/${s.slug}`
         : s.type === "period"
           ? `/period/${s.slug}`
-          : `/civilization/${s.slug}`;
+          : s.type === "belief"
+            ? `/belief/${s.slug}`
+            : s.type === "deity"
+              ? `/deity/${s.slug}`
+              : `/civilization/${s.slug}`;
 
 /**
  * Typeahead search (WAI-ARIA combobox pattern).

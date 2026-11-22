@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArchiveImage } from "@/components/archive-image";
+import { PortraitCard } from "@/components/belief-cards";
 import { PeriodStrip } from "@/components/period-strip";
 import { SectionHeading } from "@/components/section-heading";
 import { WorldMap } from "@/components/world-map";
 import { formatYear } from "@/lib/dates";
-import { getCategoriesWithCounts, getCivilizations, getMapPlaces, getNotablePeople, getPeriodsWithCounts, getRegionsWithCounts } from "@/lib/queries";
+import { getBeliefs, getCategoriesWithCounts, getCivilizations, getMapPlaces, getNotablePeople, getPeriodsWithCounts, getRegionsWithCounts } from "@/lib/queries";
 
 export const metadata: Metadata = {
   title: "Explore history",
@@ -14,13 +15,14 @@ export const metadata: Metadata = {
 };
 
 export default async function ExplorePage() {
-  const [periods, categories, regions, civs, people, places] = await Promise.all([
+  const [periods, categories, regions, civs, people, places, beliefs] = await Promise.all([
     getPeriodsWithCounts(),
     getCategoriesWithCounts(),
     getRegionsWithCounts(),
     getCivilizations(),
     getNotablePeople(30),
     getMapPlaces(),
+    getBeliefs(),
   ]);
   const points = places.map((p) => ({ slug: p.slug, name: p.name, lat: p.lat!, lng: p.lng!, weight: p.count }));
 
@@ -31,7 +33,7 @@ export default async function ExplorePage() {
         No search term needed. Pick a period, a theme, a part of the world or a person, and follow the links from there.
       </p>
       <nav aria-label="Sections on this page" className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm">
-        {[["#periods", "Periods"], ["#themes", "Themes"], ["#map", "Map"], ["#regions", "Regions"], ["#civilizations", "Civilizations"], ["#people", "People"]].map(([h, l]) => (
+        {[["#periods", "Periods"], ["#themes", "Themes"], ["#map", "Map"], ["#regions", "Regions"], ["#civilizations", "Civilizations"], ["#beliefs", "Beliefs"], ["#people", "People"]].map(([h, l]) => (
           <a key={h} href={h} className="link font-medium">{l}</a>
         ))}
         <Link href="/random" prefetch={false} className="link font-medium">Random event</Link>
@@ -96,6 +98,17 @@ export default async function ExplorePage() {
                 <span className="mt-2 block font-serif text-lg leading-tight group-hover:underline group-hover:decoration-thread group-hover:underline-offset-4">{c.name}</span>
                 <span className="block text-xs text-muted tabular">{c.dateLabel} · {c.count} events</span>
               </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="mt-16 scroll-mt-6" aria-labelledby="beliefs">
+        <SectionHeading id="beliefs" title="Beliefs and mythology" deck="World religions, their branches and the gods of ancient Greece." href="/beliefs" hrefLabel="All beliefs and gods" />
+        <ul className="grid grid-cols-2 gap-x-5 gap-y-8 sm:grid-cols-3 lg:grid-cols-6">
+          {beliefs.filter((b) => b.kind !== "branch").map((b) => (
+            <li key={b.slug}>
+              <PortraitCard href={`/belief/${b.slug}`} title={b.name} detail={`${b.eventCount} events`} image={b.image} />
             </li>
           ))}
         </ul>

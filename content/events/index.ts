@@ -9,6 +9,8 @@ import { coldWarEvents } from "./cold-war";
 import { contemporaryEvents } from "./contemporary";
 import { netherlandsEvents } from "./netherlands";
 import { netherlandsModernEvents } from "./netherlands-modern";
+import { artEvents } from "./art";
+import { inventionEvents, faithEvents } from "./faith-and-invention";
 
 export const allEvents: EventSeed[] = [
   ...ancientEvents,
@@ -21,4 +23,7 @@ export const allEvents: EventSeed[] = [
   ...contemporaryEvents,
   ...netherlandsEvents,
   ...netherlandsModernEvents,
+  ...artEvents,
+  ...inventionEvents,
+  ...faithEvents,
 ];

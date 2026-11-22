@@ -62,7 +62,7 @@ export function SearchView() {
     next.set("page", String(n));
     return `/search?${next.toString()}`;
   };
-  const nothing = res && !res.events.length && !res.people.length && !res.places.length;
+  const nothing = res && !res.events.length && !res.people.length && !res.places.length && !res.beliefs.length;
 
   return (
     <div className="container-page pt-8">
@@ -118,7 +118,7 @@ export function SearchView() {
             </div>
           ) : null}
 
-          {res && (res.people.length || res.places.length) ? (
+          {res && (res.people.length || res.places.length || res.beliefs.length) ? (
             <div className="mt-6 grid gap-6 xl:grid-cols-2">
               {res.people.length ? (
                 <section aria-labelledby="r-people">
@@ -160,6 +160,27 @@ export function SearchView() {
                             <span className="card-title block font-medium"><Marked text={x.name} terms={x.terms} /></span>
                             <span className="block truncate text-xs text-muted">{[x.country, x.sig].filter(Boolean).join(" · ")}</span>
                             <span className="block text-xs text-ink-2">{x.events} event{x.events === 1 ? "" : "s"} here</span>
+                          </span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              ) : null}
+              {res.beliefs.length ? (
+                <section aria-labelledby="r-beliefs">
+                  <h2 id="r-beliefs" className="font-sans text-sm font-semibold">Beliefs and mythology</h2>
+                  <ul className="mt-2 grid gap-2">
+                    {res.beliefs.map((x) => (
+                      <li key={x.kind + x.slug}>
+                        <Link href={`/${x.kind}/${x.slug}`} className="card-link group flex items-center gap-3 rounded-sm border border-line bg-surface p-2.5">
+                          <span className="h-14 w-14 shrink-0 overflow-hidden rounded-xs bg-sunken">
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            {x.thumb ? <img src={x.thumb} alt="" className="h-full w-full object-cover object-top" loading="lazy" /> : null}
+                          </span>
+                          <span className="min-w-0">
+                            <span className="card-title block font-medium"><Marked text={x.name} terms={x.terms} /></span>
+                            <span className="block truncate text-xs text-muted">{x.detail}</span>
                           </span>
                         </Link>
                       </li>

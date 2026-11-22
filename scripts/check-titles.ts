@@ -5,6 +5,7 @@ import { allEvents } from "../content/events";
 import { peopleRegistry } from "../content/people";
 import { placesRegistry } from "../content/places";
 import { civilizations } from "../content/taxonomy";
+import { beliefs, deities } from "../content/beliefs";
 const UA = "HistorycheckBot/1.0 (educational history database; https://github.com/peppybug/historycheck)";
 
 async function check(label: string, titles: string[]) {
@@ -32,5 +33,6 @@ async function main() {
   await check("people", [...new Set(Object.values(peopleRegistry).map(pw))]);
   await check("places", [...new Set(Object.values(placesRegistry).map((p) => p.wiki))]);
   await check("civs", civilizations.map((c) => c.wiki));
+  await check("beliefs", [...beliefs, ...deities].map((b) => b.wiki));
 }
 main();

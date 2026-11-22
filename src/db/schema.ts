@@ -516,6 +516,85 @@ export const civilizationsRelations = relations(civilizations, ({ one, many }) =
   events: many(eventCivilizations),
 }));
 
+/* ------------------------------------------------------------------ */
+/* Beliefs and mythology                                               */
+/* ------------------------------------------------------------------ */
+
+/** Religions, their branches and ancient religions. Not dated events. */
+export const beliefs = pgTable("beliefs", {
+  id: serial("id").primaryKey(),
+  slug: text("slug").notNull().unique(),
+  name: text("name").notNull(),
+  kind: text("kind").notNull(),
+  parentId: integer("parent_id"),
+  origin: text("origin").notNull(),
+  sortYear: integer("sort_year").notNull(),
+  regionId: integer("region_id").references(() => regions.id, { onDelete: "set null" }),
+  summary: text("summary").notNull(),
+  overview: text("overview").notNull(),
+  /** Reference facts as [label, value] pairs. */
+  facts: text("facts").array().notNull().default(sql`'{}'::text[]`),
+  wikidataId: text("wikidata_id"),
+  wikipediaTitle: text("wikipedia_title"),
+  imageId: integer("image_id").references(() => images.id, { onDelete: "set null" }),
+});
+
+export const beliefEvents = pgTable(
+  "belief_events",
+  {
+    beliefId: integer("belief_id").notNull().references(() => beliefs.id, { onDelete: "cascade" }),
+    eventId: integer("event_id").notNull().references(() => events.id, { onDelete: "cascade" }),
+    sort: smallint("sort").notNull().default(0),
+  },
+  (t) => [primaryKey({ columns: [t.beliefId, t.eventId] }), index("belief_events_event_idx").on(t.eventId)],
+);
+
+/** Gods and other figures of myth. Never historical people. */
+export const deities = pgTable("deities", {
+  id: serial("id").primaryKey(),
+  slug: text("slug").notNull().unique(),
+  name: text("name").notNull(),
+  beliefId: integer("belief_id").notNull().references(() => beliefs.id, { onDelete: "cascade" }),
+  domain: text("domain").notNull(),
+  romanName: text("roman_name"),
+  parents: text("parents"),
+  symbols: text("symbols"),
+  summary: text("summary").notNull(),
+  sort: smallint("sort").notNull().default(0),
+  wikidataId: text("wikidata_id"),
+  wikipediaTitle: text("wikipedia_title"),
+  imageId: integer("image_id").references(() => images.id, { onDelete: "set null" }),
+});
+
+export const deityEvents = pgTable(
+  "deity_events",
+  {
+    deityId: integer("deity_id").notNull().references(() => deities.id, { onDelete: "cascade" }),
+    eventId: integer("event_id").notNull().references(() => events.id, { onDelete: "cascade" }),
+  },
+  (t) => [primaryKey({ columns: [t.deityId, t.eventId] })],
+);
+
+export const beliefsRelations = relations(beliefs, ({ one, many }) => ({
+  image: one(images, { fields: [beliefs.imageId], references: [images.id] }),
+  region: one(regions, { fields: [beliefs.regionId], references: [regions.id] }),
+  events: many(beliefEvents),
+  deities: many(deities),
+}));
+export const beliefEventsRelations = relations(beliefEvents, ({ one }) => ({
+  belief: one(beliefs, { fields: [beliefEvents.beliefId], references: [beliefs.id] }),
+  event: one(events, { fields: [beliefEvents.eventId], references: [events.id] }),
+}));
+export const deitiesRelations = relations(deities, ({ one, many }) => ({
+  image: one(images, { fields: [deities.imageId], references: [images.id] }),
+  belief: one(beliefs, { fields: [deities.beliefId], references: [beliefs.id] }),
+  events: many(deityEvents),
+}));
+export const deityEventsRelations = relations(deityEvents, ({ one }) => ({
+  deity: one(deities, { fields: [deityEvents.deityId], references: [deities.id] }),
+  event: one(events, { fields: [deityEvents.eventId], references: [events.id] }),
+}));
+
 export type Event = typeof events.$inferSelect;
 export type Person = typeof people.$inferSelect;
 export type Place = typeof places.$inferSelect;

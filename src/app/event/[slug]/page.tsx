@@ -10,7 +10,7 @@ import { RelationLegend } from "@/components/relation-legend";
 import { VerificationBadge } from "@/components/verification-badge";
 import { WorldMap } from "@/components/world-map";
 import { formatDate, formatRange, lifespan, precisionNote } from "@/lib/dates";
-import { getEvent, staticSlugs } from "@/lib/queries";
+import { getEvent, getEventBeliefs, staticSlugs } from "@/lib/queries";
 import { siteUrl } from "@/lib/site";
 
 export async function generateStaticParams() {
@@ -55,6 +55,7 @@ export default async function EventPage({ params }: Props) {
   const { slug } = await params;
   const ev = await getEvent(slug);
   if (!ev) notFound();
+  const faith = await getEventBeliefs(ev.id);
 
   const start = { year: ev.startYear, month: ev.startMonth, day: ev.startDay, precision: ev.datePrecision };
   const end = ev.endYear != null ? { year: ev.endYear, month: ev.endMonth, day: ev.endDay } : null;
@@ -162,6 +163,19 @@ export default async function EventPage({ params }: Props) {
                       <span key={c.civilization.slug}>
                         {i ? ", " : ""}
                         <Link className="link" href={`/civilization/${c.civilization.slug}`}>{c.civilization.name}</Link>
+                      </span>
+                    ))}
+                  </dd>
+                </>
+              ) : null}
+              {faith.beliefs.length || faith.deities.length ? (
+                <>
+                  <dt className="text-muted">Beliefs</dt>
+                  <dd>
+                    {[...faith.beliefs.map((b) => ({ ...b, href: `/belief/${b.slug}` })), ...faith.deities.map((d) => ({ ...d, href: `/deity/${d.slug}` }))].map((x, i) => (
+                      <span key={x.href}>
+                        {i ? ", " : ""}
+                        <Link className="link" href={x.href}>{x.name}</Link>
                       </span>
                     ))}
                   </dd>

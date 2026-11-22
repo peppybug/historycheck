@@ -31,6 +31,7 @@ import { allEvents } from "../content/events";
 import { peopleRegistry, type PersonRef } from "../content/people";
 import { placesRegistry } from "../content/places";
 import { civilizations } from "../content/taxonomy";
+import { beliefs, deities } from "../content/beliefs";
 import { parseDate } from "../content/types";
 import { checkUrl, getJson, stripHtml } from "./lib/http";
 import { classifySource } from "./lib/source-allowlist";
@@ -125,6 +126,8 @@ export interface EnrichedData {
     }
   >;
   civilizations: Record<string, { qid: string | null; wikiUrl: string; image: { file: string; method: "wikipedia_lead" | "wikidata_p18" } | null }>;
+  beliefs: Record<string, { qid: string | null; wikiUrl: string; image: { file: string; method: "wikipedia_lead" | "wikidata_p18" } | null }>;
+  deities: Record<string, { qid: string | null; wikiUrl: string; image: { file: string; method: "wikipedia_lead" | "wikidata_p18" } | null }>;
   images: Record<string, EnrichedImage>;
 }
 
@@ -400,6 +403,8 @@ async function main() {
     ...placeList.map((p) => p.wiki),
     ...civilizations.map((c) => c.wiki),
     ...civilizations.flatMap((c) => ("imageFrom" in c ? [c.imageFrom] : [])),
+    ...beliefs.map((b) => b.wiki),
+    ...deities.map((d) => d.wiki),
   ];
   const wiki = await resolveWikipedia(titles);
   log(`    ${wiki.size} articles resolved`);
@@ -411,6 +416,8 @@ async function main() {
     ...peopleList.map((p) => qidFor(p.wiki, (p as any).qid)),
     ...placeList.map((p) => qidFor(p.wiki)),
     ...civilizations.map((c) => qidFor(c.wiki)),
+    ...beliefs.map((b) => qidFor(b.wiki)),
+    ...deities.map((d) => qidFor(d.wiki)),
   ].filter(Boolean) as string[];
   const entities = await fetchEntities(qids);
   // Labels for citizenship / country values
@@ -462,6 +469,12 @@ async function main() {
     const l = leadOf(p.wiki);
     if (l) wanted.add(l);
   }
+  for (const t of [...beliefs, ...deities].map((x) => x.wiki)) {
+    const l = leadOf(t);
+    if (l) wanted.add(l);
+    const q = p18(qidFor(t));
+    if (q) wanted.add(q);
+  }
   for (const c of civilizations) {
     for (const t of [c.wiki, "imageFrom" in c ? c.imageFrom : null]) {
       const l = t ? leadOf(t) : null;
@@ -485,6 +498,8 @@ async function main() {
     people: {},
     places: {},
     civilizations: {},
+    beliefs: {},
+    deities: {},
     images: {},
   };
 
@@ -592,6 +607,17 @@ async function main() {
     result.civilizations[c.slug] = { qid: page?.qid ?? null, wikiUrl: page?.url ?? "", image };
     if (image) usedFiles.add(image.file);
   }
+  for (const [bucket, list] of [["beliefs", beliefs], ["deities", deities]] as const) {
+    for (const b of list) {
+      const page = wiki.get(b.wiki);
+      const image = pick([
+        { file: leadOf(b.wiki), method: "wikipedia_lead" },
+        { file: p18(page?.qid ?? null), method: "wikidata_p18" },
+      ]);
+      result[bucket][b.slug] = { qid: page?.qid ?? null, wikiUrl: page?.url ?? "", image };
+      if (image) usedFiles.add(image.file);
+    }
+  }
 
   log(`6/7 Verifying ${usedFiles.size} image renditions are reachable…`);
   let broken = 0;
@@ -622,6 +648,7 @@ async function main() {
   for (const p of Object.values(result.people)) p.portrait = ok(p.portrait);
   for (const p of Object.values(result.places)) p.image = ok(p.image);
   for (const c of Object.values(result.civilizations)) c.image = ok(c.image);
+  for (const b of [...Object.values(result.beliefs), ...Object.values(result.deities)]) b.image = ok(b.image);
 
   log("7/7 Verifying sources…");
   let checked = 0;

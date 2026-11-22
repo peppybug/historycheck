@@ -27,4 +27,7 @@ export const extraRelations: [string, RelationKind, string, string][] = [
   ["late-bronze-age-collapse", "followed_by", "first-olympic-games", "Greece re-emerged from the post-collapse dark age in the eighth century BCE."],
   ["peloponnesian-war", "followed_by", "battle-of-gaugamela", "Weakened by their own wars, the Greek city-states fell under Macedonian leadership."],
   ["spanish-flu", "related_to", "world-war-i", "The pandemic spread in the war's final year, carried by troop movements."],
+  ["ninety-five-theses", "contributed_to", "council-of-trent", "The Protestant challenge made a council to define Catholic doctrine and reform the Church unavoidable."],
+  ["ninety-five-theses", "contributed_to", "beeldenstorm", "Reformation ideas, in their Calvinist form, inspired the attack on religious images."],
+  ["edict-of-milan", "followed_by", "council-of-nicaea", "Twelve years after legalising Christianity, Constantine convened the first ecumenical council."],
 ];

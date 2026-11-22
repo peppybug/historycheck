@@ -512,6 +512,58 @@ export const getCivilization = cache(async (slug: string) => {
 });
 
 /* ------------------------------------------------------------------ */
+/* Beliefs and mythology                                               */
+/* ------------------------------------------------------------------ */
+
+const parseFacts = (facts: string[]) => facts.map((f) => f.split("\t") as [string, string]);
+
+export const getBeliefs = cache(async () => {
+  const rows = await db.query.beliefs.findMany({ with: { image: true, region: true }, orderBy: asc(s.beliefs.sortYear) });
+  const counts = await db
+    .select({ beliefId: s.beliefEvents.beliefId, n: sql<number>`count(*)::int` })
+    .from(s.beliefEvents)
+    .innerJoin(s.events, and(eq(s.events.id, s.beliefEvents.eventId), published))
+    .groupBy(s.beliefEvents.beliefId);
+  const n = new Map(counts.map((c) => [c.beliefId, c.n]));
+  return rows.map((b) => ({ ...b, facts: parseFacts(b.facts), eventCount: n.get(b.id) ?? 0 }));
+});
+
+export const getDeities = cache(async () => {
+  return db.query.deities.findMany({ with: { image: true, belief: true }, orderBy: asc(s.deities.sort) });
+});
+
+export const getBelief = cache(async (slug: string) => {
+  const all = await getBeliefs();
+  const b = all.find((x) => x.slug === slug);
+  if (!b) return null;
+  const parent = b.parentId ? all.find((x) => x.id === b.parentId) ?? null : null;
+  const branches = all.filter((x) => x.parentId === b.id);
+  const links = await db.select({ eventId: s.beliefEvents.eventId }).from(s.beliefEvents).where(eq(s.beliefEvents.beliefId, b.id));
+  const events = (await cardsByIds(links.map((l) => l.eventId))).sort((x, y) => x.sortKey - y.sortKey);
+  const figures = (await getDeities()).filter((d) => d.beliefId === b.id);
+  return { ...b, parent, branches, events, figures };
+});
+
+export const getDeity = cache(async (slug: string) => {
+  const all = await getDeities();
+  const d = all.find((x) => x.slug === slug);
+  if (!d) return null;
+  const links = await db.select({ eventId: s.deityEvents.eventId }).from(s.deityEvents).where(eq(s.deityEvents.deityId, d.id));
+  const events = (await cardsByIds(links.map((l) => l.eventId))).sort((x, y) => x.sortKey - y.sortKey);
+  const others = all.filter((x) => x.beliefId === d.beliefId && x.id !== d.id);
+  return { ...d, events, others };
+});
+
+/** Beliefs and figures linked to one event, for the event page. */
+export const getEventBeliefs = cache(async (eventId: number) => {
+  const [bs, ds] = await Promise.all([
+    db.select({ slug: s.beliefs.slug, name: s.beliefs.name }).from(s.beliefEvents).innerJoin(s.beliefs, eq(s.beliefs.id, s.beliefEvents.beliefId)).where(eq(s.beliefEvents.eventId, eventId)),
+    db.select({ slug: s.deities.slug, name: s.deities.name }).from(s.deityEvents).innerJoin(s.deities, eq(s.deities.id, s.deityEvents.deityId)).where(eq(s.deityEvents.eventId, eventId)),
+  ]);
+  return { beliefs: bs, deities: ds };
+});
+
+/* ------------------------------------------------------------------ */
 /* Timeline, map, connections, sitemap                                 */
 /* ------------------------------------------------------------------ */
 
@@ -594,7 +646,7 @@ export async function listEventOptions() {
 }
 
 export async function sitemapEntries() {
-  const [ev, pe, pl, pr, ca, ci, re] = await Promise.all([
+  const [ev, pe, pl, pr, ca, ci, re, be, de] = await Promise.all([
     db.select({ slug: s.events.slug, updated: s.events.updatedAt }).from(s.events).where(published),
     db.select({ slug: s.people.slug, updated: s.people.updatedAt }).from(s.people).where(eq(s.people.status, "published")),
     db.select({ slug: s.places.slug, updated: s.places.updatedAt }).from(s.places).where(eq(s.places.status, "published")),
@@ -602,8 +654,10 @@ export async function sitemapEntries() {
     db.select({ slug: s.categories.slug }).from(s.categories),
     db.select({ slug: s.civilizations.slug }).from(s.civilizations),
     db.select({ slug: s.regions.slug }).from(s.regions),
+    db.select({ slug: s.beliefs.slug }).from(s.beliefs),
+    db.select({ slug: s.deities.slug }).from(s.deities),
   ]);
-  return { ev, pe, pl, pr, ca, ci, re };
+  return { ev, pe, pl, pr, ca, ci, re, be, de };
 }
 
 /* ------------------------------------------------------------------ */
@@ -611,7 +665,9 @@ export async function sitemapEntries() {
 /* ------------------------------------------------------------------ */
 
 /** Slugs for generateStaticParams (every public page is pre-rendered). */
-export async function staticSlugs(kind: "event" | "person" | "place" | "period" | "category" | "region" | "civilization") {
+export async function staticSlugs(kind: "event" | "person" | "place" | "period" | "category" | "region" | "civilization" | "belief" | "deity") {
+  if (kind === "belief") return (await db.select({ slug: s.beliefs.slug }).from(s.beliefs)).map((r) => ({ slug: r.slug }));
+  if (kind === "deity") return (await db.select({ slug: s.deities.slug }).from(s.deities)).map((r) => ({ slug: r.slug }));
   const rows =
     kind === "event"
       ? await db.select({ slug: s.events.slug }).from(s.events).where(published)

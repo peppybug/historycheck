@@ -22,6 +22,7 @@ import { allEvents } from "../content/events";
 import { peopleRegistry } from "../content/people";
 import { placesRegistry } from "../content/places";
 import { extraRelations } from "../content/relations";
+import { beliefs, deities } from "../content/beliefs";
 import { reviewedDates } from "../content/review";
 import { categories, civilizations, periods, regions } from "../content/taxonomy";
 import { parseDate, sortKey } from "../content/types";
@@ -35,7 +36,7 @@ const db = drizzle(client, { schema: s });
 const enrichedPath = join(process.cwd(), "data", "enriched.json");
 const E: EnrichedData = existsSync(enrichedPath)
   ? JSON.parse(readFileSync(enrichedPath, "utf8"))
-  : { generatedAt: "", events: {}, people: {}, places: {}, civilizations: {}, images: {} };
+  : { generatedAt: "", events: {}, people: {}, places: {}, civilizations: {}, beliefs: {}, deities: {}, images: {} };
 if (!E.generatedAt) console.warn("⚠ data/enriched.json not found — seeding without imagery or Wikidata facts. Run `npm run enrich` first.");
 
 const WIKI_PUBLISHER = "Wikipedia (Wikimedia Foundation)";
@@ -44,6 +45,7 @@ async function main() {
   const t0 = Date.now();
   await db.transaction(async (tx) => {
     await tx.execute(sql`TRUNCATE event_relations, event_sources, person_sources, place_sources, event_images,
+      deity_events, deities, belief_events, beliefs,
       event_civilizations, event_places, event_people, event_milestones, events, people, places, civilizations,
       sources, images, regions, categories, periods RESTART IDENTITY CASCADE`);
 
@@ -76,6 +78,7 @@ async function main() {
     for (const p of Object.values(E.people)) use(p.portrait?.file, p.portrait?.method ?? "wikidata_p18", p.portrait?.method === "wikidata_p18" ? p.qid : p.wikiTitle);
     for (const p of Object.values(E.places)) use(p.image?.file, p.image?.method ?? "wikidata_p18", p.image?.method === "wikidata_p18" ? p.qid : p.wikiTitle);
     for (const c of Object.values(E.civilizations)) use(c.image?.file, c.image?.method ?? "wikipedia_lead", c.qid);
+    for (const b of [...Object.values(E.beliefs ?? {}), ...Object.values(E.deities ?? {})]) use(b.image?.file, b.image?.method ?? "wikipedia_lead", b.qid);
     for (let i = 0; i < imageList.length; i += 200) {
       const rows = await tx
         .insert(s.images)
@@ -299,9 +302,58 @@ async function main() {
     }
     if (rels.length) await tx.insert(s.eventRelations).values(rels).onConflictDoNothing();
 
+    /* Beliefs and mythology --------------------------------------- */
+    const beliefId = new Map<string, number>();
+    for (const b of beliefs) {
+      const en = E.beliefs?.[b.slug];
+      const [row] = await tx
+        .insert(s.beliefs)
+        .values({
+          slug: b.slug,
+          name: b.name,
+          kind: b.kind,
+          origin: b.origin,
+          sortYear: b.sortYear,
+          regionId: regionId.get(b.region) ?? null,
+          summary: b.summary,
+          overview: b.overview,
+          facts: b.facts.map(([k, v]) => `${k}\t${v}`),
+          wikidataId: en?.qid ?? null,
+          wikipediaTitle: b.wiki,
+          imageId: img(en?.image),
+        })
+        .returning({ id: s.beliefs.id });
+      beliefId.set(b.slug, row.id);
+      const links = b.events.map((slug, i) => ({ beliefId: row.id, eventId: eventId.get(slug)!, sort: i })).filter((x) => x.eventId);
+      if (links.length) await tx.insert(s.beliefEvents).values(links);
+    }
+    for (const b of beliefs) if (b.parent) await tx.update(s.beliefs).set({ parentId: beliefId.get(b.parent)! }).where(sql`slug = ${b.slug}`);
+    for (const [i, d] of deities.entries()) {
+      const en = E.deities?.[d.slug];
+      const [row] = await tx
+        .insert(s.deities)
+        .values({
+          slug: d.slug,
+          name: d.name,
+          beliefId: beliefId.get(d.belief)!,
+          domain: d.domain,
+          romanName: d.roman ?? null,
+          parents: d.parents,
+          symbols: d.symbols,
+          summary: d.summary,
+          sort: i,
+          wikidataId: en?.qid ?? null,
+          wikipediaTitle: d.wiki,
+          imageId: img(en?.image),
+        })
+        .returning({ id: s.deities.id });
+      const links = (d.events ?? []).map((slug) => ({ deityId: row.id, eventId: eventId.get(slug)! })).filter((x) => x.eventId);
+      if (links.length) await tx.insert(s.deityEvents).values(links);
+    }
+
     console.log(
       `Seeded ${allEvents.length} events (${published} published, ${held} held for review), ${personId.size} people, ${placeId.size} places, ` +
-        `${imageId.size} images, ${sourceId.size} sources, ${rels.length} relations in ${((Date.now() - t0) / 1000).toFixed(1)}s`,
+        `${imageId.size} images, ${sourceId.size} sources, ${rels.length} relations, ${beliefs.length} beliefs, ${deities.length} mythological figures in ${((Date.now() - t0) / 1000).toFixed(1)}s`,
     );
   });
   await client.end();

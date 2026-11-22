@@ -21,12 +21,14 @@ import type { SearchIndex } from "./search-types";
 export type IndexEvent = SearchIndex["events"][number];
 export type IndexPerson = SearchIndex["people"][number];
 export type IndexPlace = SearchIndex["places"][number];
+export type IndexBelief = SearchIndex["beliefs"][number];
 
 export interface Engine {
   index: SearchIndex;
   events: MiniSearch;
   people: MiniSearch;
   places: MiniSearch;
+  beliefs: MiniSearch;
   eventBySlug: Map<string, IndexEvent>;
   periodName: Map<string, string>;
   categoryName: Map<string, string>;
@@ -101,7 +103,19 @@ function build(index: SearchIndex): Engine {
   });
   places.addAll(index.places);
 
-  return { index, events, people, places, eventBySlug: new Map(index.events.map((e) => [e.slug, e])), periodName, categoryName, regionName };
+  const beliefs = new MiniSearch({
+    idField: "slug",
+    fields: ["name", "alt", "detail"],
+    tokenize,
+    processTerm: (t) => t,
+    extractField: (doc, field) => {
+      const v = (doc as Record<string, unknown>)[field];
+      return Array.isArray(v) ? v.join(" ") : ((v as string) ?? "");
+    },
+  });
+  beliefs.addAll(index.beliefs ?? []);
+
+  return { index, events, people, places, beliefs, eventBySlug: new Map(index.events.map((e) => [e.slug, e])), periodName, categoryName, regionName };
 }
 
 const EVENT_BOOST = { title: 5, alt: 3.5, people: 2.5, keywords: 2, civs: 2, places: 1.5, location: 1.2, summary: 0.8, taxonomy: 0.6 };
@@ -215,6 +229,12 @@ export function runSearch(engine: Engine, p: Params) {
       .map((r) => ({ ...(engine.index.places.find((x) => x.slug === r.id) as IndexPlace), terms: r.terms }));
   }
 
+  let beliefs: (IndexBelief & { terms: string[] })[] = [];
+  if (q && !pureYear && p.type === "all") {
+    const t = tiered(engine.beliefs, q, { name: 4, alt: 3, detail: 0.8 }, ["name", "alt"]);
+    beliefs = t.res.slice(0, 4).map((r) => ({ ...(engine.index.beliefs.find((x) => x.slug === r.id) as IndexBelief), terms: r.terms }));
+  }
+
   // ---- Taxonomy shortcuts ------------------------------------------
   const nq = normalise(q);
   const taxonomy =
@@ -233,7 +253,7 @@ export function runSearch(engine: Engine, p: Params) {
 
   // ---- Did you mean -------------------------------------------------
   let suggestion: string | null = null;
-  if (q && !filtered.length && !people.length && !places.length) {
+  if (q && !filtered.length && !people.length && !places.length && !beliefs.length) {
     const s = engine.events.search(q, { fuzzy: 0.4, prefix: true, combineWith: "OR", boost: { title: 3 } })[0];
     const ps = engine.people.search(q, { fuzzy: 0.4, prefix: true, combineWith: "OR", boost: { name: 3 } })[0];
     const best = [s && { score: s.score, name: engine.eventBySlug.get(String(s.id))?.title }, ps && { score: ps.score, name: engine.index.people.find((x) => x.slug === ps.id)?.name }]
@@ -242,7 +262,7 @@ export function runSearch(engine: Engine, p: Params) {
     suggestion = best?.name ?? null;
   }
 
-  return { events: pageEvents, total: wantEvents ? filtered.length : 0, facets, people, places, taxonomy, year, suggestion, approximate };
+  return { events: pageEvents, total: wantEvents ? filtered.length : 0, facets, people, places, beliefs, taxonomy, year, suggestion, approximate };
 }
 
 /** Explains a match through a linked person ("involves Julius Caesar"). */
@@ -257,7 +277,7 @@ export function suggest(engine: Engine, raw: string) {
   const q = raw.trim();
   if (q.length < 2) return [];
   const year = parseYearQuery(q);
-  type S = { type: "event" | "person" | "place" | "period" | "civilization"; slug: string; label: string; detail: string | null; thumb: string | null; score: number };
+  type S = { type: "event" | "person" | "place" | "period" | "civilization" | "belief" | "deity"; slug: string; label: string; detail: string | null; thumb: string | null; score: number };
   const out: S[] = [];
   const opts = { prefix: true, fuzzy: (t: string) => (t.length >= 5 ? 0.2 : false), combineWith: "AND" as const };
   const yearLabel = (e: IndexEvent) => (e.sy < 0 ? `${-e.sy} BCE` : `${e.sy}`);
@@ -280,6 +300,10 @@ export function suggest(engine: Engine, raw: string) {
   for (const r of engine.places.search(q, { ...opts, boost: { name: 5, alt: 3, country: 0.5 } }).slice(0, 2)) {
     const x = engine.index.places.find((p) => p.slug === r.id)!;
     out.push({ type: "place", slug: x.slug, label: x.name, detail: x.country ?? x.sig, thumb: x.thumb, score: r.score });
+  }
+  for (const r of engine.beliefs.search(q, { ...opts, boost: { name: 5, alt: 3, detail: 0.3 } }).slice(0, 2)) {
+    const x = engine.index.beliefs.find((b) => b.slug === r.id)!;
+    out.push({ type: x.kind, slug: x.slug, label: x.name, detail: x.detail, thumb: x.thumb, score: r.score * 1.1 });
   }
   const nq = normalise(q);
   for (const p of engine.index.periods) if (normalise(p.name).includes(nq)) out.push({ type: "period", slug: p.slug, label: p.name, detail: null, thumb: null, score: 8 });

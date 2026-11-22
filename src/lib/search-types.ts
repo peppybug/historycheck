@@ -34,4 +34,6 @@ export interface SearchIndex {
   }[];
   people: { slug: string; name: string; alt: string[]; desc: string; affiliation: string | null; by: number | null; dy: number | null; thumb: string | null; events: number }[];
   places: { slug: string; name: string; alt: string[]; country: string | null; sig: string | null; thumb: string | null; events: number }[];
+  /** Belief systems and mythological figures. */
+  beliefs: { slug: string; kind: "belief" | "deity"; name: string; alt: string[]; detail: string; thumb: string | null }[];
 }

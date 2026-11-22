@@ -68,6 +68,17 @@ export async function buildSearchIndex(): Promise<SearchIndex> {
     .leftJoin(s.images, eq(s.images.id, s.places.imageId))
     .where(eq(s.places.status, "published"));
 
+  const beliefRows = await db
+    .select({ id: s.beliefs.id, parentId: s.beliefs.parentId, slug: s.beliefs.slug, name: s.beliefs.name, origin: s.beliefs.origin, thumb: s.images.smallUrl })
+    .from(s.beliefs)
+    .leftJoin(s.images, eq(s.images.id, s.beliefs.imageId))
+    .orderBy(asc(s.beliefs.sortYear));
+  const deityRows = await db
+    .select({ slug: s.deities.slug, name: s.deities.name, roman: s.deities.romanName, domain: s.deities.domain, thumb: s.images.smallUrl })
+    .from(s.deities)
+    .leftJoin(s.images, eq(s.images.id, s.deities.imageId))
+    .orderBy(asc(s.deities.sort));
+
   return {
     generatedAt: new Date().toISOString(),
     periods,
@@ -102,5 +113,16 @@ export async function buildSearchIndex(): Promise<SearchIndex> {
     })),
     people,
     places,
+    beliefs: [
+      ...beliefRows.map((b) => ({ slug: b.slug, kind: "belief" as const, name: b.name, alt: [], detail: b.parentId ? `Branch of ${beliefRows.find((x) => x.id === b.parentId)?.name} · ${b.origin}` : b.origin, thumb: b.thumb })),
+      ...deityRows.map((d) => ({
+        slug: d.slug,
+        kind: "deity" as const,
+        name: d.name,
+        alt: d.roman && d.roman !== d.name ? [d.roman] : [],
+        detail: `Greek mythology · ${d.domain}${d.roman && d.roman !== d.name ? ` (Roman: ${d.roman})` : ""}`,
+        thumb: d.thumb,
+      })),
+    ],
   };
 }

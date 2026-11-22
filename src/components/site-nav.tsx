@@ -10,6 +10,7 @@ export const NAV = [
   { href: "/timeline", label: "Timeline" },
   { href: "/periods", label: "Periods" },
   { href: "/connections", label: "Connections" },
+  { href: "/beliefs", label: "Beliefs" },
   { href: "/about", label: "About" },
 ];
 
@@ -19,7 +20,7 @@ export function DesktopNav() {
     <nav aria-label="Main" className="hidden lg:block">
       <ul className="flex items-center gap-1">
         {NAV.map((n) => {
-          const current = path === n.href || path.startsWith(n.href + "/") || (n.href === "/periods" && path.startsWith("/period/"));
+          const current = path === n.href || path.startsWith(n.href + "/") || (n.href === "/periods" && path.startsWith("/period/")) || (n.href === "/beliefs" && (path.startsWith("/belief/") || path.startsWith("/deity/")));
           return (
             <li key={n.href}>
               <Link
