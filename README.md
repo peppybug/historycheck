@@ -1,3 +1,8 @@
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="public/brand/banner-1500x500-dark.png">
+  <img src="public/brand/banner-1500x500.png" alt="Historycheck: Explore the past. Understand the present. A timeline thread from Gutenberg's printing press through the Ninety-five Theses, the Council of Trent, the Beeldenstorm and the Eighty Years' War to the Peace of Westphalia.">
+</picture>
+
 # Historycheck
 
 **Explore the past. Understand the present.**
@@ -157,6 +162,7 @@ content/            Hand-written records (TypeScript, reviewed in git)
   taxonomy.ts         Periods, categories, regions, civilizations
   beliefs.ts          Religions, branches and Greek gods (linked to events; myth labelled as myth)
   review.ts           Editorial decisions on automated date discrepancies
+scripts/banner/     Banner and social images (node scripts/banner/render.mjs → public/brand/)
 scripts/enrich.ts   Resolves every record against Wikipedia/Wikidata/Commons → data/enriched.json
 scripts/seed.ts     Loads content + enrichment into Postgres in one transaction
 ```

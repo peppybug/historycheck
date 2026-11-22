@@ -13,8 +13,13 @@ export const metadata: Metadata = {
   description:
     "Search historical events, people and places. See what caused an event, what it led to and what was happening elsewhere at the same time — with verified dates, sources and archival images.",
   applicationName: "Historycheck",
-  openGraph: { type: "website", siteName: "Historycheck", locale: "en_GB" },
-  twitter: { card: "summary_large_image" },
+  openGraph: {
+    type: "website",
+    siteName: "Historycheck",
+    locale: "en_GB",
+    images: [{ url: `${siteUrl}/brand/og-1200x630.png`, width: 1200, height: 630, alt: "Historycheck: Explore the past. Understand the present." }],
+  },
+  twitter: { card: "summary_large_image", images: [`${siteUrl}/brand/og-1200x630.png`] },
 };
 
 export const viewport: Viewport = {
