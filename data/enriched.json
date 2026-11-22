@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-21T21:06:09.467Z",
+ "generatedAt": "2026-11-22T09:56:58.516Z",
  "events": {
   "invention-of-cuneiform": {
    "qid": "Q401",
@@ -24997,7 +24997,10 @@
   "ancient-china": {
    "qid": "Q82972",
    "wikiUrl": "https://en.wikipedia.org/wiki/History_of_China",
-   "image": null
+   "image": {
+    "file": "File:The Forbidden City - View from Coal Hill.jpg",
+    "method": "wikipedia_lead"
+   }
   },
   "ancient-greece": {
    "qid": "Q11772",
@@ -25042,7 +25045,10 @@
   "islamic-caliphates": {
    "qid": "Q131401",
    "wikiUrl": "https://en.wikipedia.org/wiki/Caliphate",
-   "image": null
+   "image": {
+    "file": "File:Umayyad Caliphate 740-en.png",
+    "method": "wikipedia_lead"
+   }
   },
   "mongol-empire": {
    "qid": "Q12557",
@@ -61982,6 +61988,28 @@
    "credit": "Own work based on: Karte Mesopotamien.png and N-Mesopotamia and Syria.svg",
    "httpStatus": 200
   },
+  "File:The Forbidden City - View from Coal Hill.jpg": {
+   "file": "File:The Forbidden City - View from Coal Hill.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/The_Forbidden_City_-_View_from_Coal_Hill.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/The_Forbidden_City_-_View_from_Coal_Hill.jpg/1280px-The_Forbidden_City_-_View_from_Coal_Hill.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "thumbWidth": 1280,
+   "thumbHeight": 640,
+   "smallUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/The_Forbidden_City_-_View_from_Coal_Hill.jpg/500px-The_Forbidden_City_-_View_from_Coal_Hill.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "derived": false,
+   "width": 4092,
+   "height": 2046,
+   "mime": "image/jpeg",
+   "objectName": "The Forbidden City - View from Coal Hill",
+   "description": "A (HDR-) photograph shot from the Jingshan Park (aka Coal Hill or Prospect Hill).",
+   "creator": "Pixelflake",
+   "dateText": "2012-02-03",
+   "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Forbidden_City_-_View_from_Coal_Hill.jpg",
+   "license": "CC BY-SA 3.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+   "attributionRequired": true,
+   "credit": "Own work",
+   "httpStatus": 200
+  },
   "File:Parthenon (30276156187).jpg": {
    "file": "File:Parthenon (30276156187).jpg",
    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Parthenon_%2830276156187%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
@@ -62068,6 +62096,28 @@
    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
    "attributionRequired": false,
    "credit": "recolored from File:Eastern Roman Empire 565 CE.svg",
+   "httpStatus": 200
+  },
+  "File:Umayyad Caliphate 740-en.png": {
+   "file": "File:Umayyad Caliphate 740-en.png",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Umayyad_Caliphate_740-en.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Umayyad_Caliphate_740-en.png/1280px-Umayyad_Caliphate_740-en.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "thumbWidth": 1280,
+   "thumbHeight": 693,
+   "smallUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Umayyad_Caliphate_740-en.png/500px-Umayyad_Caliphate_740-en.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "derived": false,
+   "width": 10987,
+   "height": 5950,
+   "mime": "image/png",
+   "objectName": "Umayyad Caliphate 740-en",
+   "description": "Map of the Umayyad Caliphate and the Mediterranean and the Middle East c. 740 CE.",
+   "creator": "Ahmed.Mhdv",
+   "dateText": "2026-08-03",
+   "sourceUrl": "https://commons.wikimedia.org/wiki/File:Umayyad_Caliphate_740-en.png",
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "attributionRequired": true,
+   "credit": "This file was derived from: Caliphate 740-en.svg",
    "httpStatus": 200
   },
   "File:Map of the Mali Empire.png": {

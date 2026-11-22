@@ -399,6 +399,7 @@ async function main() {
     ...peopleList.map((p) => p.wiki),
     ...placeList.map((p) => p.wiki),
     ...civilizations.map((c) => c.wiki),
+    ...civilizations.flatMap((c) => ("imageFrom" in c ? [c.imageFrom] : [])),
   ];
   const wiki = await resolveWikipedia(titles);
   log(`    ${wiki.size} articles resolved`);
@@ -462,8 +463,10 @@ async function main() {
     if (l) wanted.add(l);
   }
   for (const c of civilizations) {
-    const l = leadOf(c.wiki);
-    if (l) wanted.add(l);
+    for (const t of [c.wiki, "imageFrom" in c ? c.imageFrom : null]) {
+      const l = t ? leadOf(t) : null;
+      if (l) wanted.add(l);
+    }
   }
   const info = await fetchImageInfo([...wanted]);
   log(`    ${info.size}/${wanted.size} files have usable Commons metadata`);
@@ -583,6 +586,8 @@ async function main() {
     const image = pick([
       { file: leadOf(c.wiki), method: "wikipedia_lead" },
       { file: p18(page?.qid ?? null), method: "wikidata_p18" },
+      // Editorial fallback: the lead image of a closely related article.
+      { file: "imageFrom" in c ? leadOf(c.imageFrom) : null, method: "wikipedia_lead" },
     ]);
     result.civilizations[c.slug] = { qid: page?.qid ?? null, wikiUrl: page?.url ?? "", image };
     if (image) usedFiles.add(image.file);

@@ -135,6 +135,8 @@ export const civilizations = [
   },
   {
     slug: "ancient-china",
+    // The main article has no lead image; use the lead image of "Forbidden City" (imperial palace of the Ming and Qing dynasties, 1420–1912).
+    imageFrom: "Forbidden City",
     name: "Imperial China",
     wiki: "History of China",
     region: "east-asia",
@@ -201,6 +203,8 @@ export const civilizations = [
   },
   {
     slug: "islamic-caliphates",
+    // The main article has no lead image; use the lead image of "Umayyad Caliphate" (map of the caliphate at its greatest extent, c. 740).
+    imageFrom: "Umayyad Caliphate",
     name: "Islamic Caliphates",
     wiki: "Caliphate",
     region: "middle-east",

@@ -1,6 +1,6 @@
 # Enrichment report
 
-Generated 2026-11-21T21:06:09.467Z
+Generated 2026-11-22T09:56:58.516Z
 
 ## Summary
 
@@ -8,7 +8,7 @@ Generated 2026-11-21T21:06:09.467Z
 - Date checks: 112 match, 39 mismatch, 62 no Wikidata date
 - People: 256; with portrait: 255; not human on Wikidata: 0
 - Places: 185; with coordinates: 184; with image: 185
-- Images verified: 1687; unreachable dropped: 0
+- Images verified: 1689; unreachable dropped: 0
 - Extra sources: 1086
 
 ## Date mismatches (for editorial review)
