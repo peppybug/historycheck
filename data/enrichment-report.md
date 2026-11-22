@@ -1,15 +1,15 @@
 # Enrichment report
 
-Generated 2026-11-22T09:56:58.516Z
+Generated 2026-11-22T10:29:51.431Z
 
 ## Summary
 
-- Events: 213; with featured image: 210; avg gallery: 5.0
-- Date checks: 112 match, 39 mismatch, 62 no Wikidata date
-- People: 256; with portrait: 255; not human on Wikidata: 0
-- Places: 185; with coordinates: 184; with image: 185
-- Images verified: 1689; unreachable dropped: 0
-- Extra sources: 1086
+- Events: 239; with featured image: 236; avg gallery: 5.0
+- Date checks: 117 match, 42 mismatch, 80 no Wikidata date
+- People: 290; with portrait: 289; not human on Wikidata: 0
+- Places: 210; with coordinates: 209; with image: 210
+- Images verified: 1919; unreachable dropped: 0
+- Extra sources: 1224
 
 ## Date mismatches (for editorial review)
 
@@ -52,6 +52,9 @@ Generated 2026-11-22T09:56:58.516Z
 - **february-strike** (1941-02-25 → 1941-02-26): date 2/26 vs Wikidata 1941-02-27 (day, gregorian)
 - **operation-market-garden** (1944-09-17 → 1944-09-25): date 9/25 vs Wikidata 1944-09-26 (day, gregorian)
 - **dutch-famine-1944** (1944-11 → 1945-05): month 11 vs Wikidata 1944-09 (month, gregorian); month 5 vs Wikidata 1945-04 (month, gregorian)
+- **marconi-transatlantic-radio** (1901-12-12): year 1901 vs Wikidata 1891 (year, gregorian)
+- **siege-of-jerusalem-70** (70-04 → 70-09): month 4 vs Wikidata 70-02 (month, gregorian)
+- **council-of-trent** (1545-12-13 → 1563-12-04): date 12/4 vs Wikidata 1563-02-21 (day, julian)
 
 ## Events without a featured image
 

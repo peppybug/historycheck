@@ -24,6 +24,8 @@ export interface BeliefSeed {
   facts: [string, string][];
   /** Events in the record where this tradition plays a part. */
   events: string[];
+  /** Use the lead image of this article instead (when the main article's lead image is only a generic icon). */
+  imageFrom?: string;
 }
 
 export interface DeitySeed {
@@ -45,6 +47,8 @@ export const beliefs: BeliefSeed[] = [
     slug: "hinduism",
     name: "Hinduism",
     wiki: "Hinduism",
+    // The Hinduism article's lead image is a generic religion icon.
+    imageFrom: "Hindu deities",
     kind: "religion",
     origin: "Roots in the Vedic religion of the 2nd millennium BCE, South Asia",
     sortYear: -1500,

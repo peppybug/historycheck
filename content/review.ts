@@ -90,4 +90,11 @@ export const reviewedDates: Record<string, string> = {
     "The evacuation of the 1st Airborne Division across the Rhine took place on the night of 25–26 September 1944, so sources end the operation on either date.",
   "dutch-famine-1944":
     "The German food embargo began in September 1944, but famine conditions took hold from November. Allied food drops began on 29 April 1945 and the famine ended with liberation in May.",
+  // Art, inventions and religion
+  "marconi-transatlantic-radio":
+    "Wikidata's date (1891) belongs to the broader article on the invention of radio. This record dates Marconi's reported transatlantic reception, 12 December 1901.",
+  "siege-of-jerusalem-70":
+    "Titus's campaign against the city began early in 70 CE; Josephus places the start of the siege itself shortly before Passover, in the spring. Month-level dates are approximate.",
+  "council-of-trent":
+    "The council's final session closed on 4 December 1563 (Gregorian; the calendar reform came only in 1582). Wikidata's end date of 21 February 1563 does not match the council's own record.",
 };

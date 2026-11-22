@@ -404,6 +404,7 @@ async function main() {
     ...civilizations.map((c) => c.wiki),
     ...civilizations.flatMap((c) => ("imageFrom" in c ? [c.imageFrom] : [])),
     ...beliefs.map((b) => b.wiki),
+    ...beliefs.flatMap((b) => (b.imageFrom ? [b.imageFrom] : [])),
     ...deities.map((d) => d.wiki),
   ];
   const wiki = await resolveWikipedia(titles);
@@ -469,7 +470,7 @@ async function main() {
     const l = leadOf(p.wiki);
     if (l) wanted.add(l);
   }
-  for (const t of [...beliefs, ...deities].map((x) => x.wiki)) {
+  for (const t of [...beliefs, ...deities].flatMap((x) => [x.wiki, ...("imageFrom" in x && x.imageFrom ? [x.imageFrom] : [])])) {
     const l = leadOf(t);
     if (l) wanted.add(l);
     const q = p18(qidFor(t));
@@ -610,7 +611,9 @@ async function main() {
   for (const [bucket, list] of [["beliefs", beliefs], ["deities", deities]] as const) {
     for (const b of list) {
       const page = wiki.get(b.wiki);
+      const from = "imageFrom" in b ? b.imageFrom : undefined;
       const image = pick([
+        { file: from ? leadOf(from) : null, method: "wikipedia_lead" },
         { file: leadOf(b.wiki), method: "wikipedia_lead" },
         { file: p18(page?.qid ?? null), method: "wikidata_p18" },
       ]);

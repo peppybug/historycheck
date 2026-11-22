@@ -4,7 +4,7 @@
 
 Historycheck is a searchable, connected record of world history. Every event page explains what happened, the context that produced it, the people and places involved, what came before and what happened next, with dates checked against Wikidata and archival images matched to the exact subject.
 
-The launch database holds **213 hand-written events** spanning about 5,000 years across all ten regions of the record, plus **256 people**, **185 places**, **18 civilizations**, **1,687** verified Wikimedia Commons images, **2,366** sources (1,081 institutional sources beyond the Wikipedia and Wikidata anchors) and **230** typed connections between events, 89 of them causal. 112 events have dates that match Wikidata exactly; every other event shows on its page why it is partially verified.
+The launch database holds **239 hand-written events** spanning about 5,000 years across all ten regions of the record, plus **290 people**, **210 places**, **18 civilizations**, **10 belief systems** and **14 figures of Greek mythology** (clearly labelled as myth, not history), **1,919** verified Wikimedia Commons images, **2,670** sources (1,217 institutional sources beyond the Wikipedia and Wikidata anchors) and **267** typed connections between events, 94 of them causal. 117 events have dates that match Wikidata exactly; every other event shows on its page why it is partially verified.
 
 ---
 
@@ -39,7 +39,7 @@ The public site is deployed as a fully static export by `.github/workflows/pages
 1. starts a throwaway PostgreSQL 16 service;
 2. validates the content and runs the unit tests;
 3. runs the migrations and loads the record from `content/` and `data/enriched.json` (no requests to Wikimedia are made during the build);
-4. pre-renders every page with `npm run build:pages`, producing ./out with 925 HTML pages, a search index, one "On this day" file per calendar day and a shared map outline;
+4. pre-renders every page with `npm run build:pages`, producing ./out with 1,060 HTML pages, a search index, one "On this day" file per calendar day and a shared map outline;
 5. publishes ./out to GitHub Pages.
 
 **One-time setup:** in the repository, open **Settings → Pages → Build and deployment** and set **Source** to **GitHub Actions**. The next push (or **Actions → Deploy to GitHub Pages → Run workflow**) publishes the site at `https://<your-user>.github.io/historycheck/`.
@@ -150,11 +150,12 @@ Secrets are only read on the server or at build time (database access, server ac
 
 ```
 content/            Hand-written records (TypeScript, reviewed in git)
-  events/*.ts         213 events: text, dates with precision, causes, consequences,
+  events/*.ts         239 events: text, dates with precision, causes, consequences,
                       timeline, people + roles, places, typed relations, sources
   people.ts           People registry → exact Wikipedia article (and Wikidata ID when needed)
   places.ts           Places registry → exact Wikipedia article + region
   taxonomy.ts         Periods, categories, regions, civilizations
+  beliefs.ts          Religions, branches and Greek gods (linked to events; myth labelled as myth)
   review.ts           Editorial decisions on automated date discrepancies
 scripts/enrich.ts   Resolves every record against Wikipedia/Wikidata/Commons → data/enriched.json
 scripts/seed.ts     Loads content + enrichment into Postgres in one transaction

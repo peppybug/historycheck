@@ -45,7 +45,7 @@ export default async function DeityPage({ params }: Props) {
         </div>
 
         <div>
-          <p className="text-sm text-ink-2">Figure of {d.belief.name.toLowerCase()} and myth</p>
+          <p className="text-sm text-ink-2">A figure of {d.belief.name.charAt(0).toLowerCase() + d.belief.name.slice(1)} and myth</p>
           <h1 className="mt-1 text-[2.25rem] leading-tight sm:text-3xl">{d.name}</h1>
           <p className="mt-2 text-lg text-ink-2">{d.domain}</p>
           <p className="mt-5 max-w-2xl rounded-sm border border-line bg-surface px-4 py-3 text-sm text-ink-2">
@@ -81,7 +81,7 @@ export default async function DeityPage({ params }: Props) {
 
       {d.others.length ? (
         <section aria-labelledby="others-h" className="mt-16">
-          <h2 id="others-h" className="text-xl">More figures of {d.belief.name.toLowerCase()}</h2>
+          <h2 id="others-h" className="text-xl">More figures of {d.belief.name.charAt(0).toLowerCase() + d.belief.name.slice(1)}</h2>
           <ul className="mt-4 grid grid-cols-2 gap-x-5 gap-y-8 sm:grid-cols-4 lg:grid-cols-7">
             {d.others.map((o) => (
               <li key={o.slug}>
