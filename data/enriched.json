@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-22T10:29:51.431Z",
+ "generatedAt": "2026-11-23T16:07:53.033Z",
  "events": {
   "invention-of-cuneiform": {
    "qid": "Q401",
@@ -1866,12 +1866,11 @@
    "qid": "Q206414",
    "wikiTitle": "Principate",
    "wikiUrl": "https://en.wikipedia.org/wiki/Principate",
-   "featured": null,
+   "featured": {
+    "file": "File:August Labicana Massimo Inv56230.jpg",
+    "method": "curated"
+   },
    "gallery": [
-    {
-     "file": "File:August Labicana Massimo Inv56230.jpg",
-     "caption": "Augustus depicted as pontifex maximus in the Via Labicana Augustus statue, now in the National Museum of Rome, Italy"
-    },
     {
      "file": "File:Principate under the rule Augustus.jpg",
      "caption": "Principate under Augustus[65]"
@@ -13992,12 +13991,11 @@
    "qid": "Q174085",
    "wikiTitle": "Willem Janszoon",
    "wikiUrl": "https://en.wikipedia.org/wiki/Willem_Janszoon",
-   "featured": null,
+   "featured": {
+    "file": "File:StateLibQld 1 117460 Duyfhen (ship).jpg",
+    "method": "curated"
+   },
    "gallery": [
-    {
-     "file": "File:StateLibQld 1 117460 Duyfhen (ship).jpg",
-     "caption": "19th-century artist impression of the ship Duyfken in the Gulf of Carpentaria"
-    },
     {
      "file": "File:Gerritsz Nueva Guinea 1622.JPG",
      "caption": "Willem Janszoon’s Vliege Bay, Dubbelde Rev., R. Visch, and Cape Keerweer on the coast of Nueva Guinea on Hessel Gerritszoon’s map of the Pacific Ocean, 1622"
@@ -15480,15 +15478,14 @@
    "qid": "Q217480",
    "wikiTitle": "Delta Works",
    "wikiUrl": "https://en.wikipedia.org/wiki/Delta_Works",
-   "featured": null,
+   "featured": {
+    "file": "File:Oosterscheldekering-pohled.jpg",
+    "method": "curated"
+   },
    "gallery": [
     {
      "file": "File:Colijnsplaat - Zeelandbrücke.jpg",
      "caption": "Zeeland Bridge"
-    },
-    {
-     "file": "File:Oosterscheldekering-pohled.jpg",
-     "caption": "Oosterscheldekering"
     },
     {
      "file": "File:Schaalmodel Maeslantkering.jpg",
@@ -56122,28 +56119,6 @@
    "credit": "Own work",
    "httpStatus": 200
   },
-  "File:Colijnsplaat - Zeelandbrücke.jpg": {
-   "file": "File:Colijnsplaat - Zeelandbrücke.jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Colijnsplaat_-_Zeelandbr%C3%BCcke.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Colijnsplaat_-_Zeelandbr%C3%BCcke.jpg/1280px-Colijnsplaat_-_Zeelandbr%C3%BCcke.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "thumbWidth": 1280,
-   "thumbHeight": 720,
-   "smallUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Colijnsplaat_-_Zeelandbr%C3%BCcke.jpg/500px-Colijnsplaat_-_Zeelandbr%C3%BCcke.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "derived": false,
-   "width": 3264,
-   "height": 1836,
-   "mime": "image/jpeg",
-   "objectName": "Colijnsplaat - Zeelandbrücke",
-   "description": "Zeelandbrücke (N256) nach Schouven-Duiveland",
-   "creator": "Rolf Cosar",
-   "dateText": "2018-03-20",
-   "sourceUrl": "https://commons.wikimedia.org/wiki/File:Colijnsplaat_-_Zeelandbr%C3%BCcke.jpg",
-   "license": "CC BY-SA 4.0",
-   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-   "attributionRequired": true,
-   "credit": "Own work",
-   "httpStatus": 200
-  },
   "File:Oosterscheldekering-pohled.jpg": {
    "file": "File:Oosterscheldekering-pohled.jpg",
    "url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Oosterscheldekering-pohled.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
@@ -56162,6 +56137,28 @@
    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Oosterscheldekering-pohled.jpg",
    "license": "CC BY 3.0",
    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+   "attributionRequired": true,
+   "credit": "Own work",
+   "httpStatus": 200
+  },
+  "File:Colijnsplaat - Zeelandbrücke.jpg": {
+   "file": "File:Colijnsplaat - Zeelandbrücke.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Colijnsplaat_-_Zeelandbr%C3%BCcke.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Colijnsplaat_-_Zeelandbr%C3%BCcke.jpg/1280px-Colijnsplaat_-_Zeelandbr%C3%BCcke.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "thumbWidth": 1280,
+   "thumbHeight": 720,
+   "smallUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Colijnsplaat_-_Zeelandbr%C3%BCcke.jpg/500px-Colijnsplaat_-_Zeelandbr%C3%BCcke.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "derived": false,
+   "width": 3264,
+   "height": 1836,
+   "mime": "image/jpeg",
+   "objectName": "Colijnsplaat - Zeelandbrücke",
+   "description": "Zeelandbrücke (N256) nach Schouven-Duiveland",
+   "creator": "Rolf Cosar",
+   "dateText": "2018-03-20",
+   "sourceUrl": "https://commons.wikimedia.org/wiki/File:Colijnsplaat_-_Zeelandbr%C3%BCcke.jpg",
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "Own work",
    "httpStatus": 200

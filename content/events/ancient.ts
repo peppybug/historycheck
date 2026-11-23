@@ -1042,6 +1042,8 @@ export const ancientEvents: EventSeed[] = [
     places: ["rome"],
     civ: ["ancient-rome"],
     wiki: "Principate",
+    // The article has no lead image; chosen from the article's own media.
+    image: "File:August Labicana Massimo Inv56230.jpg",
     keywords: ["Augustus", "Roman Empire", "princeps", "Pax Romana"],
     summary:
       "The Senate granted Octavian the name Augustus, a moment conventionally taken as the start of the Roman Empire.",

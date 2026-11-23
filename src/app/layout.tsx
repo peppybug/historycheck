@@ -5,7 +5,7 @@ import "./globals.css";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { themeScript } from "@/components/theme-toggle";
-import { siteUrl } from "@/lib/site";
+import { openGraph, siteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -13,13 +13,9 @@ export const metadata: Metadata = {
   description:
     "Search historical events, people and places. See what caused an event, what it led to and what was happening elsewhere at the same time — with verified dates, sources and archival images.",
   applicationName: "Historycheck",
-  openGraph: {
-    type: "website",
-    siteName: "Historycheck",
-    locale: "en_GB",
-    images: [{ url: `${siteUrl}/brand/og-1200x630.png`, width: 1200, height: 630, alt: "Historycheck: Explore the past. Understand the present." }],
-  },
-  twitter: { card: "summary_large_image", images: [`${siteUrl}/brand/og-1200x630.png`] },
+  openGraph: openGraph(),
+  // No twitter:image here: X falls back to each page's og:image.
+  twitter: { card: "summary_large_image" },
 };
 
 export const viewport: Viewport = {

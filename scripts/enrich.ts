@@ -90,7 +90,7 @@ export interface EnrichedData {
       qid: string | null;
       wikiTitle: string;
       wikiUrl: string;
-      featured: { file: string; method: "wikipedia_lead" | "wikidata_p18" } | null;
+      featured: { file: string; method: "curated" | "wikipedia_lead" | "wikidata_p18" } | null;
       gallery: { file: string; caption: string }[];
       extraSources: { url: string; title: string; publisher: string; type: string; status: number }[];
       dateCheck: { status: "match" | "mismatch" | "no-data"; detail: string; wikidata?: string };
@@ -452,6 +452,7 @@ async function main() {
   const wanted = new Set<string>();
   const leadOf = (t: string) => (wiki.get(t)?.leadImage ? normFile(wiki.get(t)!.leadImage!) : null);
   for (const e of allEvents) {
+    if (e.image) wanted.add(normFile(e.image));
     const l = leadOf(e.wiki);
     if (l) wanted.add(l);
     const q = p18(qidFor(e.wiki));
@@ -512,6 +513,7 @@ async function main() {
     const qid = page?.qid ?? null;
     const ent = entities[qid ?? ""];
     const featured = pick([
+      { file: e.image ? normFile(e.image) : null, method: "curated" },
       { file: leadOf(e.wiki), method: "wikipedia_lead" },
       { file: p18(qid), method: "wikidata_p18" },
     ]);

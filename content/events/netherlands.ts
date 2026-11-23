@@ -360,6 +360,8 @@ export const netherlandsEvents: EventSeed[] = [
     location: "West coast of Cape York Peninsula, Australia",
     places: ["cape-york-peninsula"],
     wiki: "Willem Janszoon",
+    // The article has no lead image; chosen from the article's own media.
+    image: "File:StateLibQld 1 117460 Duyfhen (ship).jpg",
     discovery: true,
     keywords: ["Willem Janszoon", "Duyfken", "VOC", "Cape York", "Aboriginal Australians"],
     dateNote: "The landing took place in early 1606; accounts commonly place it in February or March, but the exact date is not recorded with certainty.",

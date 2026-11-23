@@ -682,6 +682,8 @@ export const netherlandsModernEvents: EventSeed[] = [
     location: "Southwestern Netherlands",
     places: ["oosterscheldekering", "zeeland"],
     wiki: "Delta Works",
+    // The article has no lead image; chosen from the article's own media.
+    image: "File:Oosterscheldekering-pohled.jpg",
     keywords: ["storm surge barrier", "Oosterscheldekering", "Maeslantkering", "flood protection", "engineering"],
     dateNote: "The Delta Committee was appointed weeks after the 1953 flood; the Delta Act was passed in 1958, and the last major storm-surge barrier, the Maeslantkering, was completed in 1997.",
     summary:

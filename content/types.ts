@@ -46,6 +46,8 @@ export interface EventSeed {
   /** Additional institutional sources (verified by the enrichment script). */
   sources?: { url: string; title: string; publisher: string; type: SourceKind }[];
   /** Note shown to readers about uncertainty (e.g. traditional or disputed dates). */
+  /** Editorially chosen Wikimedia Commons file ("File:…") used when the Wikipedia article has no lead image. */
+  image?: string;
   dateNote?: string;
 }
 

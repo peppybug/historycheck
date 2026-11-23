@@ -11,7 +11,7 @@ import { VerificationBadge } from "@/components/verification-badge";
 import { WorldMap } from "@/components/world-map";
 import { formatDate, formatRange, lifespan, precisionNote } from "@/lib/dates";
 import { getEvent, getEventBeliefs, staticSlugs } from "@/lib/queries";
-import { siteUrl } from "@/lib/site";
+import { openGraph, siteUrl } from "@/lib/site";
 
 export async function generateStaticParams() {
   return staticSlugs("event");
@@ -28,12 +28,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${ev.title} (${date})`,
     description: ev.summary,
     alternates: { canonical: `/event/${ev.slug}` },
-    openGraph: {
+    openGraph: openGraph({
       title: `${ev.title} (${date})`,
       description: ev.summary,
       type: "article",
-      images: ev.featuredImage ? [{ url: ev.featuredImage.thumbUrl, width: ev.featuredImage.thumbWidth, height: ev.featuredImage.thumbHeight, alt: ev.featuredImage.caption }] : undefined,
-    },
+      image: ev.featuredImage ? { url: ev.featuredImage.thumbUrl, width: ev.featuredImage.thumbWidth, height: ev.featuredImage.thumbHeight, alt: ev.title } : null,
+    }),
   };
 }
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { openGraph } from "@/lib/site";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArchiveImage, ImageCredit } from "@/components/archive-image";
@@ -18,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: p.name,
     description: `${p.shortDescription}. ${p.events.length} event${p.events.length === 1 ? "" : "s"} in the Historycheck record.`,
     alternates: { canonical: `/person/${p.slug}` },
-    openGraph: { images: p.portrait ? [{ url: p.portrait.thumbUrl }] : undefined },
+    openGraph: openGraph({ title: p.name, description: p.shortDescription, type: "article", image: p.portrait ? { url: p.portrait.thumbUrl, width: p.portrait.thumbWidth, height: p.portrait.thumbHeight, alt: p.name } : null }),
   };
 }
 

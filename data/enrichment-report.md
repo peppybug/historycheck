@@ -1,10 +1,10 @@
 # Enrichment report
 
-Generated 2026-11-22T10:29:51.431Z
+Generated 2026-11-23T16:07:53.033Z
 
 ## Summary
 
-- Events: 239; with featured image: 236; avg gallery: 5.0
+- Events: 239; with featured image: 239; avg gallery: 5.0
 - Date checks: 117 match, 42 mismatch, 80 no Wikidata date
 - People: 290; with portrait: 289; not human on Wikidata: 0
 - Places: 210; with coordinates: 209; with image: 210
@@ -58,6 +58,3 @@ Generated 2026-11-22T10:29:51.431Z
 
 ## Events without a featured image
 
-- augustus-becomes-emperor
-- duyfken-landing-australia
-- delta-works
