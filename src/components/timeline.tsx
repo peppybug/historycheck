@@ -42,7 +42,9 @@ export function Timeline({ events, regions, categories }: { events: TimelineEven
   const [ppy, setPpy] = useState(6);
   const [view, setView] = useState<"chart" | "list">("chart");
   const [cursor, setCursor] = useState<number | null>(null);
-  const [hover, setHover] = useState<{ e: TimelineEvent; x: number; y: number } | null>(null);
+  // Tooltip position in viewport coordinates, computed in the event handler (never during render).
+  const [hover, setHover] = useState<{ e: TimelineEvent; left: number; top: number } | null>(null);
+  const tipAt = (e: TimelineEvent, x: number, y: number) => setHover({ e, left: Math.min(x + 14, window.innerWidth - 300), top: y + 14 });
   const [scrollLeft, setScrollLeft] = useState(0);
   const pendingCenter = useRef<number | null>(null);
 
@@ -63,6 +65,8 @@ export function Timeline({ events, regions, categories }: { events: TimelineEven
 
   // Phones get the list by default; the chart is still available.
   useEffect(() => {
+    // Screen size is only known after hydration.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (window.matchMedia("(max-width: 767px)").matches) setView("list");
   }, []);
 
@@ -103,6 +107,8 @@ export function Timeline({ events, regions, categories }: { events: TimelineEven
   useEffect(() => {
     if (didInit.current || view !== "chart" || width < 200) return;
     didInit.current = true;
+    // Runs once, after the chart has been measured; zoomTo sets scroll and zoom state.
+    /* eslint-disable react-hooks/set-state-in-effect */
     const from = Number(params.get("from"));
     const to = Number(params.get("to"));
     if (Number.isFinite(from) && Number.isFinite(to) && params.get("from") && to > from) {
@@ -111,6 +117,7 @@ export function Timeline({ events, regions, categories }: { events: TimelineEven
     } else {
       zoomTo(Math.max(1.4, (width - LABEL_COL) / 650), 1700);
     }
+    /* eslint-enable react-hooks/set-state-in-effect */
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [view, width]);
 
@@ -159,12 +166,12 @@ export function Timeline({ events, regions, categories }: { events: TimelineEven
   }, [filtered, regions, x, showLabels]);
 
   const laneTops = useMemo(() => {
-    let y = 0;
-    return lanes.map((l) => {
-      const top = y;
-      y += l.rows * ROW_H + LANE_PAD * 2;
-      return top;
-    });
+    const tops: number[] = [];
+    for (let i = 0, y = 0; i < lanes.length; i++) {
+      tops.push(y);
+      y += lanes[i].rows * ROW_H + LANE_PAD * 2;
+    }
+    return tops;
   }, [lanes]);
   const chartH = laneTops.length ? laneTops[laneTops.length - 1] + lanes[lanes.length - 1].rows * ROW_H + LANE_PAD * 2 : 120;
 
@@ -332,11 +339,11 @@ export function Timeline({ events, regions, categories }: { events: TimelineEven
                         className="group absolute flex items-center gap-1.5 focus-visible:z-30"
                         style={{ left: x0, top: LANE_PAD + row * ROW_H, height: ROW_H - 6 }}
                         aria-label={`${e.title}, ${yearLabel({ year: e.startYear, precision: e.datePrecision }, e.endYear != null ? { year: e.endYear } : null)}, ${e.regionName}`}
-                        onMouseEnter={(ev) => {
-                          const r = scroller.current!.getBoundingClientRect();
-                          setHover({ e, x: ev.clientX - r.left, y: ev.clientY - r.top });
+                        onMouseEnter={(ev) => tipAt(e, ev.clientX, ev.clientY)}
+                        onFocus={(ev) => {
+                          const b = ev.currentTarget.getBoundingClientRect();
+                          tipAt(e, b.left + 10, b.bottom);
                         }}
-                        onFocus={() => setHover({ e, x: x0 - scrollLeft + 10, y: 36 + laneTops[i] + LANE_PAD + row * ROW_H + 30 })}
                         onBlur={() => setHover(null)}
                       >
                         {isRange ? (
@@ -368,10 +375,7 @@ export function Timeline({ events, regions, categories }: { events: TimelineEven
             {hover ? (
               <div
                 className="pointer-events-none fixed z-40 w-72 rounded-sm border border-line bg-surface p-3 shadow-lift"
-                style={{
-                  left: Math.min((scroller.current?.getBoundingClientRect().left ?? 0) + hover.x + 14, (typeof window !== "undefined" ? window.innerWidth : 1200) - 300),
-                  top: (scroller.current?.getBoundingClientRect().top ?? 0) + hover.y + 14,
-                }}
+                style={{ left: hover.left, top: hover.top }}
                 role="tooltip"
               >
                 <div className="flex gap-3">

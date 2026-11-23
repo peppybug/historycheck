@@ -2,7 +2,7 @@
  * Static build for GitHub Pages.
  *
  * GitHub Pages cannot run server code, so the routes that need a server
- * (the /admin workspace and its auth middleware) are moved aside for the
+ * (the /admin workspace and its auth proxy) are moved aside for the
  * duration of the build and restored afterwards, even if the build fails.
  * Output: ./out (with .nojekyll so Pages serves the _next/ folder).
  */
@@ -12,7 +12,7 @@ import { join } from "node:path";
 
 const root = process.cwd();
 const stash = join(root, ".static-stash");
-const serverOnly = ["src/app/admin", "src/components/admin", "src/middleware.ts"];
+const serverOnly = ["src/app/admin", "src/components/admin", "src/proxy.ts"];
 
 if (existsSync(stash)) {
   console.error("A previous static build left .static-stash behind. Restore its contents into src/ and delete it, then retry.");

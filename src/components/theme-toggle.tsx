@@ -10,6 +10,8 @@ export function ThemeToggle() {
   useEffect(() => {
     try {
       const t = localStorage.getItem("hc-theme") as Theme | null;
+      // Saved preference is only readable after hydration.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       if (t === "light" || t === "dark") setTheme(t);
     } catch {}
   }, []);

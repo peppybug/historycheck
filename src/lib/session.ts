@@ -1,6 +1,6 @@
 /**
  * Stateless admin session: cookie value is "<expiryMs>.<base64url HMAC-SHA256(expiry)>"
- * signed with SESSION_SECRET. Uses Web Crypto so it runs in middleware (edge) and Node.
+ * signed with SESSION_SECRET. Uses Web Crypto so it runs in the proxy and in Node.
  */
 export const SESSION_COOKIE = "hc_admin";
 export const SESSION_TTL_MS = 1000 * 60 * 60 * 8; // 8 hours

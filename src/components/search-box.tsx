@@ -65,11 +65,18 @@ export function SearchBox({
   const [active, setActive] = useState(-1);
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => setValue(defaultValue), [defaultValue]);
+  // Follow the URL's query when it changes (e.g. back/forward), without an effect.
+  const [syncedDefault, setSyncedDefault] = useState(defaultValue);
+  if (defaultValue !== syncedDefault) {
+    setSyncedDefault(defaultValue);
+    setValue(defaultValue);
+  }
 
   useEffect(() => {
     const q = value.trim();
     if (q.length < 2) {
+      // Reset when the query becomes too short; the fetch below is the async path.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setItems([]);
       setLoading(false);
       return;

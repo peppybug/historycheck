@@ -30,7 +30,7 @@ The launch database holds **239 hand-written events** spanning about 5,000 years
 
 ## Stack
 
-- **Next.js 15** (App Router, React Server Components, server actions), **TypeScript**, **Tailwind CSS 4**
+- **Next.js 16** (App Router, React Server Components, server actions), **TypeScript**, **Tailwind CSS 4**
 - **PostgreSQL 16** with **Drizzle ORM** and SQL migrations (works with Supabase or any Postgres)
 - Client-side search with MiniSearch over a JSON index generated from Postgres at build time
 - `d3-geo` + Natural Earth for maps rendered on the server (no tile provider, no client JavaScript)
@@ -69,7 +69,7 @@ To build the static site locally:
 NEXT_PUBLIC_BASE_PATH=/historycheck npm run build:pages
 ```
 
-`scripts/build-pages.mjs` temporarily moves the server-only code (`src/app/admin`, `src/components/admin`, `src/middleware.ts`) out of the way, runs `next build` with `output: "export"`, and restores it afterwards, even if the build fails.
+`scripts/build-pages.mjs` temporarily moves the server-only code (`src/app/admin`, `src/components/admin`, `src/proxy.ts`) out of the way, runs `next build` with `output: "export"`, and restores it afterwards, even if the build fails.
 
 To preview it under the same path GitHub uses, serve a folder that contains `out` as `historycheck`:
 
@@ -134,7 +134,7 @@ Open <http://localhost:3000>. The editorial workspace is at <http://localhost:30
 
 No third-party API keys are needed. Wikipedia, Wikidata and Wikimedia Commons are public APIs; the enrichment script identifies itself with a descriptive User-Agent as Wikimedia's policy requires, and throttles and caches its requests.
 
-Secrets are only read on the server or at build time (database access, server actions and middleware); nothing sensitive is exposed to the browser. The static GitHub Pages build needs no secrets at all: its database is a temporary container inside the workflow.
+Secrets are only read on the server or at build time (database access, server actions and the admin proxy); nothing sensitive is exposed to the browser. The static GitHub Pages build needs no secrets at all: its database is a temporary container inside the workflow.
 
 ## Scripts
 

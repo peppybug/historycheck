@@ -27,11 +27,6 @@ const nextConfig: NextConfig = {
           return [{ source: "/:path*", headers: securityHeaders }];
         },
       }),
-  // The enrichment cache and browser-test artefacts live in the repo but are not app code.
-  webpack(config) {
-    config.watchOptions = { ...config.watchOptions, ignored: ["**/node_modules/**", "**/data/**", "**/.playwright-mcp/**", "**/.git/**"] };
-    return config;
-  },
 };
 
 export default nextConfig;

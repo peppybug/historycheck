@@ -25,6 +25,8 @@ export function OnThisDay() {
     const now = new Date();
     const m = now.getMonth() + 1;
     const d = now.getDate();
+    // The visitor's local date is only known in the browser, after hydration.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setDate({ m, d });
     fetch(withBase(`/data/on-this-day/${String(m).padStart(2, "0")}-${String(d).padStart(2, "0")}.json`))
       .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))

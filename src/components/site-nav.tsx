@@ -43,7 +43,12 @@ export function DesktopNav() {
 export function MobileNav() {
   const [open, setOpen] = useState(false);
   const path = usePathname();
-  useEffect(() => setOpen(false), [path]);
+  // Close the menu after navigation, without an effect.
+  const [menuPath, setMenuPath] = useState(path);
+  if (path !== menuPath) {
+    setMenuPath(path);
+    setOpen(false);
+  }
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
