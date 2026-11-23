@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-23T16:07:53.033Z",
+ "generatedAt": "2026-11-23T18:27:08.403Z",
  "events": {
   "invention-of-cuneiform": {
    "qid": "Q401",
@@ -28253,7 +28253,7 @@
    "qid": "Q28573",
    "wikiUrl": "https://en.wikipedia.org/wiki/Inca_Empire",
    "image": {
-    "file": "File:Tawa chakana.svg",
+    "file": "File:Machu Picchu, 2023 (012).jpg",
     "method": "wikipedia_lead"
    }
   },
@@ -28661,7 +28661,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Mohenjo-daro.jpg": {
    "file": "File:Mohenjo-daro.jpg",
@@ -29167,7 +29168,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": null,
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Battle of Kadesh I.png": {
    "file": "File:Battle of Kadesh I.png",
@@ -29189,7 +29191,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "attributionRequired": true,
    "credit": "Qadesh1_ita.svg .mw-parser-output .messagebox{margin:4px 0;width:auto;border-collapse:collapse;border:2px solid var(--border-color-progressive,#6485d1);background-color:var(--background-color-neutral-subtle,#fbfcff);color:var(--color-base,#202122);box-sizing:border-box;border-inline-start-width:8px…",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Battle of Kadesh II.png": {
    "file": "File:Battle of Kadesh II.png",
@@ -29211,7 +29214,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "attributionRequired": true,
    "credit": "Qadesh2_ita.svg .mw-parser-output .messagebox{margin:4px 0;width:auto;border-collapse:collapse;border:2px solid var(--border-color-progressive,#6485d1);background-color:var(--background-color-neutral-subtle,#fbfcff);color:var(--color-base,#202122);box-sizing:border-box;border-inline-start-width:8px…",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Battle of Kadesh III.png": {
    "file": "File:Battle of Kadesh III.png",
@@ -29233,7 +29237,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "attributionRequired": true,
    "credit": "Qadesh3_ita.svg .mw-parser-output .messagebox{margin:4px 0;width:auto;border-collapse:collapse;border:2px solid var(--border-color-progressive,#6485d1);background-color:var(--background-color-neutral-subtle,#fbfcff);color:var(--color-base,#202122);box-sizing:border-box;border-inline-start-width:8px…",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Ramses II besieging the Cheta people in Dapur.jpg": {
    "file": "File:Ramses II besieging the Cheta people in Dapur.jpg",
@@ -29387,7 +29392,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Transferred from en.wikipedia to Commons by Tomchen1989 using CommonsHelper.",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Wang Yirong.jpg": {
    "file": "File:Wang Yirong.jpg",
@@ -29431,7 +29437,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Hittites 1300bc.jpg": {
    "file": "File:Hittites 1300bc.jpg",
@@ -29695,7 +29702,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Own work. Data from N. Kaltsas, Olympia, Athens, 2004 (3rd ed.), fig. 14, p. 16–17.",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Olympos.jpg": {
    "file": "File:Olympos.jpg",
@@ -29783,7 +29791,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Villanovan - Urn in the Shape of a Hut and a Door - Walters 482312 - Three Quarter.jpg": {
    "file": "File:Villanovan - Urn in the Shape of a Hut and a Door - Walters 482312 - Three Quarter.jpg",
@@ -30025,7 +30034,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:121.Isaiah's Vision of the Destruction of Babylon.jpg": {
    "file": "File:121.Isaiah's Vision of the Destruction of Babylon.jpg",
@@ -30069,7 +30079,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Private Collection https://www.rijksmuseum.nl/en/collection/RP-F-2001-7-864-5",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Demos embodiment being crowned by Democracy. Ancient Agora Museum in Athens.jpg": {
    "file": "File:Demos embodiment being crowned by Democracy. Ancient Agora Museum in Athens.jpg",
@@ -30135,7 +30146,8 @@
    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
    "attributionRequired": true,
    "credit": null,
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Pericles Pio-Clementino Inv269 n5.jpg": {
    "file": "File:Pericles Pio-Clementino Inv269 n5.jpg",
@@ -30223,7 +30235,8 @@
    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
    "attributionRequired": true,
    "credit": "Own work. Data from Image:Perserkriege.jpg by Captain Blood, which uses the dtv-Atlas Weltgeschichte. Von den Anfängen bis zur Gegenwart, p. 56. Blank map from Image:Map greek sanctuaries-fr.svg.",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Darius detail on the Darius vase.jpg": {
    "file": "File:Darius detail on the Darius vase.jpg",
@@ -30267,7 +30280,8 @@
    "licenseUrl": "http://www.gnu.org/copyleft/fdl.html",
    "attributionRequired": true,
    "credit": null,
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Marshlands of Marathon, with Pentelikon mountains in the background.jpg": {
    "file": "File:Marshlands of Marathon, with Pentelikon mountains in the background.jpg",
@@ -30399,7 +30413,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "attributionRequired": true,
    "credit": "Aegean_Sea_map_bathymetry-fr.svg",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Xerxes all ethnicities.jpg": {
    "file": "File:Xerxes all ethnicities.jpg",
@@ -30443,7 +30458,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "http://www.au.af.mil/au/awc/awcgate/gabrmetz/gabr0066.htm",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Pelop war en.png": {
    "file": "File:Pelop war en.png",
@@ -30465,7 +30481,8 @@
    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
    "attributionRequired": true,
    "credit": "File:Pelop_krieg1.png, originally uploaded to German wikipedia by user Captain Blood",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Houghton STC 24058 (B) - Thucydides.jpg": {
    "file": "File:Houghton STC 24058 (B) - Thucydides.jpg",
@@ -30531,7 +30548,8 @@
    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
    "attributionRequired": true,
    "credit": "Map_athenian_empire_431_BC-fr.svg",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Battle of Potidaea 431 BCE.jpg": {
    "file": "File:Battle of Potidaea 431 BCE.jpg",
@@ -30795,7 +30813,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": null,
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Battle of Gaugamela (1 October 331 BCE).jpg": {
    "file": "File:Battle of Gaugamela (1 October 331 BCE).jpg",
@@ -30839,7 +30858,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Transferred from en.wikipedia to Commons.",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Dhauli Shanti Stupa, Bhubaneswar.jpg": {
    "file": "File:Dhauli Shanti Stupa, Bhubaneswar.jpg",
@@ -30883,7 +30903,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:China Warring States Period.png": {
    "file": "File:China Warring States Period.png",
@@ -30905,7 +30926,8 @@
    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
    "attributionRequired": true,
    "credit": "China_Warring_States_Period.jpg",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:China.Terracotta statues024.jpg": {
    "file": "File:China.Terracotta statues024.jpg",
@@ -30949,7 +30971,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:The Death of Paulus Aemilius at the Battle of Cannae (Yale University Art Gallery scan).jpg": {
    "file": "File:The Death of Paulus Aemilius at the Battle of Cannae (Yale University Art Gallery scan).jpg",
@@ -31125,7 +31148,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "File:Kazakhstan (orthographic projection).svg overlaid with vectorised (by my own work) path taken from this bitmap image, per the request of user:CactiStaccingCrane",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Woven silk, Western Han Dynasty.jpg": {
    "file": "File:Woven silk, Western Han Dynasty.jpg",
@@ -31191,7 +31215,8 @@
    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
    "attributionRequired": false,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:ChineseJadePlaques.JPG": {
    "file": "File:ChineseJadePlaques.JPG",
@@ -31301,7 +31326,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Livius.org.",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Vitrine 3e guerre punique.jpg": {
    "file": "File:Vitrine 3e guerre punique.jpg",
@@ -31455,7 +31481,8 @@
    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
    "attributionRequired": true,
    "credit": "http://www.cngcoins.com/Coin.aspx?CoinID=16524",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Woodcut illustration of Porcia Catonis counseling Marcus Junius Brutus, Julius Caesar's death at the hands of Brutus and Gaius Cassius Longinus, and Porcia's suicide - Penn Provenance Project.jpg": {
    "file": "File:Woodcut illustration of Porcia Catonis counseling Marcus Junius Brutus, Julius Caesar's death at the hands of Brutus and Gaius Cassius Longinus, and Porcia's suicide - Penn Provenance Project.jpg",
@@ -32027,7 +32054,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "香港臨時市政局 [Provisional Urban Council]; 中國歷史博物館聯合主辦 [Hong Kong Museum of History] (1998) \"Zàozhǐ\" in (in zh, en) Tian gong kai wu: Zhongguo gu dai ke ji wen wu zhan, Hong Kong: 香港歷史博物館 [Hong Kong Museum of History], pp. 54–71 ISBN: 978-962-7039-37-2. OCLC: 41895821. Originally uploaded by 豐 in Chinese…",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Cai Lun with Donchō and Mochizuki Seibee (Minobu Museum of History and Folklore).jpg": {
    "file": "File:Cai Lun with Donchō and Mochizuki Seibee (Minobu Museum of History and Folklore).jpg",
@@ -32137,7 +32165,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "attributionRequired": true,
    "credit": "Own work using: Main map source: R. Janin, Constantinople Byzantine. Developpement urbain et repertoire topographique Road network and some other details based on Dumbarton Oaks Papers 54 Data on many churches, especially unidentified ones, taken from the New York University's The Byzantine Churche…",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Bizansist touchup.jpg": {
    "file": "File:Bizansist touchup.jpg",
@@ -32445,7 +32474,8 @@
    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
    "attributionRequired": true,
    "credit": "Background map based on Image:BlankMap-Europe-v3.png Data from: Colin McEvedy, Penguin Atlas of Ancient History John Haywood, Atlas of Past Times DK Atlas of world history detailed Roman empire Expansion map at Uni of Texas See also maps at external links, four stage animated map of the roman empir…",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Invasions of the Roman Empire 1.png": {
    "file": "File:Invasions of the Roman Empire 1.png",
@@ -32467,7 +32497,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Tetrarchy map3.jpg": {
    "file": "File:Tetrarchy map3.jpg",
@@ -32511,7 +32542,8 @@
    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
    "attributionRequired": true,
    "credit": "Blank map of South Europe and North Africa.svg Romanworld271AD.jpg",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Solidus Julian-transparent.png": {
    "file": "File:Solidus Julian-transparent.png",
@@ -32533,7 +32565,8 @@
    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
    "attributionRequired": true,
    "credit": "the Jürgen K. ; English Wikipedia, original upload 1 June 2005 by Panairjdde",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Theodosius I's empire.png": {
    "file": "File:Theodosius I's empire.png",
@@ -32555,7 +32588,8 @@
    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
    "attributionRequired": true,
    "credit": "Own work based on: BlankMap-Europe-v3.png and Roman empire 395.jpg Own work using:: (2004) The Collins Atlas of World History, Category:Wiltshire: HarperCollins, pp. 46−47 ISBN: 0-00-716640-0.",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Corpus Iuris Civilis - Dionísio Godofredo - 1583.jpg": {
    "file": "File:Corpus Iuris Civilis - Dionísio Godofredo - 1583.jpg",
@@ -32753,7 +32787,8 @@
    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:The imposing basilica next to the Forum and its gagantic pillars, also known as Basilica B, Philippi (7272621716).jpg": {
    "file": "File:The imposing basilica next to the Forum and its gagantic pillars, also known as Basilica B, Philippi (7272621716).jpg",
@@ -32841,7 +32876,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Unknown source",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:The Saracen Army outside Paris, 730-32 AD.png": {
    "file": "File:The Saracen Army outside Paris, 730-32 AD.png",
@@ -32863,7 +32899,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "http://www.bridgemanartondemand.com/art/99619/The_Saracen_Army_outside_Paris_730-32_AD",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Age of Caliphs.png": {
    "file": "File:Age of Caliphs.png",
@@ -32885,7 +32922,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "http://www.gl.iit.edu/govdocs/maps/maps.htm (archive1, archive2)",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Young Folks' History of Rome illus442, Battle of Tours.png": {
    "file": "File:Young Folks' History of Rome illus442, Battle of Tours.png",
@@ -32907,7 +32945,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Project Gutenberg's Young Folks' History of Rome, by Charlotte Mary Yonge [1]",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Charles Martel at Battle of Tours, Great Chronicles of France (27686528435).jpg": {
    "file": "File:Charles Martel at Battle of Tours, Great Chronicles of France (27686528435).jpg",
@@ -32973,7 +33012,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Ten Jiedushi of Tang.png": {
    "file": "File:Ten Jiedushi of Tang.png",
@@ -32995,7 +33035,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Tang Dynasty sancai pottery camel and man.JPG": {
    "file": "File:Tang Dynasty sancai pottery camel and man.JPG",
@@ -33127,7 +33168,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "http://www.muhammadanism.org/maps/default.htm",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Round City in the Time of Mansur (Le Strange).png": {
    "file": "File:Round City in the Time of Mansur (Le Strange).png",
@@ -33149,7 +33191,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Guy Le Strange (1900). Baghdad During the Abbasid Caliphate from Contemporary Arabic and Persian Sources. Oxford: Clarendon Press, Map II.",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:T.homas Girtin Lindisfarne 1798.jpg": {
    "file": "File:T.homas Girtin Lindisfarne 1798.jpg",
@@ -33215,7 +33258,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "Own work based on Paul Vidal de la Blache's Atlas général d'histoire et de géographie (1912)",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Charlemagne c 800.jpg": {
    "file": "File:Charlemagne c 800.jpg",
@@ -33347,7 +33391,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Santa Sofía.jpg": {
    "file": "File:Santa Sofía.jpg",
@@ -33391,7 +33436,8 @@
    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
    "attributionRequired": true,
    "credit": "Made from the GNU maps of the Byzantine Empire by several editors on Commons and Wikipedia: 550 (Western Roman Empire shown in green), by User:Jniemenmaa. (The file actually used is shown below.) 717 at the accession of Leo III, by w:User:Bigdaddy1204 950 under Constantine VII, by w:User:Doll91939…",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Commemorative Tablet of Catholic-Orthodox Prayer on Saint Peter's Basilica.jpg": {
    "file": "File:Commemorative Tablet of Catholic-Orthodox Prayer on Saint Peter's Basilica.jpg",
@@ -33567,7 +33613,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "The Department of History, United States Military Academy, (archived source link)",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Peter the Hermit.jpg": {
    "file": "File:Peter the Hermit.jpg",
@@ -33611,7 +33658,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "Own work, based on B. F. Reilley The Contest of Christian and Muslim Spain - 1031-1157 (1992) and c:File:MapaTopográficoPenínsulaIbérica.svg",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Map of the Byzantine Empire (867-1081).svg": {
    "file": "File:Map of the Byzantine Empire (867-1081).svg",
@@ -33633,7 +33681,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Varqa fighting on horseback.jpg": {
    "file": "File:Varqa fighting on horseback.jpg",
@@ -33897,7 +33946,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Kur Ulug Ulus.jpg": {
    "file": "File:Kur Ulug Ulus.jpg",
@@ -33941,7 +33991,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "Atwood, Christopher (2023) The Secret History of the Mongols, London: Penguin Classics, pp. cxv–cxvi ISBN: 978-0-2411-9791-2.",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:YuanEmperorAlbumGenghisPortrait.jpg": {
    "file": "File:YuanEmperorAlbumGenghisPortrait.jpg",
@@ -34183,7 +34234,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "http://www.rarebookreview.com/wp-content/uploads/2007/09/07-magna-carta_for-email.jpg.",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Bagdad1258.jpg": {
    "file": "File:Bagdad1258.jpg",
@@ -34447,7 +34499,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "https://s.libertaddigital.com/2021/08/09/conquista-de-mexico.jpg",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Catalan Atlas BNF Sheet 6 Mansa Musa (cropped).jpg": {
    "file": "File:Catalan Atlas BNF Sheet 6 Mansa Musa (cropped).jpg",
@@ -34557,7 +34610,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "Own work from: Natural Earth ; Cesana, D.; Benedictow O.J., Bianucci R. (2017). \"The origin and early spread of the Black Death in Italy: first evidence of plague victims from 14th-century Liguria (northern Italy)\". Anthropological Science 125 (1): 15–24. DOI:10.1537/ase.161011. ISSN 0918-7960. (pa…",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Yersinia pestis fluorescent.jpeg": {
    "file": "File:Yersinia pestis fluorescent.jpeg",
@@ -34711,7 +34765,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Wubei Zhi 武備志",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Portrait assis de l'empereur Ming Chengzu.jpg": {
    "file": "File:Portrait assis de l'empereur Ming Chengzu.jpg",
@@ -34975,7 +35030,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "[1]",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Vigiles du roi Charles VII 18.JPG": {
    "file": "File:Vigiles du roi Charles VII 18.JPG",
@@ -35239,7 +35295,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "File:Siege_of_Constantinople_1453_map-fr.svg",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Dardanelles Gun Turkish Bronze 15c.png": {
    "file": "File:Dardanelles Gun Turkish Bronze 15c.png",
@@ -35261,7 +35318,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "http://en.wikipedia.org/wiki/Image:Dardanelles_Gun_Turkish_Bronze_15c.png",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Conquest of Constantinople, Zonaro.jpg": {
    "file": "File:Conquest of Constantinople, Zonaro.jpg",
@@ -35393,7 +35451,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Veritas Art Auctioneers",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Viajes de colon en2.svg": {
    "file": "File:Viajes de colon en2.svg",
@@ -35415,7 +35474,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
    "attributionRequired": true,
    "credit": "Cartilla Geográfica Amphora",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Conceptions Colomb map-en.svg": {
    "file": "File:Conceptions Colomb map-en.svg",
@@ -35437,7 +35497,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:ColombusMap.jpg": {
    "file": "File:ColombusMap.jpg",
@@ -35613,7 +35674,8 @@
    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:16th century Portuguese Spanish trade routes.png": {
    "file": "File:16th century Portuguese Spanish trade routes.png",
@@ -35635,7 +35697,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "World_Topography.jpg",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Blaeu - Moluccae Insulae Celeberrimae.jpg": {
    "file": "File:Blaeu - Moluccae Insulae Celeberrimae.jpg",
@@ -35679,7 +35742,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "[1]",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Philip II's realms in 1598.png": {
    "file": "File:Philip II's realms in 1598.png",
@@ -35701,7 +35765,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "attributionRequired": true,
    "credit": "Own work. Sources: Atlas histórico mundial by Hermann Kinder and Werner Hilgemann ISBN 84-790-005-6. About the extension of Brazil: [1] About Florida: The failure of colonization ([2][3][4][5][6][7][8]) Missions in Florida and Georgia ([9][10][11]) Juanillo rebellion in Florida ([12], [13]) Estado…",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Vascodagama.JPG": {
    "file": "File:Vascodagama.JPG",
@@ -35811,7 +35876,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Suid-Afrikaanse Geskiedenis in Beeld (1989). Anthony Preston. Bion Books: Printed in South Africa.",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Caminho maritimo para a India.png": {
    "file": "File:Caminho maritimo para a India.png",
@@ -35833,7 +35899,8 @@
    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Partida de Vasco da Gama Para a Índia (Roque Gameiro, Quadros da História de Portugal, 1917).png": {
    "file": "File:Partida de Vasco da Gama Para a Índia (Roque Gameiro, Quadros da História de Portugal, 1917).png",
@@ -35855,7 +35922,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "A TRIBO DOS PINCÉIS: Quadros da História de Portugal (1917)",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Luther 95 Thesen.png": {
    "file": "File:Luther 95 Thesen.png",
@@ -35877,7 +35945,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "http://digital.staatsbibliothek-berlin.de/werkansicht/?PPN=PPN644115580&PHYSID=PHYS_0001",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Indulgence selling from On Aplas von Rom.png": {
    "file": "File:Indulgence selling from On Aplas von Rom.png",
@@ -35899,7 +35968,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "http://bildsuche.digitale-sammlungen.de/index.html?c=viewer&l=en&bandnummer=bsb00012453&pimage=00006&v=100&nav=",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Tetzel Kasten.JPG": {
    "file": "File:Tetzel Kasten.JPG",
@@ -35943,7 +36013,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "http://bildsuche.digitale-sammlungen.de/index.html?c=viewer&bandnummer=bsb00088963&pimage=3&v=100&nav=&l=de",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Ninety-five Theses (Basel).jpg": {
    "file": "File:Ninety-five Theses (Basel).jpg",
@@ -36031,7 +36102,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "www.helmink.com (Archive: https://web.archive.org/web/20170203125700/http://www.helmink.com/Antique_Map_Ortelius_Pacific/)",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Bernard van Orley (1487-1541) Karel V - Koninklijk klooster van Brou (cropped).jpg": {
    "file": "File:Bernard van Orley (1487-1541) Karel V - Koninklijk klooster van Brou (cropped).jpg",
@@ -36361,7 +36433,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "https://img.haarets.co.il/img/1.4276143/4073906597.jpg",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Henry Perronet Briggs (1791-1793-1844) - The First Interview between the Spaniards and the Peruvians - N00375 - National Gallery.jpg": {
    "file": "File:Henry Perronet Briggs (1791-1793-1844) - The First Interview between the Spaniards and the Peruvians - N00375 - National Gallery.jpg",
@@ -36405,7 +36478,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "File:Nicolai_Copernici_torinensis_De_revolutionibus_orbium_coelestium.djvu",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:De Revolutionibus manuscript p9b.jpg": {
    "file": "File:De Revolutionibus manuscript p9b.jpg",
@@ -36471,7 +36545,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "https://books.google.com/books?id=GxEOAAAAQAAJ&printsec=frontcover#PPA13,M1",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:0056786c.jpg": {
    "file": "File:0056786c.jpg",
@@ -36757,7 +36832,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Michiel Jansz van Mierevelt - Johan van Oldenbarnevelt.jpg": {
    "file": "File:Michiel Jansz van Mierevelt - Johan van Oldenbarnevelt.jpg",
@@ -36933,7 +37009,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Page X of Archeology Evidence at Jamestown\" by the National Park Service, available at the Internet Archive *File:Maps template-en.svg (compass rose)",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Marsh - Colonial National Historical Park (Robin Baranowski, NPS Photo) (8426448355).jpg": {
    "file": "File:Marsh - Colonial National Historical Park (Robin Baranowski, NPS Photo) (8426448355).jpg",
@@ -37241,7 +37318,8 @@
    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
    "attributionRequired": true,
    "credit": "Map_Thirty_Years_War-fr.svg",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:VáclavBROŽÍK-Defenestrace.jpg": {
    "file": "File:VáclavBROŽÍK-Defenestrace.jpg",
@@ -37307,7 +37385,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "The map is an English translation of:https://commons.wikimedia.org/wiki/File:Bohemian-palatinate_phase_Bul_Map.png",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Joachim von Sandrart - Maximilian I, Elector of Bavaria.jpg": {
    "file": "File:Joachim von Sandrart - Maximilian I, Elector of Bavaria.jpg",
@@ -37351,7 +37430,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "The map is an English translation of:https://commons.wikimedia.org/wiki/File:Danish_phase_Bul_Map.png",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Münster, Historisches Rathaus -- 2014 -- 6855.jpg": {
    "file": "File:Münster, Historisches Rathaus -- 2014 -- 6855.jpg",
@@ -37505,7 +37585,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "https://respvblica.com/galileo-galilei-before-the-holy-office-in-the-vatican-by-robert-fleury/",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Jupiter family.jpg": {
    "file": "File:Jupiter family.jpg",
@@ -37615,7 +37696,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "istitutoaveta.it",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Paul V Caravaggio.jpg": {
    "file": "File:Paul V Caravaggio.jpg",
@@ -37923,7 +38005,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Transferred from en.wikisource to Commons. (previous image from another copy) Internet Archive (current image from the Bern Dibner copy)",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Portrait of Sir Isaac Newton, 1689.jpg": {
    "file": "File:Portrait of Sir Isaac Newton, 1689.jpg",
@@ -37967,7 +38050,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:NewtonsPrincipia.jpg": {
    "file": "File:NewtonsPrincipia.jpg",
@@ -38297,7 +38381,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "public domain animated map by ArdadN here",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Landauer I 014 v.jpg": {
    "file": "File:Landauer I 014 v.jpg",
@@ -38605,7 +38690,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Independence Hall Assembly Room.jpg": {
    "file": "File:Independence Hall Assembly Room.jpg",
@@ -38935,7 +39021,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "[1]File:Haiti blank map with topography.png",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Combats entre les insurgés de Saint-Domingue et les troupes françaises envoyées par Napoléon Bonaparte (1802-1803).jpg": {
    "file": "File:Combats entre les insurgés de Saint-Domingue et les troupes françaises envoyées par Napoléon Bonaparte (1802-1803).jpg",
@@ -39023,7 +39110,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
    "attributionRequired": true,
    "credit": "Own Work (photo)",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Rosetta news.jpg": {
    "file": "File:Rosetta news.jpg",
@@ -39309,7 +39397,8 @@
    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
    "attributionRequired": true,
    "credit": "The base map was taken from NASA picture Image:Indonesia_BMNG.png and the isopach maps were traced from Oppenheimer (2003).[1]",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Sumbawa Topography.png": {
    "file": "File:Sumbawa Topography.png",
@@ -39331,7 +39420,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:1815 tambora explosion.png": {
    "file": "File:1815 tambora explosion.png",
@@ -39353,7 +39443,8 @@
    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
    "attributionRequired": true,
    "credit": "The base map was taken from NASA picture Image:Indonesia_BMNG.png and the isopach maps were traced from Oppenheimer (2003).[1]",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:William Turner - Crossing the Brook.jpg": {
    "file": "File:William Turner - Crossing the Brook.jpg",
@@ -39397,7 +39488,8 @@
    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
    "attributionRequired": true,
    "credit": "Dai, J.; Mosley-Thompson, E.; Thompson, L. G. (1991). \"Ice core evidence for an explosive tropical volcanic eruption six years preceding Tambora\". Journal of Geophysical Research (Atmospheres) 96 (D9): 17361–17366. Archived from the original on 2012-09-27.",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Battle of Waterloo 1815.PNG": {
    "file": "File:Battle of Waterloo 1815.PNG",
@@ -39419,7 +39511,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Napoleon.org.pl",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Strategic Situation of Western Europe 1815.jpg": {
    "file": "File:Strategic Situation of Western Europe 1815.jpg",
@@ -39551,7 +39644,8 @@
    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
    "attributionRequired": true,
    "credit": "Own work (Original text: Self-made. Vectorized from raster image ) Flags from",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Europe 1815 map en.png": {
    "file": "File:Europe 1815 map en.png",
@@ -39573,7 +39667,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "Own work. Source of Information: Historical atlases – Map \"1815 - L'Europe après le Congrès de Vienne\" (Author unknown)(Link) – Ramsay Muir, George Philip (ed.): Philip's New School Atlas of Universal History, George Philip & Son, Ltd., London 1928 – Dr. Walter Leisering (ed.): Putzger Historischer…",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Berlin .Gendarmenmarkt .Deutscher Dom 010.jpg": {
    "file": "File:Berlin .Gendarmenmarkt .Deutscher Dom 010.jpg",
@@ -39639,7 +39734,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "attributionRequired": true,
    "credit": "http://www.histoire-image.org/photo/zoom/nic08_isabey_02f.jpg",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Wiener Kongress, Europas Wiedergeburt durch den großen Herrscherverein zu Wien, 1814.jpg": {
    "file": "File:Wiener Kongress, Europas Wiedergeburt durch den großen Herrscherverein zu Wien, 1814.jpg",
@@ -39749,7 +39845,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Mapa del Virreinato de la Nueva España (1794).svg": {
    "file": "File:Mapa del Virreinato de la Nueva España (1794).svg",
@@ -39771,7 +39868,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "Own work HGIS de las Indias Españolas, 1701-1808 Atlas Ilustrado de los Pueblos de Indios de la Nueva España, 1800 Atlas Histórico Mundial El Virreinato de la Nueva España, ahora México, 1786-1821 Divisiones política de México, 1824 Reyno de la Nueva España (Siglo XIX)",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:January Suchodolski, Bitwa pod Somosierrą.jpg": {
    "file": "File:January Suchodolski, Bitwa pod Somosierrą.jpg",
@@ -39837,7 +39935,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Mapa de Hispanic America (made from Image:BlankMap-World.png)",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:LA BANDERA DE BOUCHARD.JPG": {
    "file": "File:LA BANDERA DE BOUCHARD.JPG",
@@ -39903,7 +40002,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "An illustration from the Encyclopaedia Biblica, a 1903 publication which is now in the public domain",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Paris, Bnf man Arabe 6805 fol. 92v-93v Shawq al-Mustaham Attempted translation of hieroglyphs.jpg": {
    "file": "File:Paris, Bnf man Arabe 6805 fol. 92v-93v Shawq al-Mustaham Attempted translation of hieroglyphs.jpg",
@@ -40035,7 +40135,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Charles Grey - 2nd Earl Grey - atop the Grey Momument - Newcastle upon Tyne - England - 140804.jpg": {
    "file": "File:Charles Grey - 2nd Earl Grey - atop the Grey Momument - Newcastle upon Tyne - England - 140804.jpg",
@@ -40255,7 +40356,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Own work User:Mathiasrex Maciej Szczepańczyk",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Horrible Massacre à Lyon - 1834.jpg": {
    "file": "File:Horrible Massacre à Lyon - 1834.jpg",
@@ -40343,7 +40445,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
    "attributionRequired": true,
    "credit": "https://www.researchgate.net/figure/Spread-of-the-potato-blight-in-Europe-1845-Credit-Hans-Blomme-Ghent-University_fig1_374616605",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Europe 1848 map en.png": {
    "file": "File:Europe 1848 map en.png",
@@ -40365,7 +40468,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "Own work. Source of zámára, Kartográfiai Vállalat. Budapest, Budapest 1989, ISBN 963-351-422-3 Other publications – Mike Rapport: 1848. Revolution in Europa, Wissenschaftliche Buchgesellschaft, Lizenzausgabe des Konrad Theiss Verlags, 2011, ISBN 978-3-534-23963-4",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Indian Rebellion of 1857.jpg": {
    "file": "File:Indian Rebellion of 1857.jpg",
@@ -40475,7 +40579,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "https://www.watercolourworld.org/painting/pensioned-sepoy-tww013595",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:1st Regiment of Skinner's Horse returning from a General Review, 1828.jpg": {
    "file": "File:1st Regiment of Skinner's Horse returning from a General Review, 1828.jpg",
@@ -40651,7 +40756,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Cuvier_elephant_jaw.jpg http://www.blackwellpublishing.com/paleobiology/figure.asp?chap=01&fig=Fig1-8&img=c01f008",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Darwin tree.png": {
    "file": "File:Darwin tree.png",
@@ -40673,7 +40779,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "http://www.english.uga.edu/nhilton/4890/darwin/DarwinTree.html",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Charles Darwin - Pigeon skulls.png": {
    "file": "File:Charles Darwin - Pigeon skulls.png",
@@ -40695,7 +40802,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Darwin, Charles (1883) [1868] \"Pigeons\" in The Variation of Plants and Animals Under Domestication (PDF), vol. 1 (Second editon, revised ed.), Category:New York: D. Appleton & Co, pp. 172 Retrieved on 15 June 2009.",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Alfred Russel Wallace 1862 - Project Gutenberg eText 15997.png": {
    "file": "File:Alfred Russel Wallace 1862 - Project Gutenberg eText 15997.png",
@@ -40805,7 +40913,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:First meeting between Giuseppe Garibaldi.jpg": {
    "file": "File:First meeting between Giuseppe Garibaldi.jpg",
@@ -40915,7 +41024,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "This image is available from the United States Library of Congress's Prints and Photographs division under the digital ID cph.3g02088. This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing.",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Abraham Lincoln 1860.jpg": {
    "file": "File:Abraham Lincoln 1860.jpg",
@@ -40959,7 +41069,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "attributionRequired": true,
    "credit": "The SVG code is valid. This vector image was created with Inkscape, and then manually edited.A trace, retouch, and recolour of Image:Secession Map of the United States, 1861.png by User:Tomf688.",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:US map 1864 Civil War divisions.svg": {
    "file": "File:US map 1864 Civil War divisions.svg",
@@ -40981,7 +41092,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "attributionRequired": true,
    "credit": "by myself",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:President-Jefferson-Davis.jpg": {
    "file": "File:President-Jefferson-Davis.jpg",
@@ -41047,7 +41159,8 @@
    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
    "attributionRequired": false,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Emancipation- the past and the future (20186657008).jpg": {
    "file": "File:Emancipation- the past and the future (20186657008).jpg",
@@ -41113,7 +41226,8 @@
    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
    "attributionRequired": true,
    "credit": "Map_of_USA_with_county_outlines.png",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Emancipation proclamation.jpg": {
    "file": "File:Emancipation proclamation.jpg",
@@ -41201,7 +41315,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "https://www.masshist.org/database/6471",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Emperor Meiji by Takahashi Yuichi.jpg": {
    "file": "File:Emperor Meiji by Takahashi Yuichi.jpg",
@@ -41267,7 +41382,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "https://www.metmuseum.org/art/collection/search/73544",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Arimura Jisaemon.jpg": {
    "file": "File:Arimura Jisaemon.jpg",
@@ -41377,7 +41493,8 @@
    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
    "attributionRequired": true,
    "credit": "Deutsches_Reich1.png, itself based on: Putzger, F. W. (1965) Historischer Weltatlas (89th ed.) (1969) Westermanns Großer Atlas zur Weltgeschichte, Georg Westermann Verlag Haacks geographischer Atlas. VEB Hermann Haack Geographisch-Kartographische Anstalt, Gotha/Leipzig, 1. Auflage, 1979 Kinder, Her…",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:HRR 1789 EN.png": {
    "file": "File:HRR 1789 EN.png",
@@ -41399,7 +41516,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "attributionRequired": true,
    "credit": "Own work based on: HRR 1789.png \"translated (somewhat) from original German version\" References: Putzger, F. W. (1965) Historischer Weltatlas (89th ed.) (1969) Westermanns Großer Atlas zur Weltgeschichte, Georg Westermann Verlag Haacks geographischer Atlas. VEB Hermann Haack Geographisch-Kartograph…",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Battle Of The Nations-Monument.jpg": {
    "file": "File:Battle Of The Nations-Monument.jpg",
@@ -41443,7 +41561,8 @@
    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
    "attributionRequired": true,
    "credit": "Own work using: Data of the IEG-Maps project (Andreas Kunz, B. Johnen and Joachim Robert Moeschl: University of Mainz) - http://www.ieg-maps.uni-mainz.de. [1] [2] [3]",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Wartburg demonstration 1817.jpg": {
    "file": "File:Wartburg demonstration 1817.jpg",
@@ -41795,7 +41914,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Colonial Africa 1913 map.svg": {
    "file": "File:Colonial Africa 1913 map.svg",
@@ -41817,7 +41937,8 @@
    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
    "attributionRequired": true,
    "credit": "Own work (Original text: Own work ;) Background map : Africa map political-fr.svg (this revision) (modified) created by myself ; Reference maps : Map by John Bartholomew & Co. visible on Britishempire.co.uk ; Map from Hammond's Atlas of the Modern World, 1917 ; Map from WHKMLA Historical Atlas ; Ma…",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Tribute to the Suffragettes, Christchurch, NZ - cropped.jpg": {
    "file": "File:Tribute to the Suffragettes, Christchurch, NZ - cropped.jpg",
@@ -42147,7 +42268,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:2012-08-17 Hodometer anagoria.JPG": {
    "file": "File:2012-08-17 Hodometer anagoria.JPG",
@@ -42323,7 +42445,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "https://sova.si.edu/record/NASM.XXXX.0393?s=11210&n=10&t=C&q=Art&i=11212 (pdf page 53 of 254)",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Wright Brothers Airplane, 2c, 1928 issue.jpg": {
    "file": "File:Wright Brothers Airplane, 2c, 1928 issue.jpg",
@@ -42653,7 +42776,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
    "attributionRequired": true,
    "credit": "travail personnel (own work) à partir de Image:Map of Russia-fr.svg",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Moscow State University Tunguska event 2014-01 1389528710.JPG": {
    "file": "File:Moscow State University Tunguska event 2014-01 1389528710.JPG",
@@ -42807,7 +42931,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Sun Yat-Sen In commemoration of the 130th anniversary of Dr. Sun's birth. Edited by Shanghai Museum of Sun Yat-Sen's Former Residence.",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Chinese Empire Reform Association VPL 26814.jpg": {
    "file": "File:Chinese Empire Reform Association VPL 26814.jpg",
@@ -42873,7 +42998,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Scanning",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:QiuJin feminist revolutionary.jpg": {
    "file": "File:QiuJin feminist revolutionary.jpg",
@@ -43049,7 +43175,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Engineering journal: 'The White Star liner Titanic', vol.91.",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:DC-1914-27-d-Sarajevo-cropped.jpg": {
    "file": "File:DC-1914-27-d-Sarajevo-cropped.jpg",
@@ -43181,7 +43308,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "File:Atentado_de_Sarajevo.png",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Ferdinand Behr arrested in Sarajevo 1914.jpg": {
    "file": "File:Ferdinand Behr arrested in Sarajevo 1914.jpg",
@@ -43247,7 +43375,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
    "attributionRequired": true,
    "credit": "Translated in English from French SVG Map_Europe_alliances_1914-fr.svg",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:World 1914 empires colonies territory.PNG": {
    "file": "File:World 1914 empires colonies territory.PNG",
@@ -43269,7 +43398,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Bundesarchiv DVM 10 Bild-23-61-23, Linienschiff \"SMS Rheinland\".jpg": {
    "file": "File:Bundesarchiv DVM 10 Bild-23-61-23, Linienschiff \"SMS Rheinland\".jpg",
@@ -43313,7 +43443,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Historijski Arhiv Sarajevo. Found in a .pdf edition of \"Sarajevo, biografija grada\" (\"Sarajevo, A Biography\") by Robert J. Donia.",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:The War of the Nations WW1 337.jpg": {
    "file": "File:The War of the Nations WW1 337.jpg",
@@ -43731,7 +43862,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "http://query.nytimes.com/mem/archive-free/pdf?res=9F0DE0D9123FE433A2575AC0A9679D946696D6CF",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:19170704 Riot on Nevsky prosp Petrograd.jpg": {
    "file": "File:19170704 Riot on Nevsky prosp Petrograd.jpg",
@@ -44105,7 +44237,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "https://www.newspapers.com/image/354961550/",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Treaty of Versailles, English version.jpg": {
    "file": "File:Treaty of Versailles, English version.jpg",
@@ -44237,7 +44370,8 @@
    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
    "attributionRequired": true,
    "credit": "This file was derived from: Map of the German Empire.PNG",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Bundesarchiv Bild 146-1972-081-03, Zerlegen eines schweren Geschützes.jpg": {
    "file": "File:Bundesarchiv Bild 146-1972-081-03, Zerlegen eines schweren Geschützes.jpg",
@@ -44589,7 +44723,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:1930-67B.png": {
    "file": "File:1930-67B.png",
@@ -44611,7 +44746,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "GALLERY SIX: The Great Depression (direct link). Herbert Hoover Presidential Library and Museum. Archived from the original on May 12, 2014 (direct link).",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Great Depression money supply contraction.webp": {
    "file": "File:Great Depression money supply contraction.webp",
@@ -44655,7 +44791,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Social Security History Site",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:UnemployedMarch.jpg": {
    "file": "File:UnemployedMarch.jpg",
@@ -44809,7 +44946,8 @@
    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
    "attributionRequired": false,
    "credit": "http://www.usstuckonstupid.com/sos_downchart.php?year=1900_1939&units=s&chart=m2&bar=1&stack=1&size=l&title=&color=c http://www.usstuckonstupid.com/sos_downchart.php?year=1913_1939&units=s&chart=m2&bar=1&stack=1&size=m&title=&color=c http://www.lidderdale.com/econ/311/ch8Lect.html http://www.sjsu.e…",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Marche sel.jpg": {
    "file": "File:Marche sel.jpg",
@@ -45007,7 +45145,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Omaha daily bee., February 22, 1919, Image 1 Great Falls daily tribune., February 22, 1919, Image 1 Omaha daily bee., February 23, 1919, Image 1 The Washington times., February 23, 1919, NATIONAL EDITION, Image 1",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Hitler's DAP membership card.png": {
    "file": "File:Hitler's DAP membership card.png",
@@ -45029,7 +45168,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Kershaw, Hitler: Hubris 1889-1936, Penguin Books, p. 127",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:BASA-237K-1-351-176.jpg": {
    "file": "File:BASA-237K-1-351-176.jpg",
@@ -45139,7 +45279,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:MolotovRibbentropStalin.jpg": {
    "file": "File:MolotovRibbentropStalin.jpg",
@@ -45183,7 +45324,8 @@
    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
    "attributionRequired": true,
    "credit": "Transferred from en.wikipedia to Commons.",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Polish infantry marching -2 1939.jpg": {
    "file": "File:Polish infantry marching -2 1939.jpg",
@@ -45249,7 +45391,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Komuda, Leszek (1973) Polski czołg lekki 7TP, Warszawa: TBiU No. 21",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Poland1939 GermanPlanMap.jpg": {
    "file": "File:Poland1939 GermanPlanMap.jpg",
@@ -45491,7 +45634,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "attributionRequired": true,
    "credit": "The borders for this map are primarily based on World2Hires_filled_mercator.svg and Image:Pacific_Area_-_The_Imperial_Powers_1939_-_Map.jpg, but some changes have been made based off information from other sources. Please edit the file if you have access to better information. The border of Manchuk…",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Japanese attack plan at Pearl Harbor, Japan, 1941.jpg": {
    "file": "File:Japanese attack plan at Pearl Harbor, Japan, 1941.jpg",
@@ -45777,7 +45921,8 @@
    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
    "attributionRequired": true,
    "credit": "Own work information from Overy, Richard (2019) World War II Map by Map, DK, pp. 148−150 ISBN: 9780241358719.",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Stanowisko dowodzenia na froncie nad Donem (2-1532).jpg": {
    "file": "File:Stanowisko dowodzenia na froncie nad Donem (2-1532).jpg",
@@ -45821,7 +45966,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "German Summer Offensive, 7 May-23 July 1942 - Atlases from the History Department of the United States Military Academy",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Bundesarchiv Bild 183-B28822, Russland, Kampf um Stalingrad, Infanterie.jpg": {
    "file": "File:Bundesarchiv Bild 183-B28822, Russland, Kampf um Stalingrad, Infanterie.jpg",
@@ -45865,7 +46011,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "German Advance to Stalingrad between 24 July and 18 November - Atlases from the History Department of the United States Military Academy",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Bundesarchiv Bild 183-B22081, Russland, Kampf um Stalingrad, Luftangriff.jpg": {
    "file": "File:Bundesarchiv Bild 183-B22081, Russland, Kampf um Stalingrad, Luftangriff.jpg",
@@ -45997,7 +46144,8 @@
    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
    "attributionRequired": true,
    "credit": "English Wikipedia, File:Atlantic-Wall.gif",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Bundesarchiv Bild 101I-719-0240-26, Pas de Calais, Atlantikwall, Panzersperren.jpg": {
    "file": "File:Bundesarchiv Bild 101I-719-0240-26, Pas de Calais, Atlantikwall, Panzersperren.jpg",
@@ -46327,7 +46475,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "https://archive.org/details/trialofmajorwarc2817gori/mode/2up See also: https://www.loc.gov/item/2011525338_NT_Vol-XXVIII/ See also: https://www.gutenberg.org/ebooks/51292 (Volume 01)",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:A.N. Trainin speaks at the War Crimes Executive Committee.jpg": {
    "file": "File:A.N. Trainin speaks at the War Crimes Executive Committee.jpg",
@@ -46525,7 +46674,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Via [1]",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Gandhi at Peshawar meeting.jpg": {
    "file": "File:Gandhi at Peshawar meeting.jpg",
@@ -46613,7 +46763,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "The Israel Museum's 'Dead Sea Scrolls Digital Project', link: [1]",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Kumeran4.jpg": {
    "file": "File:Kumeran4.jpg",
@@ -46767,7 +46918,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Čížov (Zaisa) - preserved part of Iron curtain.JPG": {
    "file": "File:Čížov (Zaisa) - preserved part of Iron curtain.JPG",
@@ -46811,7 +46963,8 @@
    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
    "attributionRequired": true,
    "credit": null,
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Marshallplanhilfe.gif": {
    "file": "File:Marshallplanhilfe.gif",
@@ -46833,7 +46986,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing.",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:C-47s at Tempelhof Airport Berlin 1948.jpg": {
    "file": "File:C-47s at Tempelhof Airport Berlin 1948.jpg",
@@ -46921,7 +47075,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Extracted from PDF version of Our Flag, available here (direct PDF URL here.)",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:George C. Marshall, U.S. Secretary of State.jpg": {
    "file": "File:George C. Marshall, U.S. Secretary of State.jpg",
@@ -46965,7 +47120,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "attributionRequired": true,
    "credit": "File:Blank political map of Europe EU27 iso3166-1 code.svg File:East-west germany.svg",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Bundesarchiv Bild 183-B0527-0001-753, Krefeld, Hungerwinter, Demonstration.jpg": {
    "file": "File:Bundesarchiv Bild 183-B0527-0001-753, Krefeld, Hungerwinter, Demonstration.jpg",
@@ -47075,7 +47231,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
    "attributionRequired": true,
    "credit": "Own work based on: map data of the IEG-Maps project (Andreas Kunz, B. Johnen and Joachim Robert Moeschl: University of Mainz) - www.ieg-maps.uni-mainz.de.",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Berlin Blockade-map.svg": {
    "file": "File:Berlin Blockade-map.svg",
@@ -47097,7 +47254,8 @@
    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
    "attributionRequired": true,
    "credit": "Own work based on: File:Occupiedberlin.png by User:Complex01",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:BerlinerBlockadeLuftwege.png": {
    "file": "File:BerlinerBlockadeLuftwege.png",
@@ -47119,7 +47277,8 @@
    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Germans-airlift-1948.jpg": {
    "file": "File:Germans-airlift-1948.jpg",
@@ -47339,7 +47498,8 @@
    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:South Korean refugees mid-1950.jpg": {
    "file": "File:South Korean refugees mid-1950.jpg",
@@ -47471,7 +47631,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": null,
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Dna-split.png": {
    "file": "File:Dna-split.png",
@@ -47493,7 +47654,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "DOE Human Genome project",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Template from Crick and Watson’s DNA molecular model, 1953. (9660573227).jpg": {
    "file": "File:Template from Crick and Watson’s DNA molecular model, 1953. (9660573227).jpg",
@@ -47537,7 +47699,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Bandung bulletin",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Gedung.Merdeka.jpg": {
    "file": "File:Gedung.Merdeka.jpg",
@@ -47779,7 +47942,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Republic of Ghana",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Ghana Regions map.png": {
    "file": "File:Ghana Regions map.png",
@@ -47801,7 +47965,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "attributionRequired": true,
    "credit": "Own work based on Perry-Castañeda Library Map Collection Ghana Maps",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Guinea from Milner's Atlas.jpg": {
    "file": "File:Guinea from Milner's Atlas.jpg",
@@ -47999,7 +48164,8 @@
    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
    "attributionRequired": false,
    "credit": null,
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Dawn of the Space Age.jpg": {
    "file": "File:Dawn of the Space Age.jpg",
@@ -48329,7 +48495,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "http://en.wikipedia.org/wiki/Image:Vostok_1_orbit.png",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Gagarin Capsule.jpg": {
    "file": "File:Gagarin Capsule.jpg",
@@ -48417,7 +48584,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Bundesarchiv Bild 183-85458-0002, Berlin, Mauerbau, Kampfgruppen am Brandenburger Tor.jpg": {
    "file": "File:Bundesarchiv Bild 183-85458-0002, Berlin, Mauerbau, Kampfgruppen am Brandenburger Tor.jpg",
@@ -48615,7 +48783,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Defense Intelligence Digest: Special Historical Edition (29 September 2011,) Chapter: The Cuban Missile crisis, October 1962, page 1.",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:1962 Cuba Missiles (30848755396).jpg": {
    "file": "File:1962 Cuba Missiles (30848755396).jpg",
@@ -49033,7 +49202,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "https://baotanglichsu.vn/vi/Articles/2002/67964/djai-hoi-djai-bieu-toan-quoc-lan-thu-ii-11-19-2-1951.html",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:1954 Geneva Conference.jpg": {
    "file": "File:1954 Geneva Conference.jpg",
@@ -49429,7 +49599,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "The Computer History Museum ([1]), en:File:Arpnet-map-march-1977.png",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Arpanet in the 1970s.png": {
    "file": "File:Arpanet in the 1970s.png",
@@ -49451,7 +49622,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:1969 ARPANET BBN IMP.jpg": {
    "file": "File:1969 ARPANET BBN IMP.jpg",
@@ -49517,7 +49689,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "https://www.darpa.mil/attachments/(2O15)%20Global%20Nav%20-%20About%20Us%20-%20History%20-%20Resources%20-%2050th%20-%20Internet%20(Approved).pdf",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Arpanet map 1973.jpg": {
    "file": "File:Arpanet map 1973.jpg",
@@ -49627,7 +49800,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "attributionRequired": true,
    "credit": "This image has been extracted from another file",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Terracotta Army-China2.jpg": {
    "file": "File:Terracotta Army-China2.jpg",
@@ -49913,7 +50087,8 @@
    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
    "attributionRequired": false,
    "credit": "Decay_heat_illustration.PNG",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:View of Chernobyl taken from Pripyat zoomed.JPG": {
    "file": "File:View of Chernobyl taken from Pripyat zoomed.JPG",
@@ -50309,7 +50484,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "Own work based on:file:Wikipedia wordmark.svg",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:The world’s first web server, exhibited at CERN in Geneva. DSC03299.jpg": {
    "file": "File:The world’s first web server, exhibited at CERN in Geneva. DSC03299.jpg",
@@ -50353,7 +50529,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Commons.png": {
    "file": "File:Commons.png",
@@ -50375,7 +50552,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "http://stats.wikimedia.org/wikimedia/gallery/Gallery_Wx.htm (Original uploaded on id.wikipedia)",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:United States Antarctic Program website from 2018 02 22.png": {
    "file": "File:United States Antarctic Program website from 2018 02 22.png",
@@ -50397,7 +50575,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "https://www.usap.gov/",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Inside and Rear of Webserver.jpg": {
    "file": "File:Inside and Rear of Webserver.jpg",
@@ -50441,7 +50620,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "attributionRequired": true,
    "credit": "File:BlankMap-World-Microstates.svg",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Flag Map of Allied-Occupied Germany.png": {
    "file": "File:Flag Map of Allied-Occupied Germany.png",
@@ -50463,7 +50643,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Flag Map of West & East Germany.png": {
    "file": "File:Flag Map of West & East Germany.png",
@@ -50485,7 +50666,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Germany in Europe (-rivers -mini map).svg": {
    "file": "File:Germany in Europe (-rivers -mini map).svg",
@@ -50507,7 +50689,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "attributionRequired": true,
    "credit": "This SVG map includes elements from this map:",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Bundesarchiv Bild 183-1990-1003-417, Berlin, Flaggen vor dem Reichstag.jpg": {
    "file": "File:Bundesarchiv Bild 183-1990-1003-417, Berlin, Flaggen vor dem Reichstag.jpg",
@@ -50573,7 +50756,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "attributionRequired": true,
    "credit": "File:USSR map.svg",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Life expectancy in USSR vs leader.png": {
    "file": "File:Life expectancy in USSR vs leader.png",
@@ -50595,7 +50779,8 @@
    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
    "attributionRequired": false,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:RIAN archive 850809 General Secretary of the CPSU CC M. Gorbachev (crop).jpg": {
    "file": "File:RIAN archive 850809 General Secretary of the CPSU CC M. Gorbachev (crop).jpg",
@@ -50749,7 +50934,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "Derived from File:Schengen Area.svg",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Stone memorial in front of the entry to the Limburg Province government building in Maastricht, Netherlands, commemorating the signing of the Maastricht Treaty in February 1992.jpg": {
    "file": "File:Stone memorial in front of the entry to the Limburg Province government building in Maastricht, Netherlands, commemorating the signing of the Maastricht Treaty in February 1992.jpg",
@@ -50793,7 +50979,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "Europe-countries-outline-iso-coded-plain.svg",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Nelson Mandela 1994.jpg": {
    "file": "File:Nelson Mandela 1994.jpg",
@@ -50859,7 +51046,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Mandela voting in 1994.jpg": {
    "file": "File:Mandela voting in 1994.jpg",
@@ -50925,7 +51113,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Africa Addio",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Paul Kagame 2014.jpg": {
    "file": "File:Paul Kagame 2014.jpg",
@@ -51145,7 +51334,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "New York City seen from the International Space Station by NASA Astronaut Frank Culbertson on the 11th day of September in 2001",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:World Trade Center Site After 9-11 Attacks With Original Building Locations.jpg": {
    "file": "File:World Trade Center Site After 9-11 Attacks With Original Building Locations.jpg",
@@ -51233,7 +51423,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "attributionRequired": true,
    "credit": "Own work (Original text: I (Russ London (talk)) created this work entirely by myself.)",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Human karyotype with bands and sub-bands.png": {
    "file": "File:Human karyotype with bands and sub-bands.png",
@@ -51255,7 +51446,8 @@
    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
    "attributionRequired": false,
    "credit": "edit Own work, integrating the following Public Domain pictures: Chromosomes, with annotated bands and sub-bands, by User:Was a bee, in turn using data from the Human Genome Project, as displayed in the Ensembl genome database: Ensembl - Homo sapiens: Animal Cell.svg by Kelvin Ma (for mitochondrial…",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Lehman Brothers Times Square by David Shankbone.jpg": {
    "file": "File:Lehman Brothers Times Square by David Shankbone.jpg",
@@ -51299,7 +51491,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:NYUGDPFinancialShare.jpg": {
    "file": "File:NYUGDPFinancialShare.jpg",
@@ -51453,7 +51646,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "This file was derived from: BlankMap-Middle East.svg",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Hundreds of thousands of Bahrainis taking part in march of loyalty to martyrs.jpg": {
    "file": "File:Hundreds of thousands of Bahrainis taking part in march of loyalty to martyrs.jpg",
@@ -51585,7 +51779,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "attributionRequired": true,
    "credit": "https://cds.cern.ch/record/1630222",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Mecanismo de Higgs PH.png": {
    "file": "File:Mecanismo de Higgs PH.png",
@@ -51607,7 +51802,8 @@
    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
    "attributionRequired": true,
    "credit": null,
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Nobel Prize 24 2013.jpg": {
    "file": "File:Nobel Prize 24 2013.jpg",
@@ -51651,7 +51847,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "https://www.nature.com/articles/s41586-022-04893-w https://www.nature.com/nature-portfolio/editorial-policies/self-archiving-and-license-to-publish#creative-commons-licences",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Spontaneous symmetry breaking (explanatory diagram).png": {
    "file": "File:Spontaneous symmetry breaking (explanatory diagram).png",
@@ -51673,7 +51870,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:HiggsDecays.png": {
    "file": "File:HiggsDecays.png",
@@ -51695,7 +51893,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "https://www.nature.com/articles/s41586-022-04892-x https://www.nature.com/nature-portfolio/editorial-policies/self-archiving-and-license-to-publish#creative-commons-licences",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Light dispersion of a mercury-vapor lamp with a flint glass prism IPNr°0125.jpg": {
    "file": "File:Light dispersion of a mercury-vapor lamp with a flint glass prism IPNr°0125.jpg",
@@ -51739,7 +51938,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "This file uses File:Detailed Blank World Map.svg as a basis. Changes to the paths and their classes, are shown in the Changelog, which is included at the beginning of the file. Please do also update the Changelog, so that at any time the file can be updated easily if the political map (state border…",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:GUSTAVO-CAMACHO-GONZALEZ-L1060274 (23430273715).jpg": {
    "file": "File:GUSTAVO-CAMACHO-GONZALEZ-L1060274 (23430273715).jpg",
@@ -51849,7 +52049,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Covid-19 SP - UTI V. Nova Cachoeirinha.jpg": {
    "file": "File:Covid-19 SP - UTI V. Nova Cachoeirinha.jpg",
@@ -51893,7 +52094,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "Own work. Scientific consultants: Nikitin N.A., Doctor of Biological Sciences, Department of Virology, Faculty of Biology, Lomonosov Moscow State University. Borisevich S.S. Candidate of Chemical Sciences, Specialist in Molecular Modeling of Viral Surface Proteins, Senior Researcher, Head of the \"Q…",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:2020-3-20 黄冈送别山东援鄂医疗队 黄梅戏大剧院.jpg": {
    "file": "File:2020-3-20 黄冈送别山东援鄂医疗队 黄梅戏大剧院.jpg",
@@ -51937,7 +52139,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:2020Sept26-BioFire-Waldron-HR.jpg": {
    "file": "File:2020Sept26-BioFire-Waldron-HR.jpg",
@@ -52245,7 +52448,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "3. meisterdrucke.es/impresion-art%C3%ADstica/Otto-van-Veen/961276/Retrato-del-condottiero-Alejandro-(Alessandro)-Farnesio 1 & 2. Not provided by uploaders",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Maurits (1567-1625), prins van Oranje, in de slag bij Nieuwpoort (1600).jpg": {
    "file": "File:Maurits (1567-1625), prins van Oranje, in de slag bij Nieuwpoort (1600).jpg",
@@ -52443,7 +52647,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
    "attributionRequired": true,
    "credit": null,
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Plakkaat van Verlatinghe, pagina 1.jpg": {
    "file": "File:Plakkaat van Verlatinghe, pagina 1.jpg",
@@ -52971,7 +53176,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "https://images.wur.nl/digital/collection/coll2/id/318",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Semper Augustus - Six Collection (no book).jpg": {
    "file": "File:Semper Augustus - Six Collection (no book).jpg",
@@ -53081,7 +53287,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Wageningen University & Research (WUR) - https://edepot.wur.nl/197358",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Plattegrond van Deshima.jpg": {
    "file": "File:Plattegrond van Deshima.jpg",
@@ -53125,7 +53332,8 @@
    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
    "attributionRequired": false,
    "credit": "Public Domain",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Nagasakie. Dutch man with his slave.jpg": {
    "file": "File:Nagasakie. Dutch man with his slave.jpg",
@@ -53521,7 +53729,8 @@
    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
    "attributionRequired": false,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:One-Year German Regulator Clock.jpg": {
    "file": "File:One-Year German Regulator Clock.jpg",
@@ -53587,7 +53796,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "http://commons.wikimedia.org/wiki/Image:RaidMedwayKarte.png",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Het verbranden van de Engelse vloot voor Chatham - The Dutch burn down the English fleet before Chatham - June 20 1667 (Peter van de Velde).jpg": {
    "file": "File:Het verbranden van de Engelse vloot voor Chatham - The Dutch burn down the English fleet before Chatham - June 20 1667 (Peter van de Velde).jpg",
@@ -53741,7 +53951,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "attributionRequired": true,
    "credit": "own work, used: http://courses.washington.edu/bandafs/ http://liveaboards-indonesia.com/images/destinations/banda_islands_484.gif File:Indonesia location map.svg by User:Uwe Dedering",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Van Minderhout Battle of Lowestoft.jpg": {
    "file": "File:Van Minderhout Battle of Lowestoft.jpg",
@@ -53829,7 +54040,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Johannes van Wijckersloot - Allegorie op de Franse invasie van 1672.jpg": {
    "file": "File:Johannes van Wijckersloot - Allegorie op de Franse invasie van 1672.jpg",
@@ -53939,7 +54151,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Anthonie van Leeuwenhoek (1632-1723). Natuurkundige te Delft Rijksmuseum SK-A-957.jpeg": {
    "file": "File:Anthonie van Leeuwenhoek (1632-1723). Natuurkundige te Delft Rijksmuseum SK-A-957.jpeg",
@@ -54137,7 +54350,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "attributionRequired": true,
    "credit": "Own work A source (reference) has not been provided for the data in this self-made map.",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:War of the Spanish Succession alliances (1703).png": {
    "file": "File:War of the Spanish Succession alliances (1703).png",
@@ -54159,7 +54373,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Embaixadores e Plenipotenciários de Portugal e Castela assinando a Paz no interior do Malho aos 6 de Fevereiro de 1715.jpg": {
    "file": "File:Embaixadores e Plenipotenciários de Portugal e Castela assinando a Paz no interior do Malho aos 6 de Fevereiro de 1715.jpg",
@@ -54203,7 +54418,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Nouvelle-France map-en.svg": {
    "file": "File:Nouvelle-France map-en.svg",
@@ -54225,7 +54441,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "attributionRequired": true,
    "credit": "Own work using: Image:Nouvelle-France1750.png Les Villes françaises du Nouveau Monde : des premiers fondateurs aux ingénieurs du roi, XVIe-XVIIIe siècles, sous la direction de Laurent Vidal et Emilie d'Orgeix, Paris: Somogy 1999. Canada-Québec 1534-2000, Jacques Lacoursière, Jean Provencher et Deni…",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Hmap.jpg": {
    "file": "File:Hmap.jpg",
@@ -54357,7 +54574,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:De inkomst te Amsterdam van Lodewijk Napoleon op 20 April 1808, RP-T-00-2246 (cropped).jpg": {
    "file": "File:De inkomst te Amsterdam van Lodewijk Napoleon op 20 April 1808, RP-T-00-2246 (cropped).jpg",
@@ -54555,7 +54773,8 @@
    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
    "attributionRequired": true,
    "credit": "Own work originally at nl:Afbeelding:NLLuxDB.png",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:William I of the Netherlands.jpg": {
    "file": "File:William I of the Netherlands.jpg",
@@ -54863,7 +55082,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Afsluitdijk - The Tower.jpg": {
    "file": "File:Afsluitdijk - The Tower.jpg",
@@ -55237,7 +55457,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "http://www.vonk.org/Nederland/75-jaar-sinds-de-februaristaking-tegen-deportatie-en-bezetting.html",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:De Dokwerker.jpg": {
    "file": "File:De Dokwerker.jpg",
@@ -55347,7 +55568,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Nationaal Archief",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Groep bepakte en bezakte joden op de hoek van de Lekstraat in de Amsterdamse Rivierenbuurt.jpg": {
    "file": "File:Groep bepakte en bezakte joden op de hoek van de Lekstraat in de Amsterdamse Rivierenbuurt.jpg",
@@ -55545,7 +55767,8 @@
    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
    "attributionRequired": true,
    "credit": "selfmade Map User:W.wolny",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Twee deelnemers aan de hongertochten tijdens de hongerwinter.jpg": {
    "file": "File:Twee deelnemers aan de hongertochten tijdens de hongerwinter.jpg",
@@ -56007,7 +56230,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "https://digital.nmla.metoffice.gov.uk/archive/sdb%3Acollection%7C86058de1-8d55-4bc5-8305-5698d0bd7e13/",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:North Sea flood of 1953.png": {
    "file": "File:North Sea flood of 1953.png",
@@ -56029,7 +56253,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
    "attributionRequired": true,
    "credit": "\"own work\", used Diercke Schulatlas, Verlag Westermann",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Sturmflut 1953 2.jpg": {
    "file": "File:Sturmflut 1953 2.jpg",
@@ -56095,7 +56320,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Belgien1953.png": {
    "file": "File:Belgien1953.png",
@@ -56117,7 +56343,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Oosterscheldekering-pohled.jpg": {
    "file": "File:Oosterscheldekering-pohled.jpg",
@@ -56227,7 +56454,8 @@
    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
    "attributionRequired": true,
    "credit": "Own work. This file was derived from: Same sex marriage map Europe 2007.svg See #Sources for the data on which this map is based.",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Same-sex marriage map Netherlands.svg": {
    "file": "File:Same-sex marriage map Netherlands.svg",
@@ -56249,7 +56477,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:The Last Supper - Leonardo Da Vinci - High Resolution 32x16.jpg": {
    "file": "File:The Last Supper - Leonardo Da Vinci - High Resolution 32x16.jpg",
@@ -57283,7 +57512,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Hokusai's \"The Great Wave off Kanagawa\", reversed by Philcha",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Kajikazawa in Kai Province (Koshu Kajikazawa).jpg": {
    "file": "File:Kajikazawa in Kai Province (Koshu Kajikazawa).jpg",
@@ -57547,7 +57777,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "http://storage.torontosun.com/v1/blogs-prod-photos/a/b/6/b/b/ab6bba607f71265ebf173fa0e1adbd75.jpg?stmp=1335928250",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:TheScream Theft 1994.png": {
    "file": "File:TheScream Theft 1994.png",
@@ -57569,7 +57800,8 @@
    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
    "attributionRequired": false,
    "credit": "https://www.nbcnews.com/id/wbna5787000",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Tight security over Munch's 'Skrik'.jpg": {
    "file": "File:Tight security over Munch's 'Skrik'.jpg",
@@ -57811,7 +58043,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "http://moro.imss.fi.it/lettura/LetturaWEB.DLL?AZIONE=IMG&TESTO=E_Y&PARAM=03-63.jpg, http://moro.imss.fi.it/lettura/LetturaWEB.DLL?AZIONE=IMG&TESTO=E_Y&PARAM=03-66.jpg and http://moro.imss.fi.it/lettura/LetturaWEB.DLL?AZIONE=IMG&TESTO=E_Y&PARAM=03-66.jpg",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Pleiades Sidereus Nuncius.png": {
    "file": "File:Pleiades Sidereus Nuncius.png",
@@ -57833,7 +58066,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by/1.0",
    "attributionRequired": true,
    "credit": "http://hos.ou.edu/galleries/17thCentury/Galileo/1610/Galileo-1610-016c-r%20-%20Version%202-image/",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Medicean Stars.png": {
    "file": "File:Medicean Stars.png",
@@ -57855,7 +58089,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "http://hos.ou.edu/galleries/17thCentury/Galileo/1610/Galileo-1610-023r-image/5in/",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Smallpox vaccine.jpg": {
    "file": "File:Smallpox vaccine.jpg",
@@ -58053,7 +58288,8 @@
    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
    "attributionRequired": false,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Left side of Benz Patent-Motorwagen Model 2 without the rear box, Science Museum, London, 1925.jpg": {
    "file": "File:Left side of Benz Patent-Motorwagen Model 2 without the rear box, Science Museum, London, 1925.jpg",
@@ -58141,7 +58377,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Espacenet European Patents: Swiss Federal Patent CH960A submitted 6 March 1889; published 19 August 1889",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Benz-Patent-Motorwagen - Illustrirte Zeitung 1888.jpg": {
    "file": "File:Benz-Patent-Motorwagen - Illustrirte Zeitung 1888.jpg",
@@ -58185,7 +58422,8 @@
    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
    "attributionRequired": true,
    "credit": "de.wikipedia, original upload 26. Jun 2004 by",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Edison Carbon Bulb.jpg": {
    "file": "File:Edison Carbon Bulb.jpg",
@@ -58449,7 +58687,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "US patent 465971, T. A. Edison, Means for transmitting signals electrically, granted 29 December 1891, fig. 1",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:HEINRICH HERTZ.JPG": {
    "file": "File:HEINRICH HERTZ.JPG",
@@ -58493,7 +58732,8 @@
    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:David Edward Hughes.jpg": {
    "file": "File:David Edward Hughes.jpg",
@@ -59131,7 +59371,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "British Museum",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Concilio Trento Museo Buonconsiglio.jpg": {
    "file": "File:Concilio Trento Museo Buonconsiglio.jpg",
@@ -59219,7 +59460,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Biblioteca Nacional de Portugal",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Chemnitz, Martin (1522-1586).jpg": {
    "file": "File:Chemnitz, Martin (1522-1586).jpg",
@@ -59373,7 +59615,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Famien Strada Histoire-Beeldenstorm Antwerpen-ppn087811480 MG 8893T1p329.tif": {
    "file": "File:Famien Strada Histoire-Beeldenstorm Antwerpen-ppn087811480 MG 8893T1p329.tif",
@@ -59549,7 +59792,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "https://populocongregato.over-blog.com/2016/02/konzelebration-in-der-messfeier.html",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Second Vatican Council by Lothar Wolleh 006.jpg": {
    "file": "File:Second Vatican Council by Lothar Wolleh 006.jpg",
@@ -59615,7 +59859,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Adolf Hitler cropped restored 3x4.jpg": {
    "file": "File:Adolf Hitler cropped restored 3x4.jpg",
@@ -60055,7 +60300,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Berlin/Ethnologisches Museum, Staatliche Museen, Berlin, Germany / Art Resource, NY",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Auguste Lumière.jpg": {
    "file": "File:Auguste Lumière.jpg",
@@ -60473,7 +60719,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "https://www.president.gov.tw/Page/83 https://ahonline.drnh.gov.tw/index.php?act=Display/image/1963743AxkcLp=#d7J",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Christiaan-huygens4.jpg": {
    "file": "File:Christiaan-huygens4.jpg",
@@ -60671,7 +60918,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "https://en.wikisource.org/wiki/Page:Great_Men_and_Famous_Women_Volume_1.djvu/25",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Darius the great. jpg.jpg": {
    "file": "File:Darius the great. jpg.jpg",
@@ -62079,7 +62327,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Transferred from nl.wikipedia to Commons by Koektrommel using CommonsHelper.",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Job Cohen crop.jpg": {
    "file": "File:Job Cohen crop.jpg",
@@ -62651,7 +62900,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "File:Francesco_Molzi_-_Portrait_of_Leonardo_-_WGA14795.jpg",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Leonidas Statue.jpg": {
    "file": "File:Leonidas Statue.jpg",
@@ -62783,7 +63033,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "https://onb.digital/result/10FEF6C9",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Lord Mountbatten Naval in colour Allan Warren.jpg": {
    "file": "File:Lord Mountbatten Naval in colour Allan Warren.jpg",
@@ -63355,7 +63606,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "http://www.britishmuseum.org/",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Mohammad Hatta, Pekan Buku Indonesia 1954, p242.jpg": {
    "file": "File:Mohammad Hatta, Pekan Buku Indonesia 1954, p242.jpg",
@@ -63597,7 +63849,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "British Museum",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Olaudah Equiano - Project Gutenberg eText 15399.png": {
    "file": "File:Olaudah Equiano - Project Gutenberg eText 15399.png",
@@ -63619,7 +63872,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Project Gutenberg eText 15399 - http://www.gutenberg.org/etext/15399 Author: Uploader: User Tagishsimon on en.wikipedia; description page is (was) here * 01:52, 17 April 2005 [[:en:User:Tagishsimon|Tagishsimon]] 455×700 (50,997 bytes) <span class=\"comment\">([[:en:Olaudah Equiano]] - [[:en:Project G…",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Oliver Cromwell by Samuel Cooper.jpg": {
    "file": "File:Oliver Cromwell by Samuel Cooper.jpg",
@@ -63971,7 +64225,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Rouillé, Guillaume (1553) Promptuarium Iconum Insigniorum pars secunda, Lyon: Apud Gulielmum Rovillium, p. 7 OCLC: 716696497.",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": true
   },
   "File:Ioannes XXIII, by De Agostini, 1958–1963.jpg": {
    "file": "File:Ioannes XXIII, by De Agostini, 1958–1963.jpg",
@@ -64081,7 +64336,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Bibliothèque nationale de France",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Pietro da Cortona - Portrait of Urban VIII (ca. 1624-1627) - Google Art Project - edited.jpg": {
    "file": "File:Pietro da Cortona - Portrait of Urban VIII (ca. 1624-1627) - Google Art Project - edited.jpg",
@@ -65335,7 +65591,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
    "attributionRequired": true,
    "credit": "Ю.А. Гагарин. Не позднее 1961 г.. Открытка с автографом. Главархив Москвы, ГБУ «ЦГА Москвы». Ф. Л-396. Оп. 1. Д. 1319. Л. 1 ([1]) Гагарин Ю. А., 1961 год. Опубликовано в: Вечерняя Москва. 12 апреля 1961, № 87 (11372) Ленинское знамя. 18 апреля 1961, № 47 (4561) Орехово-Зуевская правда. 15 апреля 19…",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:ZhangQianTravels.jpg": {
    "file": "File:ZhangQianTravels.jpg",
@@ -65929,7 +66186,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Birmingham-Skyline-from-Edgbaston-crop.jpg": {
    "file": "File:Birmingham-Skyline-from-Edgbaston-crop.jpg",
@@ -67073,7 +67331,8 @@
    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Triangular extrapolation of historical Kalinga region in South Asia.jpg": {
    "file": "File:Triangular extrapolation of historical Kalinga region in South Asia.jpg",
@@ -67381,7 +67640,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
    "attributionRequired": true,
    "credit": "All CC/PD sources: File:Longmen Grottoes 3.jpg File:洛阳红牡丹.jpg File:KAM 5394 (6152837230).jpg File:LongmenBridge1962.JPG",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:MaastrichtAltstadt.jpg": {
    "file": "File:MaastrichtAltstadt.jpg",
@@ -67997,7 +68257,8 @@
    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
    "attributionRequired": false,
    "credit": "This file was derived from: BlankMap-Europe-v3.png",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Nuremberg, view from Sinwell Tower 2012.06.16 - panoramio.jpg": {
    "file": "File:Nuremberg, view from Sinwell Tower 2012.06.16 - panoramio.jpg",
@@ -68107,7 +68368,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "attributionRequired": true,
    "credit": "File:LHR-111019-29liten.jpg File:Det kongelige slott 2 photo D Ramey Logan.jpg File:Fort Oslo Marina photo D Ramey Logan.jpg File:Akershus Geitholmen IMG 9871.JPG File:Stortingsbygningen.jpg File:Full Opera by night.jpg",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Raja Hemu's 'Beheading Place'.JPG": {
    "file": "File:Raja Hemu's 'Beheading Place'.JPG",
@@ -68921,7 +69183,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Steenvoorde Mairie.JPG": {
    "file": "File:Steenvoorde Mairie.JPG",
@@ -69053,7 +69316,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "Photo by Zairon {{Cc-by-sa-4.0}} Photo by Jiuguang Wang {{Cc-by-sa-2.0}} Photo by Ben Bender {{Cc-by-sa-3.0}} Photo by CEphoto, Uwe Aranas {{Cc-by-sa-4.0}} Photo by GraphyArchy {{Cc-by-sa-4.0}}",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:The Pentagon, Headquarters of the US Department of Defense (cropped).jpg": {
    "file": "File:The Pentagon, Headquarters of the US Department of Defense (cropped).jpg",
@@ -69097,7 +69361,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "attributionRequired": true,
    "credit": "http://sketchup.google.com/3dwarehouse/details?mid=424ddd660ac85fc86c4e174b0cf70299",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Thermopylae 04.jpg": {
    "file": "File:Thermopylae 04.jpg",
@@ -69317,7 +69582,8 @@
    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
    "attributionRequired": true,
    "credit": null,
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Turin Montage.png": {
    "file": "File:Turin Montage.png",
@@ -69339,7 +69605,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": null,
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Royce Hall, University of California, Los Angeles (23-09-2003).jpg": {
    "file": "File:Royce Hall, University of California, Los Angeles (23-09-2003).jpg",
@@ -69867,7 +70134,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "Own work using: Shaw, Ian, ed. (2003) The Oxford History of Ancient Egypt, Oxford University Press ISBN: 0-19-280293-3. Dr. Peter Der Manuelian, ed. (1998) Egypt: The World of the Pharaohs, Bonner Straße, Köln (Deutschland): Könemann Verlagsgesellschaft mbH ISBN: 3-89508-913-3. Digital Egypt - maps…",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:N-Mesopotamia and Syria english.svg": {
    "file": "File:N-Mesopotamia and Syria english.svg",
@@ -69889,7 +70157,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "Own work based on: Karte Mesopotamien.png and N-Mesopotamia and Syria.svg",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:The Forbidden City - View from Coal Hill.jpg": {
    "file": "File:The Forbidden City - View from Coal Hill.jpg",
@@ -69977,7 +70246,8 @@
    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
    "attributionRequired": false,
    "credit": "This image has been extracted from another file",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Red Eastern Roman Empire 565 CE.svg": {
    "file": "File:Red Eastern Roman Empire 565 CE.svg",
@@ -69999,7 +70269,8 @@
    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
    "attributionRequired": false,
    "credit": "recolored from File:Eastern Roman Empire 565 CE.svg",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Umayyad Caliphate 740-en.png": {
    "file": "File:Umayyad Caliphate 740-en.png",
@@ -70021,7 +70292,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "This file was derived from: Caliphate 740-en.svg",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Map of the Mali Empire.png": {
    "file": "File:Map of the Mali Empire.png",
@@ -70043,7 +70315,8 @@
    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
    "attributionRequired": true,
    "credit": "Own work",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Aztec Empire ME (orthographic projection).svg": {
    "file": "File:Aztec Empire ME (orthographic projection).svg",
@@ -70065,26 +70338,27 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "attributionRequired": true,
    "credit": "Aztec Warfare: Imperial Expansion and Political Control by Ross Hassig, University of Oklahoma Press [1] [2] Department of History by Ian Mladjov, University of Michigan. [3] [4] Encyclopædia Britannica Web's pages : [5], [6], [7], [8], [9], [10], [11], [12], [13]",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
-  "File:Tawa chakana.svg": {
-   "file": "File:Tawa chakana.svg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tawa_chakana.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Tawa_chakana.svg/1280px-Tawa_chakana.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "File:Machu Picchu, 2023 (012).jpg": {
+   "file": "File:Machu Picchu, 2023 (012).jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Machu_Picchu%2C_2023_%28012%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Machu_Picchu%2C_2023_%28012%29.jpg/1280px-Machu_Picchu%2C_2023_%28012%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
    "thumbWidth": 1280,
-   "thumbHeight": 1280,
-   "smallUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Tawa_chakana.svg/500px-Tawa_chakana.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "thumbHeight": 853,
+   "smallUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Machu_Picchu%2C_2023_%28012%29.jpg/500px-Machu_Picchu%2C_2023_%28012%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
    "derived": false,
-   "width": 600,
-   "height": 600,
-   "mime": "image/svg+xml",
-   "objectName": "Tawa chakana",
-   "description": "Chakana.",
-   "creator": "Huhsunqu",
-   "dateText": "29 May 2006 (original upload date)",
-   "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tawa_chakana.svg",
-   "license": "CC BY-SA 2.5",
-   "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+   "width": 6960,
+   "height": 4640,
+   "mime": "image/jpeg",
+   "objectName": "Machu Picchu, 2023 (012)",
+   "description": "Machu Picchu",
+   "creator": "Draceane",
+   "dateText": "2023-05-26 13:45",
+   "sourceUrl": "https://commons.wikimedia.org/wiki/File:Machu_Picchu,_2023_(012).jpg",
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "attributionRequired": true,
    "credit": "Own work",
    "httpStatus": 200
@@ -70109,7 +70383,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "File:German soldiers celebrate Christmas in Ottoman Empire during WW1.jpg File:Nordenfelt submarine Abdülhamid.jpg Ottoman submarine Abdülhamid (1886) File:Declaration of the 1908 Revolution in Ottoman Empire.png Photo from 1908 http://www.tayyareci.com/digerucaklar/turkiye/preww1/Bleriot%20XI%20b%…",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Prinsenvlag.svg": {
    "file": "File:Prinsenvlag.svg",
@@ -70131,7 +70406,8 @@
    "licenseUrl": null,
    "attributionRequired": false,
    "credit": "SVG implementation of the Prinsenvlag.",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Joppen1907India1700a.jpg": {
    "file": "File:Joppen1907India1700a.jpg",
@@ -70175,7 +70451,8 @@
    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
    "attributionRequired": false,
    "credit": "Own work based on: Map-of-southeast-asia 900 CE.png",
-   "httpStatus": 200
+   "httpStatus": 200,
+   "transparent": false
   },
   "File:Ganesha Basohli miniature circa 1730 Dubost p73.jpg": {
    "file": "File:Ganesha Basohli miniature circa 1730 Dubost p73.jpg",
@@ -70673,7 +70950,7 @@
    "height": 3500,
    "mime": "image/jpeg",
    "objectName": "Hermes Ingenui Pio-Clementino Inv544",
-   "description": "So-called \"Hermes Ingenui\" after the inscription on the pedestal indicating the name of the sculptor or of the donator. Hermes wears his usual attributes: kerykeion (or herald's staff), kithara, petasus (round hat), traveller's cloak and winged temples. Marble, Roman copy of the 2nd century BC after a Greek original of the 5th century BC.",
+   "description": "So-called \"Hermes Ingenui\" after the inscription on the pedestal indicating the name of the sculptor or of the donator. Hermes wears his usual attributes: kerykeion (or herald's staff), petasus (round hat), traveller's cloak and winged temples. Marble, Roman copy of the 2nd century BC after a Greek original of the 5th century BC.",
    "creator": null,
    "dateText": null,
    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hermes_Ingenui_Pio-Clementino_Inv544.jpg",

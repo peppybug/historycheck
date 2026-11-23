@@ -81,7 +81,7 @@ export interface EnrichedImage {
   httpStatus: number;
   /** Rendition URL derived at a standard width from a file confirmed by the Commons API. */
   derived?: boolean;
-  /** Large see-through areas (drawings, emblems, maps): shown on a white backdrop so dark lines stay visible in dark mode. */
+  /** Near-black drawing on a transparent background: shown on a white backdrop so it stays visible in dark mode. */
   transparent?: boolean;
 }
 
@@ -649,10 +649,15 @@ async function main() {
   }
   // Drawings and emblems with large transparent areas (measured once, cached on disk).
   const alphaPath = join(process.cwd(), "data", "cache", "alpha.json");
-  const alphaCache: Record<string, number> = existsSync(alphaPath) ? JSON.parse(readFileSync(alphaPath, "utf8")) : {};
+  // Cache: share of see-through pixels, or { a, l } with the mean brightness (0–255) of the visible pixels.
+  type Alpha = number | { a: number; l: number };
+  const alphaCache: Record<string, Alpha> = existsSync(alphaPath) ? JSON.parse(readFileSync(alphaPath, "utf8")) : {};
+  const share = (v: Alpha) => (typeof v === "number" ? v : v.a);
   for (const [f, img] of Object.entries(result.images)) {
     if (img.httpStatus !== 200 || !/\.(svg|png|gif)$/i.test(f)) continue;
-    if (alphaCache[f] === undefined) {
+    const cached = alphaCache[f];
+    // Brightness only matters for largely transparent images; measure it for those.
+    if (cached === undefined || (typeof cached === "number" && cached > 0.15)) {
       try {
         let res = await fetch(img.smallUrl, { headers: { "User-Agent": USER_AGENT } });
         // Back off politely when Wikimedia rate-limits (429), honouring Retry-After.
@@ -663,9 +668,13 @@ async function main() {
         }
         if (!res.ok) throw new Error(String(res.status));
         const { data, info } = await sharp(Buffer.from(await res.arrayBuffer())).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
-        let clear = 0;
-        for (let i = 3; i < data.length; i += info.channels) if (data[i] < 128) clear++;
-        alphaCache[f] = clear / (info.width * info.height);
+        let clear = 0, lum = 0;
+        for (let i = 0; i < data.length; i += info.channels) {
+          if (data[i + 3] < 128) clear++;
+          else lum += 0.2126 * data[i] + 0.7152 * data[i + 1] + 0.0722 * data[i + 2];
+        }
+        const px = info.width * info.height;
+        alphaCache[f] = { a: clear / px, l: px > clear ? lum / (px - clear) : 255 };
         await new Promise((r) => setTimeout(r, 400));
       } catch (err) {
         log(`  ! transparency check failed for ${f}: ${(err as Error).message}`);
@@ -673,10 +682,12 @@ async function main() {
         continue;
       }
     }
-    img.transparent = alphaCache[f] > 0.15;
+    // Only near-black drawings on a transparent background disappear in dark mode.
+    const v = alphaCache[f];
+    img.transparent = share(v) > 0.15 && typeof v === "object" && v.l < 50;
   }
   writeFileSync(alphaPath, JSON.stringify(alphaCache, null, 1));
-  log(`    ${Object.values(result.images).filter((i) => i.transparent).length} images with large transparent areas`);
+  log(`    ${Object.values(result.images).filter((i) => i.transparent).length} dark drawings on transparent backgrounds (white backdrop)`);
 
   // Drop references to unreachable images so the site never shows a broken image.
   const ok = <T extends { file: string }>(x: T | null): T | null => (x && result.images[x.file]?.httpStatus === 200 ? x : null);

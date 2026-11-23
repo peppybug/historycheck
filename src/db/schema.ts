@@ -133,7 +133,7 @@ export const images = pgTable(
   {
     id: serial("id").primaryKey(),
     /** Original file on Wikimedia Commons (or another archive). */
-    /** Large see-through areas (drawings, emblems); rendered on a white backdrop. */
+    /** Near-black drawing on a transparent background; rendered on a white backdrop. */
     transparent: boolean("transparent").notNull().default(false),
     url: text("url").notNull(),
     /** Resized rendition used for display. */
