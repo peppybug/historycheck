@@ -97,6 +97,8 @@ export const artEvents: EventSeed[] = [
     location: "Florence; later France",
     places: ["florence", "louvre"],
     wiki: "Mona Lisa",
+    // Portrait format: keep the face in frame on cropped cards.
+    imagePosition: "50% 18%",
     featured: true,
     keywords: ["Leonardo da Vinci", "portrait", "Louvre", "sfumato", "Lisa Gherardini", "Renaissance"],
     summary:

@@ -133,7 +133,7 @@ export default async function HomePage() {
               <Link href={`/civilization/${c.slug}`} className="group block">
                 <span className="img-zoom block aspect-[4/5] overflow-hidden rounded-xs bg-sunken">
                   {c.thumb ? (
-                    <ArchiveImage image={{ thumbUrl: c.thumb, smallUrl: c.thumb, thumbWidth: c.w ?? 500, thumbHeight: c.h ?? 600, caption: c.caption ?? c.name }} alt="" sizes="200px" />
+                    <ArchiveImage image={{ thumbUrl: c.thumb, smallUrl: c.thumb, thumbWidth: c.w ?? 500, thumbHeight: c.h ?? 600, caption: c.caption ?? c.name, transparent: c.transparent }} alt="" sizes="200px" />
                   ) : (
                     <span className="flex h-full items-end p-3 text-xs text-muted" aria-hidden="true">No image on record</span>
                   )}

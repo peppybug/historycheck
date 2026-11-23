@@ -1,0 +1,1 @@
+ALTER TABLE "images" ADD COLUMN "transparent" boolean DEFAULT false NOT NULL;

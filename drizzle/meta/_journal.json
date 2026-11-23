@@ -43,6 +43,20 @@
       "when": 1795342757268,
       "tag": "0005_beliefs",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1795457596182,
+      "tag": "0006_image_position",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1795457923818,
+      "tag": "0007_image_transparency",
+      "breakpoints": true
     }
   ]
 }

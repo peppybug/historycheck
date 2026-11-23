@@ -133,6 +133,8 @@ export const images = pgTable(
   {
     id: serial("id").primaryKey(),
     /** Original file on Wikimedia Commons (or another archive). */
+    /** Large see-through areas (drawings, emblems); rendered on a white backdrop. */
+    transparent: boolean("transparent").notNull().default(false),
     url: text("url").notNull(),
     /** Resized rendition used for display. */
     thumbUrl: text("thumb_url").notNull(),
@@ -274,6 +276,8 @@ export const events = pgTable(
     primaryPlaceId: integer("primary_place_id").references(() => places.id, { onDelete: "set null" }),
     locationLabel: text("location_label").notNull(),
     featuredImageId: integer("featured_image_id").references(() => images.id, { onDelete: "set null" }),
+    /** CSS object-position for cropped views of the featured image (e.g. "50% 15%" keeps a face in frame). */
+    imagePosition: text("image_position"),
 
     isFeatured: boolean("is_featured").notNull().default(false),
     isDiscovery: boolean("is_discovery").notNull().default(false),

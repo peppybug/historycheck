@@ -29,7 +29,7 @@ export interface EventCardData {
   periodName: string;
   regionName: string;
   regionSlug: string;
-  image: Pick<ImageRow, "thumbUrl" | "smallUrl" | "thumbWidth" | "thumbHeight" | "caption" | "creator" | "license"> | null;
+  image: (Pick<ImageRow, "thumbUrl" | "smallUrl" | "thumbWidth" | "thumbHeight" | "caption" | "creator" | "license"> & { position?: string | null; transparent?: boolean | null }) | null;
 }
 
 const cardColumns = {
@@ -59,6 +59,8 @@ const cardColumns = {
   imgCaption: s.images.caption,
   imgCreator: s.images.creator,
   imgLicense: s.images.license,
+  imgPosition: s.events.imagePosition,
+  imgTransparent: s.images.transparent,
 };
 
 function cardQuery() {
@@ -103,6 +105,8 @@ export function toCard(r: CardRow): EventCardData & { id: number; sortKey: numbe
           caption: r.imgCaption!,
           creator: r.imgCreator,
           license: r.imgLicense!,
+          position: r.imgPosition,
+          transparent: r.imgTransparent,
         }
       : null,
   };
@@ -226,6 +230,7 @@ export const getCivilizations = cache(async () => {
       w: s.images.thumbWidth,
       h: s.images.thumbHeight,
       caption: s.images.caption,
+      transparent: s.images.transparent,
       count: sql<number>`(SELECT count(*)::int FROM event_civilizations ec JOIN events e ON e.id = ec.event_id AND e.status = 'published' WHERE ec.civilization_id = "civilizations"."id")`,
     })
     .from(s.civilizations)

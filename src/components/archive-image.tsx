@@ -5,6 +5,10 @@ import type { ImageRow } from "@/lib/queries";
 
 type Img = Pick<ImageRow, "thumbUrl" | "thumbWidth" | "thumbHeight" | "caption"> & {
   smallUrl?: string | null;
+  /** Focal point (CSS object-position) for cropped views. */
+  position?: string | null;
+  /** Drawings and emblems with large see-through areas need a white backdrop in dark mode. */
+  transparent?: boolean | null;
 };
 
 /**
@@ -57,7 +61,8 @@ export function ArchiveImage({
       fetchPriority={priority ? "high" : undefined}
       decoding="async"
       onError={() => setFailed(true)}
-      className={`h-full w-full ${fit === "cover" ? "object-cover" : "object-contain"} ${className}`}
+      style={image.position ? { objectPosition: image.position } : undefined}
+      className={["h-full w-full", fit === "cover" ? "object-cover" : "object-contain", image.transparent ? "bg-white" : "", className].filter(Boolean).join(" ")}
     />
   );
 }

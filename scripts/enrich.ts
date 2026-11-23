@@ -25,7 +25,8 @@
  *
  * Usage: npm run enrich           (uses on-disk cache in data/cache)
  */
-import { mkdirSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import sharp from "sharp";
 import { join } from "node:path";
 import { allEvents } from "../content/events";
 import { peopleRegistry, type PersonRef } from "../content/people";
@@ -33,7 +34,7 @@ import { placesRegistry } from "../content/places";
 import { civilizations } from "../content/taxonomy";
 import { beliefs, deities } from "../content/beliefs";
 import { parseDate } from "../content/types";
-import { checkUrl, getJson, stripHtml } from "./lib/http";
+import { USER_AGENT, checkUrl, getJson, stripHtml } from "./lib/http";
 import { classifySource } from "./lib/source-allowlist";
 
 const WP = "https://en.wikipedia.org/w/api.php";
@@ -80,6 +81,8 @@ export interface EnrichedImage {
   httpStatus: number;
   /** Rendition URL derived at a standard width from a file confirmed by the Commons API. */
   derived?: boolean;
+  /** Large see-through areas (drawings, emblems, maps): shown on a white backdrop so dark lines stay visible in dark mode. */
+  transparent?: boolean;
 }
 
 export interface EnrichedData {
@@ -602,10 +605,10 @@ async function main() {
   for (const c of civilizations) {
     const page = wiki.get(c.wiki);
     const image = pick([
+      // Editorial choice: the lead image of a closely related article, when set.
+      { file: "imageFrom" in c ? leadOf(c.imageFrom) : null, method: "wikipedia_lead" },
       { file: leadOf(c.wiki), method: "wikipedia_lead" },
       { file: p18(page?.qid ?? null), method: "wikidata_p18" },
-      // Editorial fallback: the lead image of a closely related article.
-      { file: "imageFrom" in c ? leadOf(c.imageFrom) : null, method: "wikipedia_lead" },
     ]);
     result.civilizations[c.slug] = { qid: page?.qid ?? null, wikiUrl: page?.url ?? "", image };
     if (image) usedFiles.add(image.file);
@@ -644,6 +647,37 @@ async function main() {
     }
     result.images[f] = img;
   }
+  // Drawings and emblems with large transparent areas (measured once, cached on disk).
+  const alphaPath = join(process.cwd(), "data", "cache", "alpha.json");
+  const alphaCache: Record<string, number> = existsSync(alphaPath) ? JSON.parse(readFileSync(alphaPath, "utf8")) : {};
+  for (const [f, img] of Object.entries(result.images)) {
+    if (img.httpStatus !== 200 || !/\.(svg|png|gif)$/i.test(f)) continue;
+    if (alphaCache[f] === undefined) {
+      try {
+        let res = await fetch(img.smallUrl, { headers: { "User-Agent": USER_AGENT } });
+        // Back off politely when Wikimedia rate-limits (429), honouring Retry-After.
+        for (let attempt = 1; res.status === 429 && attempt <= 4; attempt++) {
+          const wait = (Number(res.headers.get("retry-after")) || 5 * attempt) * 1000;
+          await new Promise((r) => setTimeout(r, wait));
+          res = await fetch(img.smallUrl, { headers: { "User-Agent": USER_AGENT } });
+        }
+        if (!res.ok) throw new Error(String(res.status));
+        const { data, info } = await sharp(Buffer.from(await res.arrayBuffer())).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
+        let clear = 0;
+        for (let i = 3; i < data.length; i += info.channels) if (data[i] < 128) clear++;
+        alphaCache[f] = clear / (info.width * info.height);
+        await new Promise((r) => setTimeout(r, 400));
+      } catch (err) {
+        log(`  ! transparency check failed for ${f}: ${(err as Error).message}`);
+        await new Promise((r) => setTimeout(r, 1000));
+        continue;
+      }
+    }
+    img.transparent = alphaCache[f] > 0.15;
+  }
+  writeFileSync(alphaPath, JSON.stringify(alphaCache, null, 1));
+  log(`    ${Object.values(result.images).filter((i) => i.transparent).length} images with large transparent areas`);
+
   // Drop references to unreachable images so the site never shows a broken image.
   const ok = <T extends { file: string }>(x: T | null): T | null => (x && result.images[x.file]?.httpStatus === 200 ? x : null);
   for (const e of Object.values(result.events)) {

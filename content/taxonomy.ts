@@ -249,6 +249,8 @@ export const civilizations = [
   },
   {
     slug: "inca",
+    // The article's lead image is the chakana symbol (black on transparent); use the citadel of Machu Picchu.
+    imageFrom: "Machu Picchu",
     name: "Inca Empire",
     wiki: "Inca Empire",
     region: "latin-america",

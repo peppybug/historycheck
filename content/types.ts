@@ -48,6 +48,8 @@ export interface EventSeed {
   /** Note shown to readers about uncertainty (e.g. traditional or disputed dates). */
   /** Editorially chosen Wikimedia Commons file ("File:…") used when the Wikipedia article has no lead image. */
   image?: string;
+  /** Focal point for cropped cards, as CSS object-position (e.g. "50% 15%" to keep a face in frame). */
+  imagePosition?: string;
   dateNote?: string;
 }
 
