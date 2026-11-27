@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { openGraph } from "@/lib/site";
+import { openGraph, shareImage } from "@/lib/site";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArchiveImage, ImageCredit } from "@/components/archive-image";
@@ -15,7 +15,7 @@ type Props = { params: Promise<{ slug: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const d = await getDeity((await params).slug);
   return d
-    ? { title: `${d.name}, ${d.domain.charAt(0).toLowerCase()}${d.domain.slice(1)}`, description: d.summary, alternates: { canonical: `/deity/${d.slug}` }, openGraph: openGraph({ title: d.name, description: d.summary, type: "article", image: d.image ? { url: d.image.thumbUrl, width: d.image.thumbWidth, height: d.image.thumbHeight, alt: d.name } : null }) }
+    ? { title: `${d.name}, ${d.domain.charAt(0).toLowerCase()}${d.domain.slice(1)}`, description: d.summary, alternates: { canonical: `/deity/${d.slug}` }, openGraph: openGraph({ title: d.name, description: d.summary, type: "article", image: shareImage(d.image, d.name) }) }
     : { title: "Figure not found" };
 }
 

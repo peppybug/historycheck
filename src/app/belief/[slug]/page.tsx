@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { openGraph } from "@/lib/site";
+import { openGraph, shareImage } from "@/lib/site";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArchiveImage, ImageCredit } from "@/components/archive-image";
@@ -15,7 +15,7 @@ type Props = { params: Promise<{ slug: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const b = await getBelief((await params).slug);
   return b
-    ? { title: b.name, description: b.summary, alternates: { canonical: `/belief/${b.slug}` }, openGraph: openGraph({ title: b.name, description: b.summary, type: "article", image: b.image ? { url: b.image.thumbUrl, width: b.image.thumbWidth, height: b.image.thumbHeight, alt: b.name } : null }) }
+    ? { title: b.name, description: b.summary, alternates: { canonical: `/belief/${b.slug}` }, openGraph: openGraph({ title: b.name, description: b.summary, type: "article", image: shareImage(b.image, b.name) }) }
     : { title: "Belief not found" };
 }
 

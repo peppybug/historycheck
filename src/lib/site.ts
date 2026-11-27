@@ -24,3 +24,18 @@ export function openGraph(o: { title?: string; description?: string; type?: "web
     images: [o.image ?? DEFAULT_SHARE_IMAGE],
   };
 }
+
+/**
+ * Link-preview version of an archive image. Uses the ~500px rendition: large
+ * enough for WhatsApp, iMessage, X and Facebook cards, and small enough
+ * (typically under 200 KB) that WhatsApp does not drop the image.
+ */
+export function shareImage(
+  img: { thumbUrl: string; smallUrl: string | null; thumbWidth: number; thumbHeight: number } | null | undefined,
+  alt: string,
+): ShareImage | null {
+  if (!img) return null;
+  const small = img.smallUrl && img.smallUrl !== img.thumbUrl;
+  const width = small ? Math.min(500, img.thumbWidth) : img.thumbWidth;
+  return { url: small ? img.smallUrl! : img.thumbUrl, width, height: Math.round((img.thumbHeight * width) / img.thumbWidth), alt };
+}
